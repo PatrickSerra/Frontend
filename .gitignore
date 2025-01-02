@@ -1,0 +1,71 @@
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# Cache do sistema e editor
+.cache/
+.idea/
+.vscode/
+*.bak
+*.~*
+
+# Dependências
+node_modules/
+bower_components/
+
+# Arquivos de build
+dist/
+build/
+out/
+*.min.js
+*.min.css
+*.map
+
+# Arquivos de configuração de ferramentas (se gerados automaticamente)
+*.eslintcache
+*.stylelintcache
+coverage/
+.jest/
+.nyc_output/
+
+# Relacionados ao Sass ou Less
+*.sass-cache/
+*.scss-cache/
+*.map
+
+# Arquivos de teste
+*.spec.js
+*.test.js
+coverage/
+
+# HTML pré-processado ou gerado
+*.html~
+*.ejs~
+
+# Imagens temporárias ou geradas
+*.png~
+*.jpg~
+*.gif~
+*.svg~
+
+# Arquivos de pacotes ou deploy
+*.zip
+*.tar.gz
+*.rar
+
+# Configurações locais do Git
+.gitconfig.local
+
+# Arquivos relacionados ao Docker ou CI/CD
+.docker/
+docker-compose.override.yml
+
+# Outros arquivos que podem ser gerados em builds ou edições
+*.bak
+*.orig
+*.rej
