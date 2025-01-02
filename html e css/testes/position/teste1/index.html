@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top-banner">
+        <div class="top-banner-inner">
+            <p>
+                Find out what's going on at Wombat Coffee each
+                Button to trigger
+                month. Sign up for our newsletter:
+                the modal
+                <!--Botão para ativar o modal-->
+                <button id="modal-btn-open">Sign up</button>
+            </p>
+        </div>
+    </header>
+    <div class="container">
+        <main class="col-main">
+            <nav>
+                <div class="dropdown">
+                    <div class="dropdown-label">Main Menu</div>
+                    <div class="dropdown-menu">
+                        <ul class="submenu">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/coffees">Coffees</a></li>
+                            <li><a href="/brewers">Brewers</a></li>
+                            <li><a href="/specials">Specials</a></li>
+                            <li><a href="/about">About us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <h1>Wombat Coffee Roasters</h1>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate asperiores ducimus repellendus praesentium optio cumque inventore iusto recusandae possimus ipsum nulla, explicabo, qui consequatur libero repellat corrupti perferendis pariatur dolores.
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cumque numquam ab eaque dolorum temporibus! Non laboriosam nemo modi distinctio aliquam minima, quae illo enim autem perferendis, consequuntur quos repudiandae.
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi eaque modi veniam eius molestiae autem molestias asperiores dolore iste sed velit laborum officia, culpa perferendis. Id odit esse perferendis cumque.
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet hic placeat blanditiis omnis magnam natus eaque minus saepe pariatur vitae repudiandae quas eius quis sequi vel accusamus quam, repellendus eum?
+
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque saepe officiis enim optio quae doloremque minima, nulla voluptatum fugit amet temporibus cupiditate voluptate quam eius recusandae, consequuntur provident quis distinctio!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ut excepturi facere minima modi voluptates magnam possimus eaque voluptate, ipsam, placeat tempore ipsum non soluta. Dolores temporibus earum quam doloremque!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nesciunt ullam animi odio quam optio ratione vel officia provident doloribus delectus, quo, aut inventore asperiores commodi libero nihil, fugit laboriosam!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iusto soluta omnis consequatur, sunt necessitatibus veniam laborum odit eius illum enim ducimus dolorem, voluptatum nisi repellat earum. Ipsam, iusto voluptatibus.
+                </p>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, vero facilis natus adipisci laboriosam quos voluptas assumenda veniam rem nostrum dolor magnam rerum ullam libero vel molestiae velit. Fuga, praesentium.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis itaque et saepe non molestias, temporibus tenetur labore error consequuntur, impedit, sapiente laudantium. Saepe inventore vero ipsam odio eum, maiores nihil?
+                </p>
+
+            </div>
+        </main>
+
+        <aside class="col-sidebar">
+            <div class="affix">
+                <ul class="submenu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/coffees">Coffees</a></li>
+                    <li><a href="/brewers">Brewers</a></li>
+                    <li><a href="/specials">Specials</a></li>
+                    <li><a href="/about">About us</a></li>
+                </ul>
+            </div>
+        </aside>
+        <footer>Footer</footer>
+    </div>
+    <!--Container para o modal-->
+    <div class="modal" id="modal" role="dialog" aria-labelledby="modal-title">
+        <!-- Backdrop para obscurecer o conteúdo atrás do modal -->
+        <div class="modal-backdrop"></div>
+        <div class="modal-body">
+            <button class="modal-close" title="close" id="modal-btn-close" aria-label="close modal">
+                <span aria-hidden="true">&times</span>
+            </button>
+            <h2 id="modal-title">Wombat Newsletter</h2>
+            <p id="modal-description">
+                Sign up for our monthly newsletter. No spam.
+                contents
+                We promise!
+            </p>
+            <form>
+                <p>
+                    <label for="email">Email address:</label>
+                    <input id="email" type="text" name="email" />
+                </p>
+                <p><button type="submit">Submit</button></p>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

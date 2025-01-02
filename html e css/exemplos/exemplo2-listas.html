@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+
+        nav {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            background-color: crimson;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin-right: 10px;
+        }
+
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration:  none;
+            padding: 20px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .lista-compras {
+            padding: 20px;
+            list-style-type: square; /* Opções: disc, circle, square, none */
+        }
+
+        .lista-def {
+            padding: 20px;
+        }
+
+        .lista-def dd::before {
+            content: '→'; /* Adiciona um ícone ou símbolo antes do item */
+            color: blue;
+            margin-right: 10px;
+        }
+        
+      
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+        </ul>
+    </nav>
+    <h2>Lista de Compras</h2>
+    <ul class="lista-compras">
+        <li>Café</li>
+        <li>Arroz</li>
+        <li>Item carne</li>
+    </ul>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    <ol type="a" start="20">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    <dl class="lista-def">
+        <dt>Termo1</dt>
+        <dd>Descrição do termo</dd>
+        <dt>Termo2</dt>
+        <dd>Descrição do termo 2</dd>
+    </dl>
+</body>
+</html>

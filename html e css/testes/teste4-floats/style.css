@@ -1,0 +1,87 @@
+/* Define um estilo global para calcular o tamanho dos elementos com "box-sizing: border-box".
+   Isso inclui o padding e as bordas no cálculo de largura e altura dos elementos. */
+   :root {
+    box-sizing: border-box;
+}
+
+/* Aplica "box-sizing: border-box" a todos os elementos, incluindo os pseudo-elementos ::before e ::after. */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/* Define o estilo global do corpo da página. */
+body {
+    background-color: #eee; /* Define uma cor de fundo clara para o corpo. */
+    font-family: Helvetica, Arial, sans-serif; /* Define a tipografia padrão. */
+}
+
+/* Adiciona um espaçamento vertical de 1.5em entre os elementos irmãos diretos do corpo. */
+body * + * {
+    margin-top: 1.5em;
+}
+
+/* Estiliza o cabeçalho principal (header). */
+header {
+    padding: 1em 1.5em; /* Define padding interno (em todas as direções). */
+    color: #fff; /* Define a cor do texto como branco. */
+    background-color: #0072b0; /* Define a cor de fundo como azul. */
+    border-radius: 0.5em; /* Adiciona cantos arredondados. */
+    margin-bottom: 1.5em; /* Adiciona um espaço abaixo do cabeçalho. */
+}
+
+/* Estiliza o elemento principal que contém o conteúdo. */
+.main {
+    padding: 0 1.5em 1.5em; /* Define padding interno nas laterais e parte inferior. */
+    background-color: #fff; /* Define uma cor de fundo branca. */
+    border-radius: 0.5em; /* Adiciona cantos arredondados. */
+}
+
+/* Centraliza o conteúdo da página e define um limite de largura máxima. */
+.container {
+    max-width: 1080px; /* Define uma largura máxima para o contêiner. */
+    margin: 0 auto; /* Centraliza horizontalmente o contêiner. */
+}
+
+/* Estiliza o bloco "media", frequentemente usado para layouts de mídia. */
+.media {
+    padding: 1.5em; /* Adiciona padding interno. */
+    background-color: #eee; /* Define uma cor de fundo clara. */
+    border-radius: 0.5em; /* Adiciona cantos arredondados. */
+}
+
+/* Define estilos para a imagem dentro do bloco "media". */
+.media-image {
+    float: left; /* Faz a imagem flutuar à esquerda. */
+    margin-right: 1.5em; /* Adiciona um espaço à direita da imagem. */
+}
+
+/* Define estilos para o corpo do conteúdo no bloco "media". */
+.media-body {
+    margin-top: 0; /* Remove qualquer margem superior. */
+    overflow: auto; /* Garante que o conteúdo seja exibido corretamente ao lado de elementos flutuantes. */
+}
+
+/* Remove margem superior de cabeçalhos dentro do "media-body". */
+.media-body h4 {
+    margin-top: 0;
+}
+
+/* Define uma classe "clearfix" para corrigir problemas causados por elementos flutuantes. */
+.clearfix::before,
+.clearfix::after {
+    display: table; /* Cria um contexto de tabela para corrigir o comportamento dos floats. */
+    content: " "; /* Adiciona um conteúdo vazio obrigatório. */
+}
+
+.clearfix::after {
+    clear: both; /* Limpa os elementos flutuantes à esquerda e à direita. */
+}
+
+/* Outra classe para limpar floats, com um método diferente. */
+.row::after {
+    content: " "; /* Adiciona um conteúdo vazio obrigatório. */
+    display: block; /* Garante que seja um bloco para afetar a renderização. */
+    clear: both; /* Limpa os elementos flutuantes. */
+}

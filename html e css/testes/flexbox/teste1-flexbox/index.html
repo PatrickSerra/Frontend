@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Definindo a codificação de caracteres para o HTML -->
+    <meta charset="UTF-8">
+    <!-- Definindo a configuração de visualização para dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página, que aparece na aba do navegador -->
+    <title>Document</title>
+    <!-- Vinculando o arquivo de estilo externo (CSS) -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!-- Container principal que envolve o conteúdo da página -->
+    <div class="container">
+      <!-- Cabeçalho da página, geralmente para títulos -->
+      <header>
+        <h1>Ink</h1>
+      </header>
+      
+      <!-- Navegação principal -->
+      <nav>
+        <ul class="site-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/support">Support</a></li>
+          <!-- Item de navegação alinhado à direita -->
+          <li class="nav-right">
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <!-- Corpo principal da página, com duas colunas -->
+      <main class="flex">
+        <div class="column-main tile">
+          <h1>Team collaboration done right</h1>
+          <p>Thousands of teams from all over the world turn to <b>Ink</b> to communicate and get things done.</p>
+          <!-- Parágrafos de exemplo, provavelmente serão substituídos por conteúdo real -->
+          <p>Lorem ipsum dolor sit amet...</p>
+          <p>Lorem ipsum dolor sit amet...</p>
+          <p>Lorem ipsum dolor sit amet...</p>
+          <p>Lorem ipsum dolor sit amet...</p>
+          <p>Lorem ipsum dolor sit amet...</p>
+        </div>
+
+        <!-- Coluna lateral com formulário de login e informações de preço -->
+        <div class="column-sidebar">
+          <div class="tile">
+            <!-- Formulário de login -->
+            <form class="login-form">
+              <h3>Login</h3>
+              <p>
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" />
+              </p>
+              <p>
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" />
+              </p>
+              <button type="submit">Login</button>
+            </form>
+          </div>
+          <div class="tile centered">
+            <small>Starting at</small>
+            <!-- Exibindo o preço com a formatação de valor -->
+            <div class="cost">
+              <span class="cost-currency">$</span>
+              <span class="cost-dollars">20</span>
+              <span class="cost-cents">.00</span>
+            </div>
+            <!-- Link para página de inscrição -->
+            <a class="cta-button" href="/pricing">
+              Sign up
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>

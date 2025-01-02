@@ -1,0 +1,165 @@
+/* Define o modelo de box-sizing para garantir que padding e borders não afetem a largura/altura dos elementos */
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+/* Definindo o estilo para o corpo da página */
+body {
+    background-color: #709b90; /* Cor de fundo do corpo */
+    font-family: Helvetica, Arial, sans-serif; /* Definindo a fonte */
+}
+
+/* Espaçamento entre elementos dentro do corpo */
+body * + * {
+    margin-top: 1.5em;
+}
+
+/* Container principal, limitando a largura máxima */
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* Estilo para a navegação (menu) */
+.site-nav {
+    display: flex; /* Usando Flexbox para dispor os itens na horizontal */
+    padding: .5em;
+    list-style-type: none; /* Remove as bolinhas de lista */
+    background-color: #5f4b44; /* Cor de fundo da navegação */
+}
+
+.site-nav > li {
+    margin-top: 0;
+}
+
+/* Estilo dos links na navegação */
+.site-nav > li > a {
+    display: block; /* Faz os links ocuparem toda a largura */
+    padding: .5em 1em; /* Espaçamento interno */
+    background-color: #cc6b5a; /* Cor de fundo padrão */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição para suavizar a interação */
+}
+
+/* Efeito de hover para os links */
+.site-nav > li > a:hover {
+  background-color: #96483a; /* Altera a cor de fundo ao passar o mouse */
+  transform: scale(1.05);    /* Leve aumento de escala */
+}
+
+/* Espaçamento entre os itens do menu */
+.site-nav > li + li {
+    margin-left: 1.5em;
+}
+
+/* Alinha o último item da navegação à direita */
+.site-nav > .nav-right {
+    margin-left: auto;
+}
+
+/* Estilo das "caixas" (tiles) que contêm conteúdo */
+.tile {
+    padding: 1.5em;
+    background-color: #fff; /* Cor de fundo branca */
+}
+
+/* Flexbox para disposição de elementos na página */
+.flex {
+    display: flex;
+}
+
+/* Espaçamento entre as colunas do layout */
+.flex > * + * {
+    margin-top: 0;
+    margin-left: 1.5em;
+}
+
+/* Definição de proporção entre as colunas */
+.column-main {
+    flex: 2; /* A coluna principal ocupa o dobro da largura da coluna lateral */
+}
+
+.column-sidebar {
+    flex: 1; /* A coluna lateral ocupa uma largura menor */
+    display: flex;
+    flex-direction: column; /* Disposição vertical dos elementos dentro da coluna lateral */
+}
+
+/* Estilo dos formulários */
+.login-form h3 {
+    margin: 0;
+    font-size: .9em;
+    font-weight: bold;
+    text-align: right;
+    text-transform: uppercase; /* Transformar para letras maiúsculas */
+}
+
+/* Estilo dos campos de entrada do formulário */
+.login-form input:not([type=checkbox]):not([type=radio]) {
+    display: block;
+    width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+    margin-top: 0;
+}
+
+/* Estilo do botão de login */
+.login-form button {
+    margin-top: 1em;
+    border: 1px solid #cc6b5a; /* Bordas coloridas */
+    background-color: white;
+    padding: .5em 1em;
+    cursor: pointer; /* Muda o cursor para uma mãozinha */
+}
+
+/* Estilo para centralizar elementos */
+.centered {
+    text-align: center;
+}
+
+/* Estilo para o custo (preço) */
+.cost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: .7; /* Ajuste na altura da linha */
+}
+
+/* Estilo para os elementos de preço */
+.cost > span {
+    margin-top: 0;
+}
+
+.cost-currency {
+    font-size: 2rem; /* Aumenta o tamanho do símbolo de moeda */
+}
+
+.cost-dollars {
+    font-size: 4rem; /* Aumenta o tamanho dos dólares */
+}
+
+.cost-cents {
+    font-size: 1.5rem; /* Tamanho menor para os centavos */
+    align-self: flex-start; /* Alinha os centavos ao topo */
+}
+
+/* Estilo para o botão de chamada para ação (cta) */
+.cta-button {
+    display: block;
+    background-color: #cc6b5a; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: .5em 1em;
+    text-decoration: none; /* Remove o sublinhado */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */
+}
+
+/* Efeito de hover no botão */
+.cta-button:hover{
+  background-color: #96483a; /* Altera a cor de fundo */
+  transform: scale(1.05);    /* Leve aumento de escala */
+}

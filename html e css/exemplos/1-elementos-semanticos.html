@@ -1,0 +1,66 @@
+<!--
+Os elementos semânticos do HTML são aqueles que possuem um significado claro tanto para o navegador quanto para os desenvolvedores, descrevendo o propósito e a função do conteúdo que eles envolvem. Eles ajudam a melhorar a acessibilidade, a usabilidade e o SEO (Search Engine Optimization) das páginas da web.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <header>: Representa a seção de cabeçalho de uma página ou seção, geralmente contendo o título, logotipo e menu de navegação. -->
+    <header>
+        <h1>Meu site</h1>
+        <!--  Usado para definir um bloco de links de navegação.  -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#home">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <main : Contém o conteúdo principal da página, sendo único e central. -->
+    <main>
+        <!--
+            <article>: Indica conteúdo independente que pode ser distribuído ou reutilizado, como um post de blog ou notícia.
+        -->
+        <article>
+            <h2>Bem-vindo!</h2>
+            <p>Este é o conteúdo principal</p>
+        </article>
+    </main>
+    <!--
+        O elemento <section> no HTML é usado para agrupar conteúdos relacionados dentro de uma página. Ele indica que o conteúdo dentro dele pertence a uma mesma categoria ou tema. É ideal para estruturar o documento de maneira organizada, facilitando a compreensão do propósito de cada bloco de conteúdo
+    -->
+    <section>
+        <h2>Sobre nós</h2>
+        <p>Somos uma empresa focada em tecnologia e inovação.</p>
+    </section>
+
+    <!--
+        <aside>: Contém informações relacionadas indiretamente ao conteúdo principal, como barras laterais, links ou citações.
+    -->
+    <aside>
+        <h3>Links Relacionados</h3>
+        <ul>
+            <li><a href="#link1">Link1</a></li>
+        </ul>
+        <!--
+            <figure> e <figcaption>: Usados para agrupar imagens e suas legendas.
+        -->
+        <figure>
+            <img src="img/imagem.jpg" alt="Descrição da imagem">
+            <figcaption>Legenda da imagem</figcaption>
+        </figure>
+    </aside>
+    <!--
+        <footer>: Define o rodapé da página ou seção, geralmente com informações de copyright, links de contato ou navegação adicional.
+    -->
+    <footer>
+        <p>&copy; 2024 Meu site</p>
+    </footer>
+
+</body>
+</html>

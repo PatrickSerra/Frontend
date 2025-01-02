@@ -1,0 +1,148 @@
+/* Definindo variáveis CSS */
+:root {
+    --primary-color: #0093E9;
+    --primary-dark-color: #0056b3;
+    --primary-light-color: #80D0C7;
+    --secondary-color: rgb(146, 211, 16);
+    --secondary-dark-color: rgb(115, 167, 12);
+    --secondary-light-color: rgb(92, 133, 10);
+    --background-color: #f4f4f9;
+    --form-background-color: #eee;
+    --border-color: #ccc;
+    --input-border-radius: 5px;
+    --input-padding: 8px 15px;
+    --font-family: 'Poppins', sans-serif;
+    --font-size: 1em;
+    --font-size-header: 1.5em;
+    --gap-small: 0.5em;
+    --gap-medium: 0.9em;
+    --btn-padding: 10px 20px;
+}
+
+/* Reset de estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--primary-color);
+    background-image: linear-gradient(112deg, var(--primary-color) 0%, var(--primary-light-color) 100%);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 40%;
+    max-width: 1200px;
+    background-color: var(--form-background-color);
+    padding: 1.5em 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    gap: var(--gap-medium);
+}
+
+.sign-in-form .form-header {
+    align-self: center;
+    font-size: var(--font-size-header);
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Alinha os elementos verticalmente */
+    gap: var(--gap-small); /* Espaçamento entre label e input */
+}
+
+.form-group label {
+    flex-shrink: 0; /* Impede o label de encolher */
+    flex-basis: 1.5em; /* Tamanho inicial do label */
+}
+
+.form-input {
+    flex-grow: 1;
+    padding: var(--input-padding);
+    border-radius: var(--input-border-radius);
+    background-color: var(--background-color);
+    outline: none;
+    border: 1px solid var(--border-color);
+    font-size: var(--font-size);
+}
+
+/* Efeitos nos inputs */
+.form-input:hover {
+    border: 1px solid var(--primary-dark-color);
+}
+
+.form-input:focus {
+    border: 3px solid var(--primary-color);
+    transition: border-color 0.3s ease;
+}
+
+/* Botões */
+.btn {
+    padding: var(--btn-padding);
+    font-size: var(--font-size);
+    color: white;
+    border: none;
+    border-radius: var(--input-border-radius);
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente no hover */
+}
+
+.btn-primary {
+    background-color: var(--primary-dark-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark-color);
+}
+
+.btn-primary:active {
+    background-color: var(--primary-dark-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-dark-color);
+}
+
+.btn-secondary:active {
+    background-color: var(--secondary-light-color);
+}
+
+.btn-group {
+    justify-content: flex-end;
+}
+
+/* Media Queries */
+@media (max-width: 1000px) {
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--gap-small);
+    }
+
+    .container {
+        width: 100%;
+    }
+}

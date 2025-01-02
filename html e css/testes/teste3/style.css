@@ -1,0 +1,77 @@
+/* Define o comportamento de dimensionamento padrão para todos os elementos na página */
+:root {
+    box-sizing: border-box; /* Inclui borda e padding dentro do tamanho total do elemento */
+}
+
+/* Aplica o comportamento de box-sizing a todos os elementos, incluindo pseudo-elementos */
+*,
+::before,
+::after {
+    box-sizing: inherit; /* Herda o valor de box-sizing do elemento pai, que é definido no :root */
+}
+
+/* Estilo para o corpo da página */
+body {
+    background-color: #eee; /* Define a cor de fundo como cinza claro */
+    font-family: Helvetica, Arial, sans-serif; /* Define uma fonte sans-serif */
+}
+
+/* Adiciona um espaçamento entre elementos consecutivos dentro do body */
+body * + * {
+    margin-top: 1.5em; /* Espaçamento superior entre os elementos subsequentes */
+}
+
+/* Estilo do cabeçalho */
+header {
+    padding: 1em 1.5em; /* Define o espaçamento interno: 1em em cima/baixo e 1.5em nas laterais */
+    color: #fff; /* Define a cor do texto como branco */
+    background-color: #0072b0; /* Define a cor de fundo como azul escuro */
+    border-radius: .5em; /* Adiciona bordas arredondadas ao cabeçalho */
+}
+
+/* Garante que o elemento main seja tratado como um bloco */
+main {
+    display: block; /* Faz o elemento ocupar toda a largura disponível */
+}
+
+/* Define um layout flexível para o container */
+.container {
+    display: flex; /* Ativa o layout flexível, permitindo que os elementos sejam organizados horizontalmente */
+}
+
+/* Estilo para a seção principal */
+.main {
+    width: 70%; /* Define a largura como 70% do contêiner pai */
+    background-color: #fff; /* Define o fundo como branco */
+    padding: 1em 1.5em; /* Adiciona espaçamento interno */
+    border-radius: .5em; /* Bordas arredondadas */
+}
+
+/* Estilo para a barra lateral */
+.sidebar {
+    width: 30%; /* Define a largura como 30% do contêiner pai */
+    padding: 1.5em; /* Adiciona espaçamento interno */
+    margin-top: 0; /* Remove qualquer margem superior */
+    margin-left: 1.5em; /* Adiciona um espaçamento à esquerda da barra lateral */
+    background-color: #fff; /* Define o fundo como branco */
+    border-radius: .5em; /* Adiciona bordas arredondadas */
+}
+
+/* Estilo para links estilizados como botões */
+.button-link {
+    display: block; /* O link ocupa toda a largura disponível */
+    padding: 0.5em; /* Adiciona espaçamento interno */
+    color: #fff; /* Define a cor do texto como branco */
+    background-color: #0090C9; /* Fundo azul claro */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    text-decoration: none; /* Remove o sublinhado do link */
+    text-transform: uppercase; /* Deixa o texto em letras maiúsculas */
+}
+
+/* Estilo para links de patrocinadores */
+.sponsor-link {
+    display: block; /* Faz o link ocupar toda a largura disponível */
+    color: #0072b0; /* Define a cor do texto como azul escuro */
+    font-weight: bold; /* Torna o texto em negrito */
+    text-decoration: none; /* Remove o sublinhado do link */
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <div class="logo">MyDashboard</div>
+            <input type="text" class="search" placeholder="Search...">
+            <div class="user-profile">
+                <img src="img/user-avatar.png" alt="User Avatar">
+                <span>Admin</span>
+            </div>
+        </header>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">🏠 Home</a></li>
+                <li><a href="#">📊 Analytics</a></li>
+                <li><a href="#">🛠 Settings</a></li>
+                <li><a href="#">📧 Messages</a></li>
+                <li><a href="#">🔔 Notifications</a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <h2>Welcome Back!</h2>
+            <p>Here are your latest updates:</p>
+            <div class="stats">
+                <div class="stat">
+                    <h3>Projects</h3>
+                    <p>25 Active</p>
+                </div>
+                <div class="stat">
+                    <h3>Tasks</h3>
+                    <p>128 Pending</p>
+                </div>
+                <div class="stat">
+                    <h3>Messages</h3>
+                    <p>15 New</p>
+                </div>
+            </div>
+        </main>
+        <div class="notifications tile">
+            <h3>Notifications</h3>
+            <ul>
+                <li>🔔 Task 123 is overdue</li>
+                <li>📧 New message from John</li>
+                <li>📊 Analytics report available</li>
+            </ul>
+        </div>
+        <div class="graph tile">
+            <h3>Project Performance</h3>
+            <canvas id="projectPerformanceChart"></canvas>
+        </div>
+        <div class="recent-activities tile">
+            <h3>Recent Activities</h3>
+            <ul>
+                <li>✅ Task "Design Update" completed</li>
+                <li>💬 Comment added to Project "Alpha"</li>
+                <li>📦 New resources uploaded</li>
+            </ul>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 MyDashboard. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./chart.js"></script>
+      
+</body>
+</html>

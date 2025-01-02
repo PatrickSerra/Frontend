@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        label {
+            cursor: pointer;
+            display: block;
+        }
+
+        .gender label {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Form</h1>
+    <section>
+        <form action="#" method="GET" target="_blank" autocomplete="off">
+            <fieldset>
+                <legend>Personal</legend>
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="your name" required>
+                </p>
+
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="ex: email@email.com" required>
+                </p>
+
+                <p>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </p>
+
+                <p>
+                    <label for="dev">I am developer:</label>
+                    <input type="checkbox" id="dev" name="dev" value="yes" checked>
+                </p>
+
+                <p class="gender">
+                    Gender:<br>
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">Female</label>
+                    <input type="radio" id="male" name="gender" value="female">
+                </p>
+                <p>
+                    <label for="date">Birthday:</label>
+                    <input type="date" id="date" name="date" required>
+                </p>
+
+                <p>
+                    <label for="color">Favorite color:</label>
+                    <input type="color" id="favorite-color" name="favorite-color">
+                </p>
+
+                <p>
+                    <label for="profile-image"> Profile image:</label>
+                    <input type="file" id="profile-image" name="profile-image" accept="image/*">
+                </p>
+
+                <p>
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit</button>
+                </p>
+            </fieldset>
+        </form>
+    </section>
+</body>
+</html>

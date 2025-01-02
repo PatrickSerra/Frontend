@@ -1,0 +1,64 @@
+/* Remove todas as margens e espaçamentos padrão, e define o modelo de caixa como "border-box".
+   Isso garante que padding e bordas sejam incluídos no cálculo de largura/altura dos elementos. */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define um fundo com cor personalizada para o corpo da página e escolhe uma fonte padrão para o texto. */
+body {
+    background-color: #709b90; /* Fundo em tom de verde suave. */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fontes modernas e legíveis. */
+}
+
+/* Estiliza um contêiner centralizado com largura de até 80% do viewport e no máximo 1200px. */
+.container {
+    width: 80%; /* Largura relativa ao viewport. */
+    max-width: 1200px; /* Limita a largura máxima. */
+    margin: auto; /* Centraliza o contêiner horizontalmente. */
+}
+
+/* Estiliza títulos com fundo semitransparente, cor branca, e margens sutis. */
+.title {
+    color: white; /* Texto branco. */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto com opacidade de 50%. */
+    margin: 0.3em 0; /* Margem vertical proporcional ao tamanho da fonte. */
+}
+
+/* Configura a grade para o portfólio com colunas adaptáveis e espaçamentos. */
+.portfolio {
+    display: grid; /* Define o layout como uma grade. */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    /* Cria tantas colunas quanto possível, com largura mínima de 200px e máxima proporcional. */
+    grid-auto-rows: 1fr; /* Linhas automáticas têm altura proporcional às colunas. */
+    gap: 1rem; /* Espaçamento entre os itens da grade. */
+    grid-auto-flow: dense; /* Preenche os espaços da grade de forma otimizada para evitar lacunas. */
+}
+
+/* Estiliza legendas dentro da seção de portfólio. */
+.portfolio figcaption {
+    padding: 0.3em 0.8em; /* Espaçamento interno ao redor do texto. */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semitransparente. */
+    color: #fff; /* Texto branco para contraste. */
+    text-align: right; /* Alinha o texto à direita. */
+}
+
+/* Estiliza itens destacados no portfólio, expandindo-os para ocupar mais espaço na grade. */
+.portfolio .featured {
+    grid-row: span 2; /* O item ocupa 2 linhas na grade. */
+    grid-column: span 2; /* O item ocupa 2 colunas na grade. */
+}
+
+/* Estiliza os elementos <figure> do portfólio, organizando-os em coluna. */
+.portfolio > figure {
+    display: flex; /* Define um layout flexível para os elementos filhos. */
+    flex-direction: column; /* Alinha os filhos verticalmente. */
+}
+
+/* Estiliza imagens no portfólio para se ajustarem ao contêiner. */
+.portfolio img {
+    flex: 1; /* Faz a imagem ocupar o espaço disponível no contêiner flexível. */
+    object-fit: cover; /* Ajusta a imagem para preencher o espaço sem distorcer. */
+    max-width: 100%; /* Garante que a largura da imagem não ultrapasse o contêiner. */
+}

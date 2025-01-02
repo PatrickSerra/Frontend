@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+     /* Faz com que o corpo da página ocupe toda a altura da janela. */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #6200ea;
+    color: #fff
+}
+
+.header h1 {
+    font-size: 2rem;
+}
+
+.media-gallery {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.video-container, .audio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.video-container video, .audio-container audio {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid #6200ea;
+    border-radius: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #6200ea;
+}

@@ -1,0 +1,104 @@
+/* Reset básico */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+     /* Faz com que o corpo da página ocupe toda a altura da janela. */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos globais */
+header, .main, footer {
+    padding: 1em
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Aplicando flex no cabeçalho */
+
+.header {
+    display: flex;
+    justify-content: space-between; /*Espaça os intens */
+    align-items: center; /* alinha verficalmente */
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav a {
+    margin-left: 1em;
+    color: white
+}
+
+.main {
+    display: flex;
+    gap: 1em;
+    margin: 1em 0;
+    min-height: 30%;
+    flex: 1;
+}
+
+.sidebar {
+    flex: 1; /* Ocupa menos espaço */
+    background-color: #ddd;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.content {
+    flex: 2; /* Ocupa mais espaço */
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+.footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Garante que o wrapper ocupe toda a altura da janela. */
+}
+
+
+  
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+}

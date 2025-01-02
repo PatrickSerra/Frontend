@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo1</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-gap: 10px;
+            background-color: #fff;
+            color: #444;
+        }
+
+        .box {
+            background-color: #444;
+            color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 150%;
+        }
+
+        .container div:nth-child(even) {
+            background-color: blueviolet;
+        }
+
+        .container {
+            grid-template-columns: [content-start] 1fr [content-end];
+            grid-template-rows: auto [content-start] auto [content-end];
+            grid-auto-rows: auto;
+            gap: 20px;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+        }
+
+        .aside {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .article {
+            background-color: rgb(114, 8, 124);
+            grid-column: content-start;
+            grid-column: content-start;
+
+        }
+
+        .footer {
+            grid-column: 1 / -1;
+
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                max-width: 1200px;
+                width: 90%;
+                margin: auto;
+                display: grid;
+                grid-template-columns: 2fr 4fr;
+                grid-template-areas: 
+                "header header"
+                "sidebar main"
+                ". footer";
+            }
+
+            .header {
+                grid-area: header;
+            }
+
+            .aside {
+                grid-area: sidebar;
+            }
+
+            .article {
+                grid-area: main;
+
+            }
+
+            .footer {
+                grid-area: footer;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box header">Header</div>
+        <div class="box aside">Aside</div>
+        <div class="box article">
+            <h1>Article</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores id, vero soluta quis suscipit laborum
+                ad natus mollitia deserunt sed eveniet doloremque iusto est numquam facilis, nobis nostrum hic.
+                Mollitia.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptas sed ratione dolore animi,
+                ea atque quisquam amet debitis, earum deleniti iure quasi facilis illum unde saepe, officiis qui
+                delectus?
+            </p>
+        </div>
+        <div class="box footer">footer</div>
+     
+    </div>
+</body>
+
+</html>

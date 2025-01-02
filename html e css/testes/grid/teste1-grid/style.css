@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid; /* Faz o elmento um grid container */
+    grid-template-columns: 1fr 1fr 1fr; /* Defime 3 colunas de larguras iguais */
+    grid-template-rows: 1fr 1fr; /* Defime 2 linhas de altura iguais */
+    gap: 1.5em 2em; /* Aplica espaçamento vertical e horizontal entre as celulas do grid */
+    
+}
+
+
+.grid > * {
+    background-color: darkgray;
+    color: white;
+    padding: 2em;
+    border-radius: 0.5em;
+}
+
+.inline-grid {
+    display: inline-grid; /* Faz o elmento um grid container */
+    grid-template-columns: 1fr 1fr 1fr; /* Defime 3 colunas de larguras iguais */
+    grid-template-rows: 1fr 1fr; /* Defime 2 linhas de altura iguais */
+    gap: 0.5em; /* Aplica espaçamento entre celula do grid */
+}
+
+
+.inline-grid > * {
+    background-color: darkgray;
+    color: white;
+    padding: 2em;
+    border-radius: 0.5em;
+    margin-top: 5px;
+}
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Define que o documento é HTML5 -->
+  <meta charset="UTF-8"> <!-- Codificação de caracteres UTF-8, garantindo suporte a textos multilingues -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta a visualização para dispositivos móveis -->
+  <title>Document</title> <!-- Título que aparece na aba do navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Vincula o arquivo de estilo externo -->
+</head>
+
+<body>
+  <div class="container">
+    <!-- Cabeçalho do site -->
+    <header>
+      <h1 class="page-heading">Ink</h1> <!-- Título principal do site -->
+    </header>
+
+    <!-- Navegação principal -->
+    <nav>
+      <ul class="site-nav">
+        <!-- Links de navegação do site -->
+        <li><a href="/">Home</a></li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/support">Support</a></li>
+        <!-- Link alinhado à direita usando a classe "nav-right" -->
+        <li class="nav-right">
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Seção principal -->
+    <main class="main tile">
+      <h1>Team collaboration done right</h1> <!-- Subtítulo principal -->
+      <p>
+        Thousands of teams from all over the
+        world turn to <b>Ink</b> to communicate
+        and get things done.
+      </p> <!-- Texto explicativo sobre o produto/serviço -->
+    </main>
+
+    <!-- Parte superior da barra lateral -->
+    <div class="sidebar-top tile">
+      <form class="login-form">
+        <h3>Login</h3> <!-- Título do formulário de login -->
+        <p>
+          <!-- Campo para o nome de usuário -->
+          <label for="username">Username</label>
+          <input id="username" type="text" name="username" />
+        </p>
+        <p>
+          <!-- Campo para a senha -->
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" />
+        </p>
+        <!-- Botão para enviar o formulário -->
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Parte inferior da barra lateral -->
+    <div class="sidebar-bottom tile centered">
+      <small>Starting at</small> <!-- Texto pequeno indicando o preço inicial -->
+      <div class="cost">
+        <!-- Exibição do preço -->
+        <span class="cost-currency">$</span> <!-- Símbolo da moeda -->
+        <span class="cost-dollars">20</span> <!-- Parte inteira do preço -->
+        <span class="cost-cents">.00</span> <!-- Centavos -->
+      </div>
+      <!-- Botão de chamada para ação -->
+      <a class="cta-button" href="/pricing">
+        Sign up
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>
