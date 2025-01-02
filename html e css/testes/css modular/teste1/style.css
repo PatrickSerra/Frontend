@@ -77,22 +77,142 @@ div {
   padding: 1.5em;
   background-color: #eee;
   border-radius: 0.5em;
+  display: flex;
+  gap: 1.5em;
 }
 
-.media::after {
-  content: "";
-  display: block;
-  clear: both;
+.media--stacked {
+  flex-direction: column;
+  align-items: start; /* Centraliza o conteúdo horizontalmente */
+  max-width: 50%;
+}
+
+.media--right > .media__image {
+  order: 1;
 }
 
 .media__image {
-  float: left;
-  margin-right: 1.5em;
+  max-width: 100%; /* Garante que a imagem não exceda o tamanho do container */
+  height: auto; /* Mantém a proporção da imagem */
 }
+
 .media__body {
   overflow: auto;
   margin-top: 0;
+  text-align: justify;
 }
+
 .media__body > h4 {
   margin-top: 0;
+}
+
+/* O dropdown é dividido em submodulos cada com uma responsabilidade */
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown__toggle {
+  padding: 0.5em 2em 0.5em 1.5em;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #eee;
+}
+
+.dropdown__toggle::after {
+  content: "";
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  border: 0.3em solid;
+  border-color: black transparent transparent;
+}
+
+.dropdown__drawer {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 2.1em;
+  min-width: 100%;
+  background-color: #eee;
+}
+
+.dropdown.is-open .dropdown__toggle::after {
+  top: 0.7em;
+  border-color: transparent transparent black;
+}
+
+.dropdown.is-open .dropdown__drawer {
+  display: block;
+}
+
+.menu {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+  border: 1px solid #999;
+}
+
+.menu > li + li {
+  border-top: 1px solid #999;
+}
+
+.menu > li > a {
+  display: block;
+  padding: 0.5em 1.5em;
+  background-color: #eee;
+  color: #369;
+  text-decoration: none;
+}
+
+.menu > li > a:hover {
+  background-color: #fff;
+}
+
+.menu--horizontal {
+  display: flex;
+}
+
+.menu--horizontal > li + li {
+  border-left: 1px solid #999;
+}
+
+.menu--horizontal > li > a {
+  display: block;
+  padding: 0.5em 1.5em;
+  background-color: #eee;
+  color: #369;
+  text-decoration: none;
+}
+
+.dropdown-flex {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dropdown-flex .dropdown__toggle::after {
+  content: "";
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  border: 0.3em solid;
+  border-color: black transparent transparent;
+}
+
+.dropdown-flex .dropdown__drawer {
+  margin: 0;
+  display: none;
+  min-width: 100%;
+  background-color: #eee;
+}
+
+.dropdown-flex.is-open .dropdown__toggle::after {
+  top: 0.7em;
+  border-color: transparent transparent black;
+}
+
+.dropdown-flex.is-open .dropdown__drawer {
+  display: block;
 }

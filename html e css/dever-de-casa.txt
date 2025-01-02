@@ -1,9 +1,15 @@
 Topicos para estudar depois:
+    1 - Importante e prioritario
+    2 - Importante mas não Prioritario
+    3 - Opcional
+
     CSS:
-        * Fazer os exemplos de https://gridbyexample.com/
-        * ler mais sobre links e botoes: https://css-tricks.com/a-complete-guide-to-links-and-buttons/
-        * Object-fit
-        * Container Queries
-        * CSS Logical Properties
-        * Content sizing keywords
-        * dá uma olha nesses padrões design responsivo https://bradfrost.github.io/this-is-responsive/patterns.html.
+        * BEM e OCSS (1)
+        * SASS (1)
+        * Fazer os exemplos de https://gridbyexample.com/ (2)
+        * ler mais sobre links e botoes: https://css-tricks.com/a-complete-guide-to-links-and-buttons/ (2)
+        * Object-fit (3)
+        * Container Queries (2)
+        * CSS Logical Properties (2)
+        * Content sizing keywords (2)
+        * dá uma olha nesses padrões design responsivo https://bradfrost.github.io/this-is-responsive/patterns.html. (2)

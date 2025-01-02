@@ -1,14 +1,16 @@
+/* Define estilos globais */
 :root {
-  box-sizing: border-box;
-  font-size: calc(1vw + 0.6em);
+  box-sizing: border-box; /* Faz com que largura e altura incluam borda e padding */
+  font-size: calc(1vw + 0.6em); /* Define o tamanho da fonte baseado na largura da viewport */
 }
 
 @media (min-width: 50em) {
   :root {
-    font-size: 1.125em;
+    font-size: 1.125em; /* Ajusta o tamanho da fonte para telas maiores que 50em */
   }
 }
 
+/* Aplica box-sizing herdado para todos os elementos */
 *,
 *::before,
 *:after {
@@ -16,94 +18,99 @@
 }
 
 body {
-  margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
+  margin: 0; /* Remove margem padrão */
+  font-family: Helvetica, Arial, sans-serif; /* Define fonte padrão */
 }
 
+/* Estilização de links */
 a:link {
-  color: #1476b8;
+  color: #1476b8; /* Cor do link não visitado */
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: none; /* Remove sublinhado */
 }
 
 a:visited {
-  color: #1430b8;
+  color: #1430b8; /* Cor do link visitado */
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Sublinha link ao passar o mouse */
 }
 
 a:active {
-  color: #b81414;
+  color: #b81414; /* Cor do link ativo (clicado) */
 }
 
+/* Estilização do cabeçalho */
 .page-header {
   padding: 0.4em 1em;
-  background-color: #fff;
+  background-color: #fff; /* Fundo branco */
 }
 
 @media (min-width: 35em) {
   .page-header {
-    padding: 1em;
+    padding: 1em; /* Mais espaço em telas maiores */
   }
 }
 
 @media (min-width: 50em) {
   .page-header {
-    padding: 1em 4em;
+    padding: 1em 4em; /* Ainda mais espaço em telas maiores */
   }
 }
 
+/* Estilização do título */
 .title > h1 {
-  color: #333;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  margin: 0.2em 0;
+  color: #333; /* Cor escura */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  font-size: 1.5rem; /* Tamanho inicial */
+  margin: 0.2em 0; /* Margem vertical */
 }
 
 @media (min-width: 35em) {
   .title > h1 {
-    font-size: 2.25rem;
+    font-size: 2.25rem; /* Maior em telas médias */
   }
 }
 
+/* Estilização do slogan */
 .slogan {
-  color: #888;
+  color: #888; /* Cinza claro */
   font-size: 0.875em;
   margin: 0;
 }
 
+/* Estilização da seção hero */
 .hero {
   padding: 2em 1em;
-  /* adciona a hero image a pagina */
-  background-image: url(img/coffee-beans-small.jpg);
-  background-size: 100%;
-  color: #fff;
-  text-shadow: 0.1em 0.1em 0.3em #000;
+  background-image: url(img/coffee-beans-small.jpg); /* Imagem de fundo */
+  background-size: 100%; /* Imagem ocupa toda a largura */
+  color: #fff; /* Texto branco */
+  text-shadow: 0.1em 0.1em 0.3em #000; /* Sombra no texto */
 }
 
 @media (min-width: 35em) {
   .hero {
     padding: 5em 3em;
-    font-size: 1.2rem;
-    background-image: url(img/coffee-beans-medium.jpg);
+    font-size: 1.2rem; /* Texto maior */
+    background-image: url(img/coffee-beans-medium.jpg); /* Imagem maior */
   }
 }
 
 @media (min-width: 50em) {
   .hero {
-    padding: 7em 6em;
-    background-image: url(img/coffee-beans.jpg);
+    padding: 7em 6em; /* Espaçamento ainda maior */
+    background-image: url(img/coffee-beans.jpg); /* Imagem de alta resolução */
   }
 }
 
+/* Estilização do conteúdo principal */
 main {
   padding: 1em;
 }
 
 @media (min-width: 35em) {
-  .main {
+  main {
     padding: 2em 1em;
   }
 }
@@ -114,6 +121,7 @@ main {
   }
 }
 
+/* Estilização de subtítulos */
 .subtitle {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -121,23 +129,19 @@ main {
   text-transform: uppercase;
 }
 
+/* Menu */
 .menu {
   position: relative;
 }
 
 .menu-toggle {
   position: absolute;
-  top: -1.2em;
-  right: 0.1em;
-  border: 0;
-  background-color: transparent;
-  font-size: 3em;
-  width: 1em;
-  height: 1em;
-  line-height: 0.4;
-  text-indent: 5em;
-  white-space: nowrap;
-  overflow: hidden;
+  top: -1.2em; /* Posiciona acima */
+  right: 0.1em; /* Alinha à direita */
+  border: 0; /* Remove bordas */
+  background-color: transparent; /* Fundo transparente */
+  font-size: 3em; /* Ícone grande */
+  text-indent: 5em; /* Move texto para fora da visão */
 }
 
 .menu-toggle::after {
@@ -145,135 +149,78 @@ main {
   top: 0.2em;
   left: 0.2em;
   display: block;
-  content: "\2261";
-  text-indent: 0;
+  content: "\2261"; /* Ícone de menu hambúrguer */
 }
 
 .menu-dropdown {
-  display: none;
+  display: none; /* Esconde por padrão */
   position: absolute;
   right: 0;
   left: 0;
-  margin: 0;
 }
 
 @media (min-width: 35em) {
   .menu-toggle {
-    display: none;
+    display: none; /* Esconde botão em telas maiores */
   }
 
   .menu-dropdown {
-    display: block;
+    display: block; /* Mostra menu */
     position: static;
   }
 }
 
+/* Menu aberto */
 .menu.is-open .menu-dropdown {
   display: block;
 }
 
+/* Estilização do menu de navegação */
 .nav-menu {
   margin: 0;
   padding-left: 0;
   border: 1px solid #ccc;
-  list-style: none;
-  background-color: rgb(0, 0, 0);
+  list-style: none; /* Remove marcadores */
+  background-color: rgb(0, 0, 0); /* Fundo preto */
   color: #fff;
 }
 
 @media (min-width: 50em) {
   .nav-menu {
-    padding: 0 4em;
+    padding: 0 4em; /* Adiciona espaçamento */
   }
 }
 
-.nav-menu > li + li {
-  border-top: 1px solid #ccc;
-}
-
-.nav-menu > li > a {
-  display: block;
-  padding: 0.8em 1em;
-  color: #fff;
-  font-weight: normal;
-}
-
-.nav-menu > li > a:hover {
-  background-color: rgb(119, 115, 115);
-}
-
-@media (min-width: 35em) {
-  .nav-menu {
-    display: flex;
-    border: 0;
-    padding: 0 1em;
-  }
-
-  .nav-menu > li {
-    flex: 1;
-  }
-
-  .nav-menu > li + li {
-    border: 0;
-  }
-
-  .nav-menu > li > a {
-    padding: 0.3em;
-    text-align: center;
-  }
-}
-
-@media (min-width: 35em) {
-  .row {
-    display: flex;
-    margin-left: -0.75em;
-    margin-right: -0.75em;
-  }
-
-  .column {
-    flex: 1;
-    margin-right: 0.75em;
-    margin-left: 0.75em;
-  }
-}
-
+/* Estilização de tabelas */
 table {
-  border-collapse: collapse;
+  border-collapse: collapse; /* Remove espaços entre bordas */
+  width: 100%; /* Largura total */
 }
 
-th,
-td {
+th, td {
   border: 1px solid black;
   padding: 0.3em 0.5em;
 }
 
-table {
-  width: 100%;
-}
-
 @media (max-width: 30em) {
-  table,
-  thead,
-  tbody,
-  tr,
-  th,
-  td {
-    display: block;
+  table, thead, tbody, tr, th, td {
+    display: block; /* Tabela vira layout em bloco */
   }
 
   thead tr {
-    position: absolute;
+    position: absolute; /* Remove cabeçalho da tabela */
     top: -9999px;
     left: -9999px;
   }
 
   tr {
-    margin-bottom: 1em;
+    margin-bottom: 1em; /* Espaçamento entre linhas */
   }
 }
 
+/* Estilização para impressão */
 @media print {
   body *:not(main):not(main *) {
-    display: none !important;
+    display: none !important; /* Esconde tudo exceto o conteúdo principal */
   }
 }

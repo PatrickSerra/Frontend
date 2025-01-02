@@ -23,7 +23,7 @@
     <button class="button button--success">Read more</button>
 
     <div class="media">
-      <img class="media__image" src="runner.png" />
+      <img class="media__image" src="img/runner.png" />
       <div class="media__body">
         <h4>Strength</h4>
         <p>
@@ -32,5 +32,75 @@
         </p>
       </div>
     </div>
+
+    <div class="media media--right">
+      <img class="media__image" src="img/runner.png" />
+      <div class="media__body">
+        <h4>Strength</h4>
+        <p>
+          Strength training is an important part of injury prevention. Focus on
+          your core&mdash; especially your abs and glutes.
+        </p>
+      </div>
+    </div>
+    <div class="media media--stacked">
+      <img class="media__image" src="img/runner.png" />
+      <div class="media__body">
+        <h4>Strength</h4>
+        <p>
+          Strength training is an important part of injury prevention. Focus on
+          your core&mdash; especially your abs and glutes. Lorem ipsum dolor sit
+          amet consectetur, adipisicing elit. Ducimus illo dolores quos in
+          dolorem fuga, eaque dolorum fugit beatae non esse tempora maiores,
+          voluptates unde maxime reprehenderit, magni explicabo labore.
+        </p>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown__toggle">Main Menu</button>
+      <div class="dropdown__drawer">
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/coffees">Coffees</a></li>
+          <li><a href="/brewers">Brewers</a></li>
+          <li><a href="/specials">Specials</a></li>
+          <li><a href="/about">About us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dropdown dropdown-flex">
+      <button class="dropdown__toggle">Main Menu</button>
+      <div class="dropdown__drawer">
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/coffees">Coffees</a></li>
+          <li><a href="/brewers">Brewers</a></li>
+          <li><a href="/specials">Specials</a></li>
+          <li><a href="/about">About us</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae facilis neque doloribus asperiores perferendis consectetur. Sunt maiores culpa ratione voluptatum velit perferendis vitae est officiis ad atque! Quod, id voluptatem.
+    </p>
+
+    <script type="text/javascript">
+      (function () {
+        // Seleciona todos os elementos com a classe 'dropdown__toggle'
+        let toggles = document.querySelectorAll(".dropdown__toggle");
+        console.log(toggles); // Aqui, vamos ver todos os toggles no console.
+
+        // Para cada toggle, adicionamos um ouvinte de evento
+        toggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (event) {
+            event.preventDefault();
+            // Seleciona o dropdown associado ao botão clicado
+            let dropdown = event.target.closest(".dropdown");
+            // Alterna a classe 'is-open' para abrir/fechar o dropdown
+            dropdown.classList.toggle("is-open");
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
