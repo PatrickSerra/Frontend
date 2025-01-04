@@ -41,6 +41,32 @@
         <a class="kss-nav__menu-link" href="section-media.html">
           <span class="kss-nav__ref">3</span><span class="kss-nav__name">Media</span>
         </a>
+            <ul class="kss-nav__menu-child">
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-media.html#kssref-media">
+                  <span class="kss-nav__ref ">3</span
+                  ><span class="kss-nav__name">Flex Order</span>
+                </a>
+              </li>
+            </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-media.html">
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Flex Order</span>
+        </a>
+            <ul class="kss-nav__menu-child">
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-media.html#kssref-media">
+                  <span class="kss-nav__ref ">3</span
+                  ><span class="kss-nav__name">Flex Order</span>
+                </a>
+              </li>
+            </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-messages.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Messages</span>
+        </a>
       </li>
     </ul>
   </nav>
@@ -59,7 +85,7 @@
                   #Media
               </span>
             </span>
-            Media
+            Flex Order
           </a>
         </h1>
 
@@ -95,8 +121,8 @@
           </p>
 
           <div class="kss-description">
-            <p>Displays an image on the left and body content
-on the right.</p>
+            <p>Modifica a ordem de um elemento em flex container</p>
+<p>.media--stacked - Exibição empilhada verticalmente.</p>
 
           </div>
 
@@ -105,66 +131,38 @@ on the right.</p>
 
         <div class="kss-modifier__wrapper">
           <div class="kss-modifier__heading kss-style">
-            Examples
+            Example
           </div>
 
-            <div class="kss-modifier__default-name kss-style">
-              Default styling
-            </div>
 
           <div class="kss-modifier__example">
-            <div class="media ">
+            <div class="media">
   <img class="media__image" src="https://placehold.co/150X150" />
   <div class="media__body">
-    <h4>Strength</h4>
-    <p>
-      Strength training is an important part of injury prevention. Focus on
-      your core&mdash; especially your abs and glutes.
-    </p>
+    <h4>Title</h4>
+    <p>Body content here.</p>
   </div>
 </div>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
-            <div class="kss-modifier__name kss-style">
-              .media--stacked
-            </div>
-            <div class="kss-modifier__description kss-style">
-              Horizontal media element
-            </div>
-            <div class="kss-modifier__example">
-              <div class="media media--stacked">
-  <img class="media__image" src="https://placehold.co/150X150" />
-  <div class="media__body">
-    <h4>Strength</h4>
-    <p>
-      Strength training is an important part of injury prevention. Focus on
-      your core&mdash; especially your abs and glutes.
-    </p>
-  </div>
-</div>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
         </div>
 
           <details class="kss-markup kss-style">
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;media [modifier class]&quot;</span>&gt;</span>
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;media&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;media__image&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://placehold.co/150X150&quot;</span> /&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;media__body&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Strength<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-      Strength training is an important part of injury prevention. Focus on
-      your core<span class="hljs-symbol">&amp;mdash;</span> especially your abs and glutes.
-    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Body content here.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>../css/components.css</code>, line 76
+          Source: <code>../css/components.css</code>, line 200
         </div>
 
     </div>
@@ -177,6 +175,33 @@ on the right.</p>
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
+<script>
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+<script src="../kss/kss.js"></script>
+<script src="../js/index.js"></script>
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>
+.js"></script>
 <script>
   var spy = new ScrollSpy('#kss-node', {
     nav: '.kss-nav__menu-child > li > a',

@@ -19,10 +19,19 @@ function generateStyleguide(done) {
     title: "My components",
     source: paths.styleguide.source, // Pasta de origem dos arquivos KSS
     destination: paths.styleguide.dest, // Pasta de destino
-    css: ["../kss/kss.css", "../css/components.css"], // Caminho para o CSS no styleguide
+    /*
+    O ../css/components.css" é o caminho relativo a destination onde está o css dos compoenteents para ser usado na interface do kss
+    O ../kss/kss.css" é um css personalizado que podde ser retirado se necessario
+    */
+    css: ["../kss/kss.css", "../css/components.css"], 
     //overview: "overview.md", // Gera um arquivo overview.md
     homepage: '../css/homepage.md', // Caminho correto para o arquivo markdown
-    js: ['../kss/kss.js', '../js/index.js']
+      /*
+    O ../js/index.js é o caminho relativo a a destination onde está o javacript dos compoenteents para ser usado na interface do kss
+    O ../kss/kss.js é um javascript personalizado que podde ser retirado se necessario
+    */
+    js: ['../kss/kss.js', '../js/index.js'] 
+
   })
     .then(() => {
       done(); // Indica que a tarefa foi concluída

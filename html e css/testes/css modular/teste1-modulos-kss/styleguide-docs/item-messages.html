@@ -58,23 +58,23 @@
 <main class="kss-main" aria-label="Content">
   <article>
 
-    <div id="kssref-buttons" class="kss-section kss-section--depth-1 is-fullscreen">
+    <div id="kssref-messages" class="kss-section kss-section--depth-1 is-fullscreen">
 
       <div class="kss-style">
         <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-buttons">
+          <a class="kss-title__permalink" href="#kssref-messages">
             <span class="kss-title__ref">
-              1
+              4
               <span class="kss-title__permalink-hash">
-                  #Buttons
+                  #Messages
               </span>
             </span>
-            Buttons
+            Messages
           </a>
         </h1>
 
           <p class="kss-toolbar">
-            <a href="#kssref-buttons" data-kss-guides="true">
+            <a href="#kssref-messages" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -95,7 +95,7 @@
                 <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
               </svg>
             </a>
-            <a href="#kssref-buttons" data-kss-markup="true">
+            <a href="#kssref-messages" data-kss-markup="true">
               <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -105,8 +105,8 @@
           </p>
 
           <div class="kss-description">
-            <p>Estilos para botões. Os modificadores permitem
-personalização de cor e tamanho.</p>
+            <p>Estilos para mensagens de feedback visual. Diferentes
+modificadores fornecem feedback de sucesso, aviso ou erro.</p>
 
           </div>
 
@@ -123,58 +123,46 @@ personalização de cor e tamanho.</p>
             </div>
 
           <div class="kss-modifier__example">
-            <button class="button ">
-  click here
-</button>
+            <div class="message ">
+  Your message content here.
+</div>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
             <div class="kss-modifier__name kss-style">
-              .button--success
+              .message--success
             </div>
             <div class="kss-modifier__description kss-style">
-              Botão verde para sucesso.
+              Estilo de mensagem para sucesso.
             </div>
             <div class="kss-modifier__example">
-              <button class="button button--success">
-  click here
-</button>
+              <div class="message message--success">
+  Your message content here.
+</div>
               <div class="kss-modifier__example-footer"></div>
             </div>
             <div class="kss-modifier__name kss-style">
-              .button--danger
+              .message--warning
             </div>
             <div class="kss-modifier__description kss-style">
-              Botão vermelho para ações críticas.
+              Estilo de mensagem para aviso.
             </div>
             <div class="kss-modifier__example">
-              <button class="button button--danger">
-  click here
-</button>
+              <div class="message message--warning">
+  Your message content here.
+</div>
               <div class="kss-modifier__example-footer"></div>
             </div>
             <div class="kss-modifier__name kss-style">
-              .button--small
+              .message--error
             </div>
             <div class="kss-modifier__description kss-style">
-              Botão menor.
+              Estilo de mensagem para erro.
             </div>
             <div class="kss-modifier__example">
-              <button class="button button--small">
-  click here
-</button>
-              <div class="kss-modifier__example-footer"></div>
-            </div>
-            <div class="kss-modifier__name kss-style">
-              .button--large
-            </div>
-            <div class="kss-modifier__description kss-style">
-              Botão maior.
-            </div>
-            <div class="kss-modifier__example">
-              <button class="button button--large">
-  click here
-</button>
+              <div class="message message--error">
+  Your message content here.
+</div>
               <div class="kss-modifier__example-footer"></div>
             </div>
         </div>
@@ -183,13 +171,13 @@ personalização de cor e tamanho.</p>
             <summary>
                 Markup
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button [modifier class]&quot;</span>&gt;</span>
-  click here
-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></code></pre>
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;message [modifier class]&quot;</span>&gt;</span>
+  Your message content here.
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>../css/components.css</code>, line 44
+          Source: <code>../css/components.css</code>, line 1
         </div>
 
     </div>

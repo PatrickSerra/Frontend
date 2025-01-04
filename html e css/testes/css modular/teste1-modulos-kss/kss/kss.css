@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
 }
 
+
 .kss-style a {
   color: #6a8dad;
   text-decoration: none;
@@ -217,10 +218,42 @@ body {
   color: inherit;
 }
 
+#kss-node .kss-toolbar {
+  margin: 6px 0 24px;
+  display: inline-block;
+  border: 1px solid #444;
+  border-right-color: #555;
+  border-bottom-color: #555;
+  background-color: #333;
+  line-height: 1;
+  padding: 3px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#kss-node .kss-toolbar a {
+  color: #f7f7f7; /* Cor de link clara para contraste */
+  text-decoration: none;
+}
+
+#kss-node .kss-toolbar a:hover {
+  color: #a5c6f3; /* Cor do link ao passar o mouse */
+  text-decoration: underline;
+}
+
+#kss-node .kss-toolbar .icon {
+  color: #f7f7f7; /* Ícones claros para contraste */
+}
+
+#kss-node .kss-toolbar .icon:hover {
+  color: #a5c6f3; /* Ícones ao passar o mouse */
+}
+
+
 /* Tema claro */
-body.light-mode {
-  background-color: #fafafa !important; 
-  color: #333 !important;
+#kss-node.light-mode {
+  background-color: #fafafa ; 
+  color: #333;
 }
 
 .kss-style.light-mode {
@@ -272,6 +305,37 @@ body.light-mode {
 
 #kss-node.light-mode .kss-modifier__name {
   color: #5a7f98;
+}
+
+#kss-node.light-mode .kss-toolbar{
+  margin: 6px 0 24px;
+  display: inline-block;
+  border: 1px solid #eee;
+  border-right-color: #e0e0e0;
+  border-bottom-color: #e0e0e0;
+  background-color: #f9f9f9;
+  line-height: 1;
+  padding: 3px;
+  border-radius: 8px; /* Bordas arredondadas para sofisticação */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#kss-node.light-mode .kss-toolbar a {
+  color: #333; /* Cor de link mais escura para contraste */
+  text-decoration: none;
+}
+
+#kss-node.light-mode .kss-toolbar a:hover {
+  color: #1e78c3; /* Cor do link ao passar o mouse */
+  text-decoration: underline;
+}
+
+#kss-node.light-mode .kss-toolbar .icon {
+  color: #333; /* Ícones mais escuros */
+}
+
+#kss-node.light-mode  .kss-toolbar .icon:hover {
+  color: #1e78c3; /* Ícones ao passar o mouse */
 }
 
 /* Estilos do botão de alternância */

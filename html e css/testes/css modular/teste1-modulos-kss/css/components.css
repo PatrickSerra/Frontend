@@ -1,150 +1,152 @@
+/* 
+Messages
+
+Estilos para mensagens de feedback visual. Diferentes 
+modificadores fornecem feedback de sucesso, aviso ou erro.
+
+Markup:
+<div class="message {{modifier_class}}">
+  Your message content here.
+</div>
+
+.message--success - Estilo de mensagem para sucesso.
+.message--warning - Estilo de mensagem para aviso.
+.message--error   - Estilo de mensagem para erro.
+
+Styleguide Messages
+*/
 .message {
   padding: 0.8em 1.2em;
-  border-radius: 0.2em;
+  border-radius: 0.2em; /* Bordas levemente arredondadas */
   border: 1px solid #265559;
   color: #265559;
-  background-color: #e0f0f2;
+  background-color: #e0f0f2; /* Fundo claro para contraste */
 }
 
 .message--success {
-  border-color: #cfe8c9;
-  color: #2f5926;
-  background-color: #cfe8c9;
+  border-color: #cfe8c9; /* Borda em tom de verde claro */
+  color: #2f5926; /* Texto em verde escuro */
+  background-color: #cfe8c9; /* Fundo em verde claro */
 }
 
 .message--warning {
-  color: #594826;
-  border-color: #594826;
-  background-color: #e8dec9;
+  color: #594826; /* Texto em tom de marrom */
+  border-color: #594826; /* Borda em tom de marrom */
+  background-color: #e8dec9; /* Fundo bege */
 }
 
 .message--error {
-  border-color: #59262f;
-  color: #59262f;
-  background-color: #e8c9cf;
+  border-color: #59262f; /* Borda em tom de vermelho escuro */
+  color: #59262f; /* Texto em vermelho escuro */
+  background-color: #e8c9cf; /* Fundo em vermelho claro */
 }
 
-/*
+/* 
 Buttons
 
-Buttons are available in a number of sizes and
-colors. You may mix and match any size with any
-color.
+Estilos para botões. Os modificadores permitem 
+personalização de cor e tamanho.
 
 Markup:
 <button class="button {{modifier_class}}">
   click here
 </button>
 
-.button--success  - A green success button
-.button--danger   - A red danger button
-.button--small    - A small button
-.button--large    - A large button
+.button--success  - Botão verde para sucesso.
+.button--danger   - Botão vermelho para ações críticas.
+.button--small    - Botão menor.
+.button--large    - Botão maior.
 
 Styleguide Buttons
 */
 .button {
   padding: 0.5em 0.8em;
   border: 1px solid #265559;
-  border-radius: 0.2em;
+  border-radius: 0.2em; /* Bordas levemente arredondadas */
   background-color: transparent;
   font-size: 1rem;
   color: #333;
-  font-weight: bold;
+  font-weight: bold; /* Texto em negrito */
 }
 
 .button--danger {
-  border-color: #e8c9c9;
-  color: #fff;
-  background-color: #a92323;
+  border-color: #e8c9c9; /* Borda em vermelho claro */
+  color: #fff; /* Texto branco */
+  background-color: #a92323; /* Fundo em vermelho escuro */
 }
 
 .button--success {
-  border-color: #cfe8c9;
-  color: #fff;
-  background-color: #2f5926;
+  border-color: #cfe8c9; /* Borda em verde claro */
+  color: #fff; /* Texto branco */
+  background-color: #2f5926; /* Fundo em verde escuro */
 }
 
 .button--small {
-  font-size: 0.8rem;
+  font-size: 0.8rem; /* Tamanho menor para texto */
 }
 
 .button--large {
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* Tamanho maior para texto */
 }
 
-/*
+/* 
 Media
 
-Displays an image on the left and body content
-on the right.
+Elemento de mídia exibindo uma imagem à esquerda 
+e conteúdo à direita. Pode ser ajustado para uma 
+exibição empilhada.
 
 Markup:
 <div class="media {{modifier_class}}">
   <img class="media__image" src="https://placehold.co/150X150" />
   <div class="media__body">
-    <h4>Strength</h4>
-    <p>
-      Strength training is an important part of injury prevention. Focus on
-      your core&mdash; especially your abs and glutes.
-    </p>
+    <h4>Title</h4>
+    <p>Body content here.</p>
   </div>
 </div>
 
-.media--stacked - Horizontal media element 
+.media--stacked - Exibição empilhada verticalmente.
 
 Styleguide Media
 */
-
 .media {
   padding: 1.5em;
-  background-color: #eee;
-  border-radius: 0.5em;
-  display: flex;
-  gap: 1.5em;
+  background-color: #eee; /* Fundo neutro */
+  border-radius: 0.5em; /* Bordas arredondadas */
+  display: flex; /* Layout flexível */
+  gap: 1.5em; /* Espaçamento entre imagem e conteúdo */
 }
 
 .media--stacked {
-  flex-direction: column;
-  align-items: start;
-  max-width: 50%;
+  flex-direction: column; /* Exibição vertical */
+  align-items: start; /* Alinhamento inicial */
+  max-width: 50%; /* Largura máxima */
 }
 
-.media--right > .media__image {
-  order: 1;
-}
 
 .media__image {
-  max-width: 100%;
+  max-width: 100%; /* Imagem responsiva */
   height: auto;
 }
 
 .media__body {
   overflow: auto;
   margin-top: 0;
-  text-align: justify;
+  text-align: justify; /* Texto justificado */
 }
 
 .media__body > h4 {
-  margin-top: 0;
+  margin-top: 0; /* Sem margem superior */
 }
 
-/*
+/* 
 Dropdown
 
-A dropdown menu. Clicking the toggle button opens
-and closes the drawer.
-
-Use JavaScript to toggle the `is-open` class in
-order to open and close the dropdown.
+Menu suspenso que abre e fecha ao clicar no botão 
+de alternância. Usa JavaScript para alternar a 
+classe `is-open`.
 
 Markup:
-<div class="dropdown">
-  <button class="dropdown__toggle">Open menu</button>
-  <div class="dropdown__drawer">
-    Drawer contents
-  </div>
-</div>
 <div class="dropdown">
   <button class="dropdown__toggle">Open menu</button>
   <div class="dropdown__drawer">
@@ -156,7 +158,7 @@ Styleguide Dropdown
 */
 .dropdown {
   display: inline-block;
-  position: relative;
+  position: relative; /* Necessário para posição do drawer */
 }
 
 .dropdown__toggle {
@@ -169,88 +171,52 @@ Styleguide Dropdown
 .dropdown__toggle::after {
   content: "";
   position: absolute;
-  right: 1em;
-  top: 1em;
+  right: 1em; /* Ícone alinhado à direita */
+  top: 1em; /* Alinhamento vertical */
   border: 0.3em solid;
-  border-color: black transparent transparent;
+  border-color: black transparent transparent; /* Setinha para baixo */
 }
 
 .dropdown__drawer {
-  display: none;
+  display: none; /* Escondido por padrão */
   position: absolute;
   left: 0;
-  top: 2.1em;
+  top: 2.1em; /* Alinhamento com o botão */
   min-width: 100%;
   background-color: #eee;
 }
 
 .dropdown.is-open .dropdown__toggle::after {
-  top: 0.7em;
+  top: 0.7em; /* Setinha para cima */
   border-color: transparent transparent black;
 }
 
 .dropdown.is-open .dropdown__drawer {
-  display: block;
+  display: block; /* Mostra o menu */
 }
 
-.menu {
-  margin: 0;
-  padding-left: 0;
-  list-style-type: none;
-  border: 1px solid #999;
-}
 
-.menu > li + li {
-  border-top: 1px solid #999;
-}
 
-.menu > li > a {
-  display: block;
-  padding: 0.5em 1.5em;
-  background-color: #eee;
-  color: #369;
-  text-decoration: none;
-}
+/* 
+Flex Order
 
-.menu > li > a:hover {
-  background-color: #fff;
-}
+Modifica a ordem de um elemento em flex container
 
-.menu--horizontal {
-  display: flex;
-}
+Markup:
+<div class="media">
+  <img class="media__image" src="https://placehold.co/150X150" />
+  <div class="media__body">
+    <h4>Title</h4>
+    <p>Body content here.</p>
+  </div>
+</div>
 
-.menu--horizontal > li + li {
-  border-left: 1px solid #999;
-}
 
-.dropdown-flex {
-  display: inline-flex;
-  flex-direction: column;
-  position: relative;
-}
+.media--stacked - Exibição empilhada verticalmente.
 
-.dropdown-flex .dropdown__toggle::after {
-  content: "";
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  border: 0.3em solid;
-  border-color: black transparent transparent;
-}
+Styleguide Media
+*/
 
-.dropdown-flex .dropdown__drawer {
-  margin: 0;
-  display: none;
-  min-width: 100%;
-  background-color: #eee;
-}
-
-.dropdown-flex.is-open .dropdown__toggle::after {
-  top: 0.7em;
-  border-color: transparent transparent black;
-}
-
-.dropdown-flex.is-open .dropdown__drawer {
-  display: block;
+.order-1 {
+   order: 1;
 }
