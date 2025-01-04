@@ -1,0 +1,301 @@
+/* Tema escuro (default) */
+body {
+  background-color: #2b3b49;
+  color: #f7f7f7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.kss-style {
+  color: inherit;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.kss-style a {
+  color: #6a8dad;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.kss-style a:visited {
+  color: #4f7392;
+}
+
+.kss-style a:hover,
+.kss-style a:focus {
+  color: #2d5772;
+  transform: scale(1.05);
+}
+
+.kss-style a:active {
+  color: #9ad0e7;
+}
+
+.kss-style p {
+  margin: 16px 0;
+}
+
+.kss-style h1,
+.kss-style h2,
+.kss-style h3,
+.kss-style h4,
+.kss-style h5,
+.kss-style h6 {
+  margin: 24px 0 16px 0;
+  font-family: 'Poppins', sans-serif;
+  color: inherit;
+  line-height: 1.2em;
+}
+
+.kss-style h1 {
+  font-size: 40px;
+}
+
+.kss-style h2 {
+  font-size: 36px;
+}
+
+.kss-style h3 {
+  font-size: 34px;
+}
+
+.kss-style h4 {
+  font-size: 32px;
+}
+
+.kss-style h5 {
+  font-size: 30px;
+}
+
+.kss-style h6 {
+  font-size: 28px;
+}
+
+.kss-style blockquote {
+  color: #a0b6c6;
+  margin: 20px 0;
+  padding-left: 24px;
+  border-left: 0.5em #6c8b99 solid;
+  border-radius: 8px;
+}
+
+.kss-style hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #a3b8d6;
+  border-bottom: 1px solid #c2d0e5;
+  margin: 32px 0;
+  padding: 0;
+}
+
+.kss-style pre,
+.kss-style code,
+.kss-style kbd,
+.kss-style samp {
+  font-family: 'Roboto', sans-serif;
+  color: inherit;
+}
+
+.kss-style pre {
+  white-space: pre;
+  overflow: scroll;
+  margin: 20px 0;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #3d4b62;
+}
+
+.kss-style ins {
+  color: #222;
+  background: #d7f0ff;
+  text-decoration: none;
+}
+
+.kss-style mark {
+  color: #222;
+  background: #d7f0ff;
+  font-weight: bold;
+}
+
+.kss-style ul,
+.kss-style ol {
+  margin: 24px 0;
+  padding: 0 0 0 24px;
+}
+
+.kss-style li {
+  margin-bottom: 12px;
+}
+
+.kss-style li p:last-child {
+  margin: 0;
+}
+
+.kss-style img {
+  max-width: 100%;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.kss-style table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.kss-style td {
+  vertical-align: top;
+  padding: 12px;
+}
+
+/* Fundo de KSS */
+#kss-node {
+  margin: 0;
+  padding: 40px;
+  background: #2b3b49;
+  border-radius: 12px;
+}
+
+#kss-node .kss-main {
+  background: linear-gradient(to right, #4a6c83, #7a9bbf);
+  color: inherit;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+#kss-node .kss-sidebar {
+  background: linear-gradient(to right, #3b5b73, #5e85a2);
+  padding: 24px;
+  border-radius: 12px;
+}
+
+#kss-node .kss-nav__menu-item a {
+  color: #89a6c8;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+#kss-node .kss-nav__menu-item a:hover {
+  color: #93bbd7;
+  background-color: #4a6c83;
+}
+
+#kss-node .kss-modifier__example {
+  border-color: #6f89a7;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+#kss-node .kss-modifier__name {
+  color: #a7b9c7;
+}
+
+#kss-node .kss-modifier__description {
+  color: #c1d4e3;
+}
+
+#kss-node .kss-title__permalink {
+  color: inherit;
+}
+
+#kss-node .kss-modifier__heading {
+  background-color: #4a6c83;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+
+#kss-node .kss-title__permalink {
+  color: inherit;
+}
+
+/* Tema claro */
+body.light-mode {
+  background-color: #fafafa !important; 
+  color: #333 !important;
+}
+
+.kss-style.light-mode {
+  color: #333 !important;
+}
+
+.kss-style.light-mode a {
+  color: #1e78c3 !important;
+}
+
+.kss-style.light-mode a:hover {
+  color: #155c8c !important;
+}
+
+.kss-style.light-mode blockquote {
+  color: #5a7f98;
+  border-left: 0.5em #3c5a72 solid;
+}
+
+.kss-style.light-mode hr {
+  border-top: 1px solid #d0e0f0;
+  border-bottom: 1px solid #a2b8d1;
+}
+
+
+.kss-style.light-mode pre,
+.kss-style.light-mode code {
+  background-color: #f5f9fd;
+  color: #333;
+  border-radius: 8px;
+}
+
+#kss-node.light-mode .kss-main {
+  background: linear-gradient(to right, #cce1f3, #a0c4d7);
+}
+
+#kss-node.light-mode .kss-sidebar {
+  background: linear-gradient(to right, #a8c1d5, #89aab9);
+}
+
+#kss-node.light-mode .kss-modifier__example {
+  background-color: #e7f4ff;
+  border-color: #b0c9d6;
+}
+
+#kss-node.light-mode .kss-title__permalink {
+  color: #2b2b2b;
+}
+
+#kss-node.light-mode .kss-modifier__name {
+  color: #5a7f98;
+}
+
+/* Estilos do botão de alternância */
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4f6276;
+  color: #fafafa;
+  border: none;
+  padding: 12px 16px;
+  font-size: 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.toggle-button:hover {
+  background-color: #3c4e63;
+  transform: scale(1.1);
+}
+
+.toggle-button:focus {
+  outline: none;
+}

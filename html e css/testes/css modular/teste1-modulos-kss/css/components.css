@@ -1,23 +1,3 @@
-:root {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-div {
-  margin: 5px;
-}
-
-/* message é o módulo e as classes com -- são as variantes */
-
 .message {
   padding: 0.8em 1.2em;
   border-radius: 0.2em;
@@ -44,13 +24,33 @@ div {
   background-color: #e8c9cf;
 }
 
-/* Button é o módulo e as classes com -- são as variantes */
+/*
+Buttons
+
+Buttons are available in a number of sizes and
+colors. You may mix and match any size with any
+color.
+
+Markup:
+<button class="button {{modifier_class}}">
+  click here
+</button>
+
+.button--success  - A green success button
+.button--danger   - A red danger button
+.button--small    - A small button
+.button--large    - A large button
+
+Styleguide Buttons
+*/
 .button {
   padding: 0.5em 0.8em;
   border: 1px solid #265559;
   border-radius: 0.2em;
   background-color: transparent;
   font-size: 1rem;
+  color: #333;
+  font-weight: bold;
 }
 
 .button--danger {
@@ -73,6 +73,29 @@ div {
   font-size: 1.2rem;
 }
 
+/*
+Media
+
+Displays an image on the left and body content
+on the right.
+
+Markup:
+<div class="media {{modifier_class}}">
+  <img class="media__image" src="https://placehold.co/150X150" />
+  <div class="media__body">
+    <h4>Strength</h4>
+    <p>
+      Strength training is an important part of injury prevention. Focus on
+      your core&mdash; especially your abs and glutes.
+    </p>
+  </div>
+</div>
+
+.media--stacked - Horizontal media element 
+
+Styleguide Media
+*/
+
 .media {
   padding: 1.5em;
   background-color: #eee;
@@ -83,7 +106,7 @@ div {
 
 .media--stacked {
   flex-direction: column;
-  align-items: start; /* Centraliza o conteúdo horizontalmente */
+  align-items: start;
   max-width: 50%;
 }
 
@@ -92,8 +115,8 @@ div {
 }
 
 .media__image {
-  max-width: 100%; /* Garante que a imagem não exceda o tamanho do container */
-  height: auto; /* Mantém a proporção da imagem */
+  max-width: 100%;
+  height: auto;
 }
 
 .media__body {
@@ -106,8 +129,31 @@ div {
   margin-top: 0;
 }
 
-/* O dropdown é dividido em submodulos cada com uma responsabilidade */
+/*
+Dropdown
 
+A dropdown menu. Clicking the toggle button opens
+and closes the drawer.
+
+Use JavaScript to toggle the `is-open` class in
+order to open and close the dropdown.
+
+Markup:
+<div class="dropdown">
+  <button class="dropdown__toggle">Open menu</button>
+  <div class="dropdown__drawer">
+    Drawer contents
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropdown__toggle">Open menu</button>
+  <div class="dropdown__drawer">
+    Drawer contents
+  </div>
+</div>
+
+Styleguide Dropdown
+*/
 .dropdown {
   display: inline-block;
   position: relative;
@@ -176,14 +222,6 @@ div {
 
 .menu--horizontal > li + li {
   border-left: 1px solid #999;
-}
-
-.menu--horizontal > li > a {
-  display: block;
-  padding: 0.5em 1.5em;
-  background-color: #eee;
-  color: #369;
-  text-decoration: none;
 }
 
 .dropdown-flex {

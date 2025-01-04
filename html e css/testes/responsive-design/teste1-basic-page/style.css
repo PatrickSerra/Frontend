@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total dos elementos */
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-weight: 400; /* Define peso médio para os títulos */
+  }
+  
+  body {
+    padding: 1rem 0.5rem; /* Espaçamento interno da página */
+    font-size: 1.3rem; /* Tamanho de fonte padrão */
+    line-height: 1.2; /* Altura de linha */
+    max-width: 60rem; /* Largura máxima do corpo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    min-height: 100vh; /* Altura mínima da página */
+    color: #333; /* Cor do texto */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, 
+      "Open Sans", "Helvetica Neue", sans-serif; /* Fonte padrão com fallback */
+  }
+  
+  img {
+    max-width: 100%; /* Garante que as imagens não ultrapassem o container */
+  }
+  
+  .Header {
+    text-align: center; /* Centraliza o texto no cabeçalho */
+    border-bottom: 8px double #f9f9f9; /* Linha dupla na parte inferior */
+    margin-bottom: 2rem; /* Espaço abaixo do cabeçalho */
+    padding-bottom: 1rem; /* Espaçamento interno inferior */
+  }
+  
+  .Strap {
+    font-size: 1rem; /* Define o tamanho da fonte */
+  }
+  
+  .MoneyShot {
+    position: relative; /* Permite posicionar elementos relativos ao container */
+  }
+  
+  .MoneyShotImg {
+    border: 6px solid #e8cfa9; /* Borda ao redor da imagem */
+    border-radius: 4px; /* Bordas arredondadas */
+  }
+  
+  .LogoWrapper {
+    display: block; /* Exibe o elemento como um bloco */
+  }
+  
+  .ImageCaption {
+    font-size: 0.75rem; /* Fonte pequena para legenda */
+    position: absolute; /* Posicionamento absoluto dentro do .MoneyShot */
+    bottom: 0.5rem; /* Alinha na parte inferior */
+    right: 1rem; /* Alinha à direita */
+    padding: 3px; /* Espaçamento interno */
+    background-color: #222; /* Fundo preto */
+    color: #e4e4e4; /* Texto cinza claro */
+  }
+  
+  .IntroText {
+    font-size: 1.8rem; /* Texto maior para introdução */
+    font-style: italic; /* Texto em itálico */
+    padding: 0; /* Sem espaçamento interno */
+  }
+  
+  .MethodWrapper li {
+    padding: 0.4rem 0; /* Espaçamento entre os itens */
+    list-style-type: decimal-leading-zero; /* Números com zero à esquerda */
+    line-height: 1.4em; /* Altura de linha */
+  }
+  
+  @media screen and (min-width: 800px) {
+    body {
+      border-left: 4px solid #f9f9f9; /* Bordas laterais para telas maiores */
+      border-right: 4px solid #f9f9f9;
+      padding: 1rem 2rem; /* Mais espaçamento lateral */
+    }
+  
+    .IntroWrapper {
+      display: flex; /* Layout flexível */
+      gap: 0 20px; /* Espaçamento horizontal */
+      flex: 1 1 auto; /* Cresce e encolhe conforme necessário */
+      align-items: center; /* Centraliza os itens verticalmente */
+    }
+  
+    .MoneyShot,
+    .IntroText {
+      margin: 0; /* Remove margens */
+      flex: 1 1 50%; /* Cada elemento ocupa metade do espaço */
+    }
+  
+    .MoneyShotImg {
+      filter: drop-shadow(0 0 20px #0008); /* Sombra em torno da imagem */
+      border: 0; /* Remove borda */
+    }
+  
+    .IntroText {
+      padding: 0.5rem; /* Pequeno espaçamento interno */
+      font-size: 2.5rem; /* Texto maior em telas grandes */
+      text-align: left; /* Alinha à esquerda */
+      position: relative; /* Posicionamento relativo */
+    }
+  
+    .Ingredients {
+      font-size: 0.9rem; /* Texto pequeno para a seção de ingredientes */
+      float: right; /* Move para o lado direito */
+      padding: 1rem; /* Espaçamento interno */
+      margin: 0 0 0.5rem 1rem; /* Espaçamento externo */
+      border-radius: 3px; /* Bordas arredondadas */
+      background-color: #ffffdf; /* Fundo amarelo claro */
+      border: 9px solid #debb71; /* Borda destacada */
+    }
+  
+    .Ingredients h3 {
+      margin: 0; /* Remove margens para o título */
+    }
+  }
+  

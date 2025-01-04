@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="normalize.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css" />
   </head>
   <body>
     <div class="message">Save successful</div>
@@ -84,23 +85,6 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae facilis neque doloribus asperiores perferendis consectetur. Sunt maiores culpa ratione voluptatum velit perferendis vitae est officiis ad atque! Quod, id voluptatem.
     </p>
 
-    <script type="text/javascript">
-      (function () {
-        // Seleciona todos os elementos com a classe 'dropdown__toggle'
-        let toggles = document.querySelectorAll(".dropdown__toggle");
-        console.log(toggles); // Aqui, vamos ver todos os toggles no console.
-
-        // Para cada toggle, adicionamos um ouvinte de evento
-        toggles.forEach((toggle) => {
-          toggle.addEventListener("click", function (event) {
-            event.preventDefault();
-            // Seleciona o dropdown associado ao botão clicado
-            let dropdown = event.target.closest(".dropdown");
-            // Alterna a classe 'is-open' para abrir/fechar o dropdown
-            dropdown.classList.toggle("is-open");
-          });
-        });
-      })();
-    </script>
+    <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
