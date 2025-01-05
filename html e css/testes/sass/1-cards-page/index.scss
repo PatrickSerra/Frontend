@@ -1,0 +1,74 @@
+/* 
+Declaração de uma fonte personalizada usando @font-face.
+Isso permite que a fonte "Roboto" seja carregada de URLs específicos e usada no projeto.
+*/
+@font-face {
+  font-family: "Roboto"; /* Nome da fonte que será usada no CSS */
+  src: 
+    url("https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2"), /* Caminho para o formato woff2 */
+    url("https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff") format("woff");  /* Caminho para o formato woff */
+  font-weight: normal; /* Define o peso da fonte como normal */
+  font-style: normal;  /* Define o estilo da fonte como normal */
+}
+
+/* Definição de variáveis Sass para reutilização no código */
+$main-color: #c8dfff; /* Cor principal do tema */
+$bg-image-center: no-repeat center/cover; /* Background centralizado e ajustado */
+$main-font: "Roboto", sans-serif; /* Fonte principal usada no projeto */
+
+/* Reseta o box-sizing para evitar problemas de cálculo de tamanho */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo do body */
+body {
+  background: linear-gradient(#a5aae9cc, #8c9af6); /* Gradiente de fundo com transparência */
+}
+
+/* Estilo do container principal */
+.container {
+  display: flex; /* Define o layout como flexbox */
+  flex-wrap: wrap; /* Permite que os itens quebrem para novas linhas */
+  justify-content: center; /* Centraliza horizontalmente os itens */
+  align-items: center; /* Centraliza verticalmente os itens */
+  font-family: $main-font; /* Usa a fonte definida na variável */
+}
+
+/* Estilo para os cartões */
+.card {
+  background-color: $main-color; /* Cor de fundo definida na variável */
+  max-width: 280px; /* Largura máxima do cartão */
+  padding: 20px; /* Espaçamento interno */
+  line-height: 24px; /* Altura da linha */
+  margin: 4em; /* Margem externa */
+  position: relative; /* Necessário para posicionar elementos filhos como absolutos */
+}
+
+/* Estilo para imagens dentro dos cartões */
+.img {
+  width: 70px; /* Largura da imagem */
+  height: 70px; /* Altura da imagem */
+  border-radius: 100%; /* Torna a imagem circular */
+  border: 5px solid white; /* Borda branca */
+  position: absolute; /* Permite posicionar a imagem relativamente ao cartão */
+  right: -35px; /* Move a imagem 35px para fora da borda direita */
+  top: -35px; /* Move a imagem 35px para fora da borda superior */
+}
+
+/* Estilos específicos para cada imagem usando classes únicas */
+.img-one {
+  background: url(Images/one.jpg) $bg-image-center; /* Usa a imagem "one.jpg" com o background configurado */
+}
+
+.img-two {
+  background: url(Images/two.jpg) $bg-image-center; /* Usa a imagem "two.jpg" com o background configurado */
+}
+
+.img-three {
+  background: url(Images/three.jpg) $bg-image-center; /* Usa a imagem "three.jpg" com o background configurado */
+}
+
+.img-four {
+  background: url(Images/four.jpg) $bg-image-center; /* Usa a imagem "four.jpg" com o background configurado */
+}
