@@ -1,3 +1,39 @@
+/* Variáveis CSS */
+:root {
+  --color-primary: #3498db;
+  --color-primary-dark: #1d6fa5;
+  --color-secondary: #2ecc71;
+  --color-accent: #e67e22;
+  --color-accent-dark: #d35400;
+  --color-danger: #e74c3c;
+  --color-warning: #f1c40f;
+  --color-muted: #7f8c8d;
+  --color-light: #ecf0f1;
+  --color-dark: #34495e;
+  --color-danger-dark: #a92323;
+
+  --background-light: #e0f0f2;
+  --background-success: #cfe8c9;
+  --background-warning: #e8dec9;
+  --background-error: #e8c9cf;
+
+  --border-radius-small: 0.2em;
+  --border-radius-medium: 0.5em;
+
+  --padding-small: 0.5em;
+  --padding-medium: 1.2em;
+  --padding-large: 1.5em;
+
+  --font-size-small: 0.8rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.2rem;
+
+  --font-weight-bold: bold;
+}
+
+
+/* Todos os comentários subsequentes são comentáios de documentação utilizados pelo kss /*
+
 /* 
 Messages
 
@@ -16,29 +52,29 @@ Markup:
 Styleguide Messages
 */
 .message {
-  padding: 0.8em 1.2em;
-  border-radius: 0.2em; /* Bordas levemente arredondadas */
-  border: 1px solid #265559;
-  color: #265559;
-  background-color: #e0f0f2; /* Fundo claro para contraste */
+  padding: var(--padding-medium);
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--color-muted);
+  color: var(--color-muted);
+  background-color: var(--background-light);
 }
 
 .message--success {
-  border-color: #cfe8c9; /* Borda em tom de verde claro */
-  color: #2f5926; /* Texto em verde escuro */
-  background-color: #cfe8c9; /* Fundo em verde claro */
+  border-color: var(--background-success);
+  color: var(--color-secondary);
+  background-color: var(--background-success);
 }
 
 .message--warning {
-  color: #594826; /* Texto em tom de marrom */
-  border-color: #594826; /* Borda em tom de marrom */
-  background-color: #e8dec9; /* Fundo bege */
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+  background-color: var(--background-warning);
 }
 
 .message--error {
-  border-color: #59262f; /* Borda em tom de vermelho escuro */
-  color: #59262f; /* Texto em vermelho escuro */
-  background-color: #e8c9cf; /* Fundo em vermelho claro */
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  background-color: var(--background-error);
 }
 
 /* 
@@ -60,33 +96,54 @@ Markup:
 Styleguide Buttons
 */
 .button {
-  padding: 0.5em 0.8em;
-  border: 1px solid #265559;
-  border-radius: 0.2em; /* Bordas levemente arredondadas */
+  padding: var(--padding-small) var(--padding-medium);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--border-radius-small);
   background-color: transparent;
-  font-size: 1rem;
-  color: #333;
-  font-weight: bold; /* Texto em negrito */
+  font-size: var(--font-size-medium);
+  color: var(--color-dark);
+  font-weight: var(--font-weight-bold);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary-dark);
+}
+
+.button:active {
+  transform: scale(0.95);
 }
 
 .button--danger {
-  border-color: #e8c9c9; /* Borda em vermelho claro */
-  color: #fff; /* Texto branco */
-  background-color: #a92323; /* Fundo em vermelho escuro */
+  border-color: var(--color-danger);
+  color: #fff;
+  background-color: var(--color-danger-dark);
+}
+
+.button--danger:hover {
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
 }
 
 .button--success {
-  border-color: #cfe8c9; /* Borda em verde claro */
-  color: #fff; /* Texto branco */
-  background-color: #2f5926; /* Fundo em verde escuro */
+  border-color: var(--background-success);
+  color: #fff;
+  background-color: var(--color-secondary);
+}
+
+.button--success:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
 }
 
 .button--small {
-  font-size: 0.8rem; /* Tamanho menor para texto */
+  font-size: var(--font-size-small);
 }
 
 .button--large {
-  font-size: 1.2rem; /* Tamanho maior para texto */
+  font-size: var(--font-size-large);
 }
 
 /* 
@@ -115,6 +172,7 @@ Styleguide Media
   border-radius: 0.5em; /* Bordas arredondadas */
   display: flex; /* Layout flexível */
   gap: 1.5em; /* Espaçamento entre imagem e conteúdo */
+  color: black;
 }
 
 .media--stacked {
@@ -123,10 +181,38 @@ Styleguide Media
   max-width: 50%; /* Largura máxima */
 }
 
+/* 
+Media Image
+
+A imagem do elemento de mídia pode ser posicionada a direita.
+
+Markup:
+<div class="media">
+  <img class="media__image {{modifier_class}}" src="https://placehold.co/150X150" />
+  <div class="media__body">
+    <h4>Title</h4>
+    <p>Body content here.</p>
+  </div>
+</div>
+
+.image-right - imagem a direita.
+
+Styleguide Media.image
+*/
 
 .media__image {
   max-width: 100%; /* Imagem responsiva */
   height: auto;
+} 
+
+.media__image  {
+  max-width: 100%; /* Imagem responsiva */
+  height: auto;
+
+}
+
+.media__image.image-right {
+  order: 1
 }
 
 .media__body {
@@ -156,67 +242,378 @@ Markup:
 
 Styleguide Dropdown
 */
+/* Dropdown */
 .dropdown {
   display: inline-block;
-  position: relative; /* Necessário para posição do drawer */
+  position: relative;
+  color: var(--color-dark);
+  font-family: Arial, sans-serif;
+  font-size: var(--font-size-medium);
 }
 
 .dropdown__toggle {
-  padding: 0.5em 2em 0.5em 1.5em;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  background-color: #eee;
+  padding: var(--padding-small) calc(var(--padding-medium) * 1.5);
+  border: 1px solid var(--color-muted);
+  font-size: var(--font-size-medium);
+  background-color: var(--color-light);
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.dropdown__toggle:hover {
+  background-color: var(--color-primary);
+  color: #fff;
 }
 
 .dropdown__toggle::after {
   content: "";
   position: absolute;
-  right: 1em; /* Ícone alinhado à direita */
-  top: 1em; /* Alinhamento vertical */
-  border: 0.3em solid;
-  border-color: black transparent transparent; /* Setinha para baixo */
-}
-
-.dropdown__drawer {
-  display: none; /* Escondido por padrão */
-  position: absolute;
-  left: 0;
-  top: 2.1em; /* Alinhamento com o botão */
-  min-width: 100%;
-  background-color: #eee;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0.3em solid transparent;
+  border-top-color: var(--color-dark);
+  transition: transform 0.3s ease;
 }
 
 .dropdown.is-open .dropdown__toggle::after {
-  top: 0.7em; /* Setinha para cima */
-  border-color: transparent transparent black;
+  transform: translateY(-50%) rotate(180deg);
+  border-top-color: var(--color-primary);
+}
+
+.dropdown__drawer {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 100%;
+  background-color: var(--color-light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-small);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .dropdown.is-open .dropdown__drawer {
-  display: block; /* Mostra o menu */
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
+.dropdown__drawer a {
+  display: block;
+  padding: var(--padding-small);
+  text-decoration: none;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  transition: all 0.3s ease;
+}
 
+.dropdown__drawer a:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+/*
+Utility Classes
 
-/* 
-Flex Order
+Estas são classes utilitárias para aplicar estilos específicos e reutilizáveis.
 
-Modifica a ordem de um elemento em flex container
+Utilize estas classes para rapidamente aplicar estilos de alinhamento, espaçamento ou visibilidade.
 
-Markup:
-<div class="media">
-  <img class="media__image" src="https://placehold.co/150X150" />
-  <div class="media__body">
-    <h4>Title</h4>
-    <p>Body content here.</p>
-  </div>
-</div>
-
-
-.media--stacked - Exibição empilhada verticalmente.
-
-Styleguide Media
+Styleguide 2.0
 */
 
-.order-1 {
-   order: 1;
+/*
+Text Alignment
+
+Classes utilitárias para alinhamento de texto.
+
+Markup:
+<p class="text-left">Texto alinhado à esquerda.</p>
+<p class="text-center">Texto centralizado.</p>
+<p class="text-right">Texto alinhado à direita.</p>
+
+Classes: <br>
+.text-left    - Alinha o texto à esquerda. <br>
+.text-center  - Centraliza o texto. <br>
+.text-right   - Alinha o texto à direita. <br>
+
+Styleguide 2.1
+*/
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/*
+Spacing Utilities
+
+Classes utilitárias para controle de espaçamento.
+
+Markup:
+<div class="margin-top-sm">Pequena margem superior</div>
+<div class="padding-lg">Grande preenchimento interno</div>
+
+
+Classes: <br>
+.margin-top-sm   - Aplica uma pequena margem superior. <br>
+.margin-top-lg   - Aplica uma grande margem superior. <br>
+.padding-sm      - Aplica um pequeno preenchimento interno. <br>
+.padding-lg      - Aplica um grande preenchimento interno. <br>
+
+Styleguide 2.2
+*/
+
+.margin-top-sm {
+  margin-top: 8px;
+}
+
+.margin-top-lg {
+  margin-top: 24px;
+}
+
+.padding-sm {
+  padding: 8px;
+}
+
+.padding-lg {
+  padding: 24px;
+}
+
+/*
+Color Utilities
+
+Estas classes utilitárias oferecem um conjunto de cores modernas e elegantes para texto, fundo, bordas e mais.
+
+Usage:
+- Adicione estas classes diretamente ao elemento desejado.
+- Combine-as com outras classes para maior flexibilidade.
+
+Markup:
+ <h2>Texto</h2>
+  <p class="text-primary">Texto azul vibrante.</p>
+  <p class="text-secondary">Texto verde suave.</p>
+  <p class="text-accent">Texto laranja brilhante.</p>
+  <p class="text-danger">Texto vermelho alerta.</p>
+  <p class="text-warning">Texto amarelo vibrante.</p>
+  <p class="text-muted">Texto cinza suave.</p>
+  <h2>Fundos</h2>
+  <div class="container bg-primary">Fundo azul vibrante</div>
+  <div class="container bg-secondary">Fundo verde suave</div>
+  <div class="container bg-accent">Fundo laranja brilhante</div>
+  <div class="container bg-danger">Fundo vermelho alerta</div>
+  <div class="container bg-warning">Fundo amarelo vibrante</div>
+  <div class="container bg-light">Fundo claro</div>
+  <div class="container bg-dark">Fundo escuro</div>
+  <h2>Bordas</h2>
+  <div class="container border-primary">Borda azul vibrante</div>
+  <div class="container border-secondary">Borda verde suave</div>
+  <div class="container border-accent">Borda laranja brilhante</div>
+  <div class="container border-danger">Borda vermelha alerta</div>
+  <div class="container border-warning">Borda amarela vibrante</div>
+  <h2>Gradientes</h2>
+  <div class="container bg-gradient-primary">Fundo com gradiente azul</div>
+  <div class="container bg-gradient-accent">Fundo com gradiente laranja</div>
+
+Styleguide 2.3
+*/
+
+* Color Utilities */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-danger {
+  color: var(--color-danger);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-danger {
+  background-color: var(--color-danger);
+}
+
+.bg-warning {
+  background-color: var(--color-warning);
+}
+
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.bg-dark {
+  background-color: var(--color-dark);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+
+.border-accent {
+  border-color: var(--color-accent);
+}
+
+.border-danger {
+  border-color: var(--color-danger);
+}
+
+.border-warning {
+  border-color: var(--color-warning);
+}
+
+.border-light {
+  border-color: var(--color-light);
+}
+
+.border-dark {
+  border-color: var(--color-dark);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark));
+}
+
+/*
+Grid System
+
+Este sistema de grid proporciona uma maneira flexível e responsiva de organizar o conteúdo em colunas e linhas. 
+Utilize as classes de grid para criar layouts com diferentes números de colunas, controle de espaçamento e alinhamento.
+
+Usage:
+- Adicione as classes diretamente ao contêiner desejado para definir o layout da grid.
+- Combine as classes para maior flexibilidade de design e comportamento responsivo.
+
+Markup:
+<h2>Grid com 2 colunas</h2>
+<div class="grid grid--cols-2 bg-primary border-secondary">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+<h2>Grid com 3 colunas</h2>
+<div class="grid grid--cols-3 bg-primary border-secondary">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+<h2>Grid com 4 colunas</h2>
+<div class="grid grid--cols-4 bg-primary border-secondary">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</div>
+<h2>Grid com colunas automáticas</h2>
+<div class="grid grid--cols-auto bg-primary border-secondary">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</div>
+<h2>Grid com linhas automáticas</h2>
+<div class="grid grid--rows-auto container bg-primary border-secondary">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+<h2>Grid centralizado</h2>
+<div class="grid grid--center bg-primary border-secondary">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+<h2>Grid com espaçamento pequeno</h2>
+<div class="grid grid--gap-sm bg-primary border-secondary">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+<h2>Grid com espaçamento grande</h2>
+<div class="grid grid--gap-lg bg-primary border-secondary">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+
+Styleguide 1.0
+*/
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--padding-medium);
+}
+
+.grid--cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--cols-auto {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.grid--rows-auto {
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.grid--center {
+  justify-content: center;
+  align-items: center;
+}
+
+.grid--gap-sm {
+  gap: var(--padding-small);
+}
+
+.grid--gap-lg {
+  gap: var(--padding-large);
 }

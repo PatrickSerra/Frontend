@@ -1,0 +1,258 @@
+/* ----------------------------------------------
+   FONTES E RESET
+---------------------------------------------- */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Definindo variáveis CSS */
+:root {
+  --primary-color: #0093e9;
+  --primary-dark-color: #0056b3;
+  --primary-light-color: #80d0c7;
+  --secondary-color: rgb(146, 211, 16);
+  --secondary-dark-color: rgb(115, 167, 12);
+  --secondary-light-color: rgb(92, 133, 10);
+  --background-color: #f4f4f9;
+  --form-background-color: #eee;
+  --border-color: #ccc;
+  --input-border-radius: 5px;
+  --input-padding: 8px 15px;
+  --font-family: "Poppins", sans-serif;
+  --font-size: 1em;
+  --font-size-header: 1.5em;
+  --gap-small: 0.3em;
+  --gap-medium: 0.9em;
+  --btn-padding: 10px 20px;
+  --transition-default: 0.3s ease;
+}
+
+
+/* ----------------------------------------------
+   FORMULÁRIO
+---------------------------------------------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  gap: var(--gap-medium);
+}
+
+.form__header {
+  align-self: center;
+  font-size: var(--font-size-header);
+  font-weight: bold;
+}
+
+/* Secções do Formulário */
+.form__group {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-small);
+}
+
+.form__group--stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  gap: var(--gap-small);
+}
+
+.form-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-small);
+}
+
+.form-section .form__group {
+  flex: 1;
+}
+
+.form-section .form__group--stacked {
+  flex: 1;
+}
+
+/* Inputs e Labels */
+.form__group label {
+  flex-shrink: 0;
+  flex-basis: 1.5em;
+}
+
+/* Base para todos os inputs */
+.form-input {
+  padding: var(--input-padding);
+  border-radius: var(--input-border-radius);
+  background-color: var(--background-color);
+  outline: none;
+  border: 1px solid var(--border-color);
+  font-size: var(--font-size);
+  transition: border-color var(--transition-default);
+}
+
+.form .form-input {
+  width: 100%;
+} 
+
+/* Estilo quando o input está em foco */
+.form-input:focus {
+  border-color: var(--primary-color); /* A borda ficará com a cor primária */
+  box-shadow: 0 0 8px var(--primary-light-color); /* Cria um brilho suave ao redor do input */
+}
+
+/* Estilos específicos para tipos de inputs */
+.form-input--text {
+  text-transform: none; /* Garantir texto padrão */
+}
+
+.form-input--number {
+  text-align: right;
+  width: 120px; /* Valor ajustável */
+}
+
+.form-input--textarea {
+  resize: vertical;
+  width: 100%;
+  min-height: 9.375em;
+}
+
+.form-input--select {
+  appearance: none; /* Remove estilos padrão do navegador */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>')
+    no-repeat right var(--gap-small) center;
+  padding-right: 2em; /* Para o ícone da seta */
+}
+
+/* Checkbox e Radio */
+.form-input--checkbox,
+.form-input--radio {
+  flex: 0; /* Não estica */
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Botões */
+.form-input--button {
+  padding: var(--btn-padding);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Modificadores de estado */
+.form-input.is-valid {
+  border-color: green;
+}
+
+.form-input.is-invalid {
+  border-color: red;
+}
+
+.form-input.is-disabled {
+  background-color: var(--form-background-color);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Placeholder estilizado */
+.form-input::placeholder {
+  color: var(--border-color);
+  font-style: italic;
+}
+
+/* ----------------------------------------------
+   BOTÕES
+---------------------------------------------- */
+.btn {
+  padding: var(--btn-padding);
+  font-size: var(--font-size);
+  color: white;
+  border: none;
+  border-radius: var(--input-border-radius);
+  cursor: pointer;
+  transition: transform 0.2s, background-color var(--transition-default);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-dark-color);
+}
+
+/* Botão em Grupo */
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-small);
+}
+
+/* Mostrar campos de senha  */
+/* Container para o campo de senha */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Estilo do botão de alternância */
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--primary-color, #0093e9);
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+/* Alteração de cor no hover */
+.password-toggle:hover {
+  color: var(--primary-dark-color, #0056b3);
+}
+
+/* Estilo de foco para acessibilidade */
+.password-toggle:focus {
+  outline: 2px solid var(--primary-light-color, #80d0c7);
+  outline-offset: 2px;
+}
+
+/* CLASSES UTILITARIAS */
+
+.align-self-end {
+  align-self: end;
+}
+
+/* ----------------------------------------------
+   MEDIA QUERIES
+---------------------------------------------- */
+@media (max-width: 1000px) {
+  .form-section {
+  
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
