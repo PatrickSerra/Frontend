@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shadows</title>
     <style>
+      /* 
+    
+      1. box-shadow: Adiciona sombras ao redor de elementos (internas ou externas).
+         - Sintaxe: box-shadow: [offset-x] [offset-y] [blur-radius] [spread-radius] [color];
+         - Exemplos:
+           - box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); // sombra externa
+           - inset box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.3); // sombra interna
+
+      2. text-shadow: Adiciona sombras ao texto.
+         - Sintaxe: text-shadow: [offset-x] [offset-y] [blur-radius] [color];
+         - Exemplo: text-shadow: 2px 2px 4px #000;
+
+      Observação: Sombras podem melhorar a estética e a usabilidade de interfaces ao adicionar profundidade e simulação de iluminação.
+      */
+
+      /* Estilização global para a página */
       body {
         margin: 0;
         padding: 15px;
       }
 
+      /* Botão com sombra dupla para profundidade */
       .button {
         padding: 1em;
         border: 0;
@@ -17,30 +34,38 @@
         color: white;
         border-radius: 0.5em;
         background-image: linear-gradient(to bottom, #57b, #148);
+        /* Sombra externa: múltiplas camadas para maior profundidade */
         box-shadow: 0.1em 0.1em 0.5em black, 0.1em 0.1em 0.5em black;
       }
 
+      /* Estilo do botão pressionado */
       .button:active {
+        /* Sombra interna para dar efeito de "afundamento" */
         box-shadow: inset 0 0 0.5em #124, inset 0 0.5em 1em rgba(0, 0, 0, 0.4);
       }
 
+      /* Botão com sombra mais plana (design minimalista) */
       .button-flat {
         padding: 0.8em;
         border: 0;
         font-size: 1rem;
         color: white;
         background-color: #456ad6;
+        /* Sombra externa leve para simular elevação mínima */
         box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.15);
       }
 
+      /* Estilo ao passar o mouse */
       .button-flat:hover {
         background-color: #456ab6;
       }
 
+      /* Estilo ao pressionar */
       .button-flat:active {
         background-color: #148;
       }
 
+      /* Botão com sombras combinadas (externa e texto) */
       .button-mixed {
         padding: 0.8em;
         border: 0;
@@ -49,18 +74,23 @@
         font-size: 1rem;
         padding: 0.8em;
         border-radius: 0.5em;
+        /* Sombra externa curta para simular elevação */
         box-shadow: 0 0.4em #148;
+        /* Sombra no texto para profundidade */
         text-shadow: 1px 1px #148;
       }
 
+      /* Estilo do botão pressionado */
       .button-mixed:active {
         background-color: #456ab5;
+        /* Simula afundamento ao pressionar */
         transform: translateY(0.1em);
         box-shadow: 0 0.3em #148;
       }
     </style>
   </head>
   <body>
+    <!-- Botões com estilos diferentes -->
     <button class="button">Signup now</button>
     <button class="button-flat">Signup now</button>
     <button class="button-mixed">Signup now</button>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caderno Text Box</title>
+    <style>
+      /* Container para a caixa de texto */
+      .notebook {
+        display: flex;
+        width: 80%;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #f4f4f4; /* Cor de fundo do caderno */
+        border: 1px solid #ccc; /* Borda leve para o contêiner */
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar efeito de profundidade */
+
+      }
+
+      /* Caixa de texto com estilo de página de caderno */
+      .notebook-textbox {
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        outline: none;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        font-family: "Courier New", Courier, monospace; /* Fonte monoespaçada para simular escrita */
+        border: none;
+        background-color: #f7e6a0; /* Cor de fundo amarelada pastel */
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.1) 2px,
+            transparent 3px
+          );
+        background-size: 100% calc(1em * 1.6); /* Largura 100%, altura das linhas é 20px */
+        background-attachment: local;
+        resize: none; /* Impede o redimensionamento */
+        outline: none;
+        color: #333;
+      }
+
+      /* Estilo para o foco do textarea, para dar um destaque */
+      .notebook-textbox:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(87, 187, 255, 0.6); /* Sombra azul clara para foco */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notebook">
+      <textarea
+        class="notebook-textbox"
+        placeholder="Escreva aqui..."
+      ></textarea>
+    </div>
+  </body>
+</html>

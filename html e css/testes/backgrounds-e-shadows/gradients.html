@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Image</title>
+    <style>
+      /*
+        Resumo das Propriedades Usadas:
+
+ 
+        1. background-image: Define a imagem ou gradiente como fundo do elemento.  
+          - Sintaxe: `background-image: url('image.jpg') | linear-gradient(...) | radial-gradient(...) | repeating-linear-gradient(...);`
+
+        2. linear-gradient: Cria transições suaves entre duas ou mais cores ao longo de uma linha (horizontal, vertical ou diagonal).  
+          - Sintaxe: `linear-gradient([direction], color-stop1, color-stop2, ...);`  
+            - Exemplo: `linear-gradient(to bottom, #57b, #148);`
+
+        3. radial-gradient: Gera transições suaves entre cores em círculos ou elipses, partindo de um ponto central.  
+          - Sintaxe: `radial-gradient([shape] [size] at [position], color-stop1, color-stop2, ...);`  
+            - Exemplo: `radial-gradient(circle, #57b, #148);`
+
+        4. repeating-linear-gradient: Repete gradientes lineares para criar padrões contínuos.  
+          - Sintaxe: `repeating-linear-gradient([direction], color-stop1, color-stop2, ...);`  
+            - Exemplo: `repeating-linear-gradient(45deg, #57b, #148 10%);`
+      */
+
+      body {
+        margin: 0; /* Remove margens padrão do corpo */
+        padding: 20px; /* Remove o preenchimento padrão */
+      }
+
+      .hero {
+        height: 100vh; /* Altura total da janela */
+        display: inline-flex; /* Flex layout para alinhamento interno */
+        flex-direction: column; /* Organiza os elementos em coluna */
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center; /* Centraliza o texto */
+        height: 300px; /* Altura específica */
+        color: white; /* Cor do texto */
+      }
+
+      .hero + .hero {
+        margin-top: 10px; /* Espaçamento entre as seções hero */
+      }
+
+      /* Exemplo 1: Imagem de fundo simples */
+      .hero-1 {
+        background-image: url(./img/imagem.jpg); /* Usa uma imagem local como fundo */
+        width: 400px;
+        height: 400px;
+      }
+
+      /* Exemplo 2: Gradiente linear simples */
+      .hero-2 {
+        height: 200px;
+        width: 400px;
+        background-image: linear-gradient(
+          to right,
+          rgb(184, 175, 212),
+          /* Cor inicial */ rgb(26, 26, 124) /* Cor final */
+        );
+        color: rgb(0, 0, 0); /* Texto escuro */
+      }
+
+      /* Exemplo 3: Gradiente linear de cima para baixo */
+      .hero-3 {
+        height: 200px;
+        width: 400px;
+        background-image: linear-gradient(
+          to bottom,
+          rgb(76, 129, 153),
+          /* Cor inicial */ rgb(26, 26, 124) /* Cor final */
+        );
+        color: rgb(0, 0, 0); /* Texto escuro */
+      }
+
+      /* Exemplo 4: Gradiente linear em 45 graus */
+      .hero-4 {
+        height: 200px;
+        width: 400px;
+        background-image: linear-gradient(
+          45deg,
+          rgb(143, 228, 223),
+          /* Cor inicial */ rgb(65, 65, 143),
+          /* Cor intermediária */ rgb(123, 0, 92) /* Cor final */
+        );
+        color: white; /* Texto branco para contraste */
+      }
+
+      /* Exemplo 5: Gradiente linear com transparência */
+      .hero-6 {
+        height: 200px;
+        width: 400px;
+        background-image: linear-gradient(
+          45deg,
+          transparent,
+          /* Começa transparente */ rgb(65, 65, 143),
+          /* Transição para uma cor */ rgb(123, 0, 92) /* Cor sólida no final */
+        );
+        color: white; /* Texto branco */
+      }
+
+      /* Exemplo 6: Gradiente com transições definidas */
+      .hero-7 {
+        height: 200px;
+        width: 400px;
+        color: black;
+        background-image: linear-gradient(
+          90deg,
+          /* Direção horizontal */ red 40%,
+          /* Vermelho ocupa 40% */ white 40%,
+          /* Branco começa em 40% */ white 60%,
+          /* Branco termina em 60% */ blue 60% /* Azul ocupa o restante */
+        );
+      }
+
+      /* Exemplo 7: Gradiente linear repetitivo */
+      .hero-8 {
+        height: 1em;
+        width: 400px;
+        background-image: repeating-linear-gradient(
+          -30deg,
+          /* Ângulo de repetição */ #57b,
+          /* Cor inicial */ #57b 10px,
+          /* Término da primeira repetição */ #148 10px,
+          /* Cor secundária */ #148 20px /* Ciclo completo */
+        );
+        border-radius: 0.3em; /* Bordas arredondadas */
+      }
+
+      /* Exemplo 8: Gradiente radial */
+      .hero-9 {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%; /* Cria um círculo */
+        background-image: radial-gradient(
+          black,
+          /* Cor central */ rgb(174, 199, 214),
+          /* Cor intermediária */ rgb(4, 71, 116) /* Cor periférica */
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Exemplo de imagem de fundo simples -->
+    <div class="hero hero-1">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci
+        aliquam, saepe explicabo in harum nulla eum praesentium ab repellendus
+        tempore non architecto expedita perspiciatis impedit, veritatis minima
+        eaque quo soluta.
+      </p>
+    </div>
+
+    <!-- Gradientes variados -->
+    <div class="hero hero-2">Gradiente horizontal</div>
+    <div class="hero hero-3">Gradiente vertical</div>
+    <div class="hero hero-4">Gradiente em 45°</div>
+    <div class="hero hero-6">Gradiente com transparência</div>
+    <div class="hero hero-7">Gradiente com divisões</div>
+    <div class="hero hero-8"></div>
+    <div class="hero hero-9"></div>
+  </body>
+</html>

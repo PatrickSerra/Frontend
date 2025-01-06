@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /*
+     ### Propriedades relacionadas background:
+
+        1. **`background-image`**  
+        Define a imagem de fundo de um elemento. Pode ser uma URL de uma imagem ou valores especiais, como gradientes.
+
+        2. **`background-repeat`**  
+        Controla se a imagem de fundo será repetida (horizontalmente, verticalmente ou ambos) ou não.
+
+        3. **`background-position`**  
+        Define a posição inicial da imagem de fundo dentro do elemento. Pode usar palavras-chave (como `center`, `top`, `right`) ou valores específicos (como `px` ou `%`).
+
+        4. **`background-size`**  
+        Determina como a imagem de fundo será redimensionada. Pode preencher todo o espaço disponível (`cover`), ajustar para caber dentro do elemento (`contain`), ou ter dimensões personalizadas.
+
+        5. **`background-origin`**  
+        Define o ponto de início da imagem de fundo em relação ao elemento. Pode ser o conteúdo (`content-box`), o preenchimento (`padding-box`), ou a borda (`border-box`).
+
+        6. **`background-clip`**  
+        Controla até onde a imagem de fundo ou a cor de fundo é visível: dentro do conteúdo, do padding, ou da borda.
+
+        7. **`background-attachment`**  
+        Determina o comportamento da imagem de fundo em relação ao scroll. Pode ser fixa (`fixed`), se mover com o elemento (`local`), ou com o restante da página (`scroll`).
+
+        8. **`background-color`**  
+        Define a cor de fundo do elemento como um fallback ou alternativa quando nenhuma imagem é usada. 
+
+        Cada uma dessas propriedades pode ser usada isoladamente ou combinada na propriedade **`background`** shorthand.
+
+        */
+
+      body {
+        margin: 0; /* Remove margens padrão do corpo */
+        padding: 20px; /* Define espaçamento interno no corpo */
+        box-sizing: border-box; /* Garante que padding e border sejam inclusos no tamanho total */
+        height: 400vh; /* Faz o corpo ter altura suficiente para testar o efeito de scroll */
+      }
+
+      .hero {
+        display: inline-flex; /* Alinha elementos em uma linha, flexível */
+        flex-direction: column; /* Organiza os filhos em uma coluna */
+        justify-content: center; /* Centraliza os filhos verticalmente */
+        align-items: center; /* Centraliza os filhos horizontalmente */
+        text-align: center; /* Centraliza o texto */
+        color: white; /* Define a cor do texto */
+        background-color: grey; /* Define uma cor de fundo padrão */
+        width: 400px; /* Largura do bloco */
+        height: 400px; /* Altura do bloco */
+      }
+
+      .hero + .hero {
+        margin-top: 10px; /* Espaçamento entre os blocos consecutivos */
+      }
+
+      /* Exemplo 1: Imagem de fundo com posição específica */
+      .hero-1 {
+        background-image: url(./img/imagem.jpg); /* Imagem de fundo */
+        background-repeat: no-repeat; /* Evita repetição da imagem */
+        background-position: 20px 30px; /* Define posição específica (x, y) */
+      }
+
+      /* Exemplo 2: Centraliza a imagem de fundo */
+      .hero-2 {
+        background-image: url(./img/imagem.jpg);
+        background-position: center center; /* Centraliza no eixo x e y */
+        background-repeat: no-repeat;
+      }
+
+      /* Exemplo 3: Posição fixa no canto superior direito */
+      .hero-3 {
+        background-image: url(./img/imagem.jpg);
+        background-position: right top; /* Define a posição no canto superior direito */
+        background-repeat: no-repeat;
+      }
+
+      /* Exemplo 4: Escala personalizada */
+      .hero-4 {
+        background-image: url(./img/imagem.jpg);
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: 50% 100%; /* Largura: 50%, Altura: 100% */
+      }
+
+      /* Exemplo 5: Faz a imagem ocupar todo o espaço disponível */
+      .hero-5 {
+        background-image: url(./img/imagem.jpg);
+        background-repeat: no-repeat;
+        background-size: cover; /* Ajusta para cobrir toda a área */
+      }
+
+      /* Exemplo 6: Ajusta para caber dentro do elemento */
+      .hero-6 {
+        background-image: url(./img/imagem.jpg);
+        background-repeat: no-repeat;
+        background-size: contain; /* Redimensiona para caber dentro */
+      }
+
+      /* Exemplo 7: Origem da imagem no padding */
+      .hero-7 {
+        background-image: url(./img/imagem.jpg);
+        background-repeat: no-repeat;
+        border: 5px solid black;
+        background-origin: padding-box; /* A imagem começa dentro do padding */
+      }
+
+      /* Exemplo 8: Origem da imagem no border */
+      .hero-8 {
+        background-image: url(./img/imagem.jpg);
+        background-repeat: no-repeat;
+        border: 5px solid black;
+        background-origin: border-box; /* A imagem começa no border */
+      }
+
+      /* Exemplo 9: Origem da imagem no conteúdo */
+      .hero-9 {
+        background-image: url(./img/imagem.jpg);
+        background-repeat: no-repeat;
+        border: 5px solid black;
+        background-origin: content-box; /* A imagem começa no content */
+        padding: 5px;
+      }
+
+      /* Exemplo 10: Recorta o fundo no padding */
+      .hero-10 {
+        background-image: url(./img/imagem.jpg);
+        background-repeat: no-repeat;
+        border: 10px solid black;
+        background-clip: padding-box; /* Fundo visível até o padding */
+      }
+
+      /* Exemplo 11: Imagem fixa durante o scroll */
+      .hero-11 {
+        background-image: url(./img/imagem.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed; /* A imagem não se move durante o scroll */
+      }
+
+      /* Exemplo 12: Imagem se move com o conteúdo */
+      .hero-12 {
+        background-image: url(./img/imagem.jpg);
+        background-position: center center;
+        background-attachment: local; /* A imagem se move junto com o conteúdo */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero hero-1">Wonderful Place</div>
+    <div class="hero hero-2">Background Position: Center Center</div>
+    <div class="hero hero-3">Background Position: Right Top</div>
+    <div class="hero hero-4">Background Size: 50% 100%</div>
+    <div class="hero hero-5">Background Size: Cover</div>
+    <div class="hero hero-6">Background Size: Contain</div>
+    <div class="hero hero-7">Background Origin: Padding Box</div>
+    <div class="hero hero-8">Background Origin: Border Box</div>
+    <div class="hero hero-9">Background Origin: Content Box</div>
+    <div class="hero hero-10">Background Clip: Padding Box</div>
+    <div class="hero hero-11">Background Attachment: Fixed</div>
+    <div class="hero hero-12">Background Attachment: Local</div>
+  </body>
+</html>

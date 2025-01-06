@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blend mode</title>
+    <style>
+      /*
+            Blend mode (modo de mesclagem) é um recurso usado em design gráfico e na web para determinar como duas camadas (ou elementos visuais) interagem entre si em termos de cor e luminosidade. Ele controla como as cores de uma camada superior se misturam com as cores da camada inferior, criando efeitos visuais que podem variar de sutis a dramáticos.
+
+            No contexto do CSS, os blend modes podem ser aplicados a elementos HTML usando as propriedades mix-blend-mode e background-blend-mode.
+
+           * mix-blend-mode: Define como um elemento (incluindo seu conteúdo e fundo) será misturado com os elementos subjacentes.
+             - mix-blend-mode: normal | multiply | screen | overlay | darken | lighten | ...;
+
+          * background-blend-mode: Define como várias camadas de fundo (imagens e cores) de um único elemento se misturam entre si.
+            
+          - background-blend-mode: normal | multiply | screen | overlay | darken | lighten | ...;
+
+         * Principais valores dos blend modes
+
+          normal: Exibe a camada superior sem mesclar.
+          multiply: Multiplica as cores de base e mistura, resultando em um efeito mais escuro.
+          screen: Combina as cores invertidas, criando um efeito mais claro.
+          overlay: Mescla usando combinações de multiply e screen com base na luminosidade.
+          darken: Retém as cores mais escuras da camada base e da camada de cima.
+          lighten: Retém as cores mais claras das camadas.
+          difference: Subtrai as cores da camada superior das da camada base ou vice-versa.
+          exclusion: Similar ao difference, mas com menor contraste.
+          hue, saturation, color, luminosity: Trabalham com os diferentes componentes do modelo de cores HSL.
+       */
+
+       body {
+        display: flex; /* Use flex para alinhamento adequado */
+        align-items: flex-start; /* Alinha as caixas no topo */
+        margin: 0; /* Remove margens padrão */
+        padding: 20px; /* Espaçamento interno do corpo */
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+       
+      .hero {
+         background-size: cover;
+         background-repeat: no-repeat;
+         width: 400px;
+         height: 400px;
+      }
+      
+      .hero-1 {
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url(./img/imagem.jpg),
+          linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 1));
+        background-position: left, center;
+        background-size: 50%, cover;
+      }
+
+      .hero-2 {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+        );
+        background-size: cover;
+        color: white;
+      }
+
+      .blend {
+        width: 600px;
+        height: 600px;
+        background-image: url(./img/imagem.jpg), url(./img/imagem.jpg);
+        background-position: -20vh, 30vh;
+        background-blend-mode: multiply;
+      }
+
+      .blend-2 {
+        width: 600px;
+        height: 600px;
+        background-image: url(./img/imagem.jpg), linear-gradient(to right, #df6e6e, #2a5adf);
+        background-position: center center;
+        background-blend-mode: lighten;
+      }
+
+      .blend-3 {
+        width: 600px;
+        height: 600px;
+        background-image: url(./img/imagem.jpg);
+        background-color: #148;
+        background-position: center center;
+        background-blend-mode: lighten;
+      }
+
+      .blend-4 {
+        width: 600px;
+        height: 600px;
+        background-image: url(./img/imagem.jpg);
+        background-color: #148;
+        background-position: center center;
+        background-blend-mode: luminosity;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="hero hero-1"></div>
+    <div class="hero hero-2"></div>
+    <div class="hero blend"></div>
+    <div class="hero blend-2"></div>
+    <div class="hero blend-3"></div>
+    <div class="hero blend-4"></div>
+ 
+  </body>
+</html>
