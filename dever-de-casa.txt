@@ -5,7 +5,6 @@ Topicos para estudar depois:
 
     CSS:
         * BEM e OCSS (1)
-        * background CSS
         * SASS (1)
         * Fazer os exemplos de https://gridbyexample.com/ (2)
         * ler mais sobre links e botoes: https://css-tricks.com/a-complete-guide-to-links-and-buttons/ (2)
@@ -14,6 +13,8 @@ Topicos para estudar depois:
         * CSS Logical Properties (2)
         * Content sizing keywords (2)
         * dá uma olha nesses padrões design responsivo https://bradfrost.github.io/this-is-responsive/patterns.html. (2)
+        * identidade visual (2)
+        *Dá uma olhada nesse link sobre escolha de cores - https://tallys.github.io/color-theory/ (2)
 
 Estudos em progresso:
     Sass - https://www.youtube.com/watch?v=sb4Nnc6VtZI&t=7289s - parei no minuto
