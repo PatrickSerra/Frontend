@@ -1,0 +1,95 @@
+// Define que todo elemento na página (representado por `*`) terá margens e paddings zerados,
+// e o cálculo de largura/altura dos elementos incluirá bordas e paddings (box-sizing: border-box).
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Define um mixin chamado `button-styles` que estiliza botões.
+// Isso é útil para reutilizar estilos de botões em diferentes partes do código.
+@mixin button-styles {
+  background: #141414;        // Cor de fundo do botão.
+  color: #fff;                // Cor do texto (branco).
+  font-weight: bold;          // Peso da fonte em negrito.
+  padding: 10px 20px;         // Espaçamento interno (vertical: 10px, horizontal: 20px).
+  width: 140px;               // Largura fixa do botão.
+  border-radius: 100px;       // Bordas arredondadas.
+  cursor: pointer;            // Cursor muda para "mãozinha" ao passar o mouse sobre o botão.
+}
+
+// Define um mixin chamado `card-basic-styles` que aplica estilos básicos a cartões.
+@mixin card-basic-styles {
+  width: 300px;               // Largura fixa de 300px.
+  padding: 35px;              // Espaçamento interno de 35px.
+  background: linear-gradient(to bottom, #ec4bd2, #eb4bd05d); // Fundo gradiente.
+  border-radius: 10px;        // Bordas arredondadas.
+  color: #574747;             // Cor do texto.
+}
+
+// Define um mixin chamado `card-content-styles` que aplica estilos aos conteúdos dos cartões.
+@mixin card-content-styles {
+  display: flex;              // Define o layout como flexbox.
+  flex-direction: column;     // Os elementos internos são organizados em uma coluna.
+  justify-content: space-around; // Espaça uniformemente os elementos verticalmente.
+  align-items: center;        // Alinha os elementos no centro horizontalmente.
+  gap: 2.5em;                 // Espaçamento entre os elementos.
+  text-align: center;         // Centraliza o texto.
+  font-family: sans-serif;    // Define a fonte como sans-serif.
+  height: 70%;                // Altura relativa de 70%.
+}
+
+// Classe para o contêiner de todos os cartões.
+.cards {
+  display: flex;              // Define o layout como flexbox.
+  flex-wrap: wrap;            // Permite que os cartões "quebrem" para a próxima linha, se necessário.
+  justify-content: center;    // Alinha os cartões ao centro horizontalmente.
+  align-items: center;        // Alinha os cartões verticalmente ao centro.
+  height: 100vh;              // Define a altura do contêiner como a altura total da janela.
+}
+
+// Classe individual para cada cartão.
+.card {
+  @include card-basic-styles; // Aplica os estilos básicos do mixin `card-basic-styles`.
+  margin: 10px;               // Adiciona uma margem de 10px ao redor do cartão.
+
+  // Estilos para o conteúdo dentro de cada cartão.
+  .card-content {
+    @include card-content-styles; // Aplica os estilos do mixin `card-content-styles`.
+
+    // Estilos para o preço dentro do cartão.
+    .price {
+      font-size: 3rem;        // Tamanho da fonte grande.
+      span {
+        font-size: 1.4rem;    // Tamanho da fonte menor para spans internos.
+      }
+    }
+
+    // Estilos para o nome do cartão.
+    .card-name {
+      font-size: 2rem;        // Tamanho da fonte grande.
+    }
+
+    // Estilos para as informações adicionais no cartão.
+    .card-info {
+      font-size: 14px;        // Tamanho da fonte pequeno.
+      padding: 0 20px;        // Espaçamento interno horizontal.
+      line-height: 1.4;       // Altura da linha para melhorar a legibilidade.
+    }
+
+    // Estilos para o botão dentro do cartão.
+    button {
+      @include button-styles; // Aplica os estilos do mixin `button-styles`.
+    }
+  }
+}
+
+// Classe adicional para cartões com fundo alternativo (verde).
+.card-two {
+  background: linear-gradient(to bottom, #2cdb60, #69c5085d); // Fundo gradiente verde.
+}
+
+// Classe adicional para cartões com fundo alternativo (azul).
+.card-three {
+  background: linear-gradient(to bottom, #060da35d, #4ba1ec); // Fundo gradiente azul.
+}

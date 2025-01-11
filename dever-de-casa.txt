@@ -4,9 +4,9 @@ Topicos para estudar depois:
     3 - Opcional
 
     CSS:
-        * BEM e OCSS (1)
+        * BEM e OCSS (1) - https://www.youtube.com/watch?v=rltjnLyjFZk
         * SASS (1)
-        * Fazer os exemplos de https://gridbyexample.com/ (2)
+        * Fazer alguns exemplos de https://gridbyexample.com/ (2)
         * ler mais sobre links e botoes: https://css-tricks.com/a-complete-guide-to-links-and-buttons/ (2)
         * Object-fit (3)
         * Container Queries (2)
@@ -16,8 +16,16 @@ Topicos para estudar depois:
         * identidade visual (2)
         *Dá uma olhada nesse link sobre escolha de cores - https://tallys.github.io/color-theory/ (2)
 
+    JAVASCRIPT
+        * Fazer uma calculdora simples usando JAVASCRIPT (1)
+        * Fazer alguns exeplos de HOWTO https://www.youtube.com/watch?v=rltjnLyjFZk (3)
+
+
+
 Estudos em progresso:
     Sass - https://www.youtube.com/watch?v=sb4Nnc6VtZI&t=7289s - parei no minuto
-    1:17:18:01    
+    1:34:55:01    
+
+    BEM - https://www.youtube.com/watch?v=rltjnLyjFZk
 
 

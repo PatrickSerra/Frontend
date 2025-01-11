@@ -9,6 +9,9 @@
   --white: hsl(0, 0%, 100%);
   --red: hsl(342, 63%, 46%);
 }
+
+
+
 *,
 *::before,
 *::after {
@@ -18,10 +21,27 @@
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  line-height: 1.4;
+  font-family: Roboto, sans-serif;
+  line-height: 1.5;
   padding: 0;
+  letter-spacing: 0.01em;
   background-color: var(--extra-light-gray);
+}
+
+body .fonts-failed {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: Sansita, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.fonts-failed h1,
+.fonts-failed h2,
+.fonts-failed h3,
+.fonts-failed h4 {
+font-family: Georgia, sans-serif;
 }
 
 
@@ -48,15 +68,16 @@ a:active {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0.625em 0;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .home-link {
-    width: 60px;
-    height: 60px;
-    background-image: url(../img/logo.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
+    font-family: Sansita, serif;
+    letter-spacing: 0.03;
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.6rem;
     
 }
 
@@ -69,11 +90,13 @@ a:active {
 
 .top-nav a {
   display: block;
-  padding: 0.3em 1.25em;
+  padding: 0.3rem 1.25rem;
   color: var(--white);
   background-color: var(--brand-green);
   text-decoration: none;
   border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .top-nav a:hover {
@@ -104,6 +127,7 @@ a:active {
 .hero h2 {
   font-size: 1.95rem;
   margin-bottom: 0.625rem;
+  letter-spacing: -0.02em;
 }
 
 .button {
@@ -180,4 +204,33 @@ a:active {
   max-width: 1080px;
   text-align: center;
   font-size: 0.8rem;
+}
+
+@media (max-width: 29.125em) {
+  .nav-container__inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
+}
+
+@media (max-width: 48em) {
+
+  :root {
+    font-size: 0.875em;
+  }
+
+  .hero__inner {
+    width: 100%;
+  }
+
+   .tile-row {
+      flex-direction: column;
+   }
+
+   .hero__inner {
+    text-align: center;
+  }
+
 }
