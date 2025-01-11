@@ -1,0 +1,14 @@
+{
+  "name": "studies",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.jscl"
+  },
+  "author": "Patrick",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
