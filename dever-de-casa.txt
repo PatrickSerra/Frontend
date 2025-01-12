@@ -19,6 +19,7 @@ Topicos para estudar depois:
     JAVASCRIPT
         * Fazer uma calculdora simples usando JAVASCRIPT (1)
         * Fazer alguns exeplos de HOWTO https://www.youtube.com/watch?v=rltjnLyjFZk (3)
+        * Construir uma aplicação desktop usando electon: https://www.youtube.com/watch?v=fP-371MN0Ck&t=545s (3)
 
 
 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Estilo do corpo da página */
+      body {
+        display: flex; /* Define um layout flexível para organizar os elementos filhos */
+        flex-wrap: wrap; /* Permite que os elementos "quebrem" para uma nova linha se não couberem na largura */
+        gap: 20px; /* Define um espaço de 20px entre os elementos flexíveis */
+        justify-content: space-between; /* Distribui os elementos com espaço igual entre eles */
+        background-color: hsl(
+          210,
+          80%,
+          20%
+        ); /* Define a cor de fundo em HSL (azul escuro e saturado) */
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Define a fonte padrão da página */
+      }
+
+      /* Estilo para imagens */
+      img {
+        max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner pai */
+      }
+
+      /* Estilo para cartões */
+      .card {
+        padding: 0.5em; /* Define um espaçamento interno de 0.5em em todos os lados */
+        margin: 0 auto; /* Centraliza o cartão horizontalmente no contêiner */
+        background-color: white; /* Define a cor de fundo branca */
+        max-width: 300px; /* Limita a largura máxima do cartão a 300px */
+      }
+
+      /* Rotação do elemento */
+      .rotate {
+        transform: rotate(
+          -15deg
+        ); /* Rotaciona o elemento em -15 graus no sentido anti-horário */
+        transform-origin: bottom right; /* Define o ponto de origem da rotação no canto inferior direito */
+      }
+
+      /* Inclinação do elemento */
+      .skew {
+        transform: skew(10deg); /* Inclina o elemento em 10 graus no eixo X */
+        transform-origin: bottom right; /* Define o ponto de origem da inclinação no canto inferior direito */
+      }
+
+      /* Redução de escala */
+      .scale-shrink {
+        transform: scale(
+          0.5
+        ); /* Reduz o tamanho do elemento para 50% do tamanho original */
+      }
+
+      /* Expansão de escala */
+      .scale-expand {
+        transform: scale(
+          1.5
+        ); /* Aumenta o tamanho do elemento para 150% do tamanho original */
+      }
+
+      /* Translação do elemento */
+      .translate {
+        transform: translate(
+          210px,
+          80px
+        ); /* Move o elemento 210px à direita e 80px para baixo */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card rotate">
+      <img src="images/chicken1.jpg" alt="a chicken" />
+      <h4>Mrs. Featherstone</h4>
+      <p>
+        She may be a bit frumpy, but Mrs Featherstone gets the job done. She
+        lays her largish cream-colored eggs on a daily basis. She is gregarious
+        to a fault.
+      </p>
+      <p>This Austra White is our most prolific producer.</p>
+    </div>
+
+    <div class="card skew">
+      <img src="images/chicken1.jpg" alt="a chicken" />
+      <h4>Mrs. Featherstone</h4>
+      <p>
+        She may be a bit frumpy, but Mrs Featherstone gets the job done. She
+        lays her largish cream-colored eggs on a daily basis. She is gregarious
+        to a fault.
+      </p>
+      <p>This Austra White is our most prolific producer.</p>
+    </div>
+
+    <div class="card scale-shrink">
+      <img src="images/chicken1.jpg" alt="a chicken" />
+      <h4>Mrs. Featherstone</h4>
+      <p>
+        She may be a bit frumpy, but Mrs Featherstone gets the job done. She
+        lays her largish cream-colored eggs on a daily basis. She is gregarious
+        to a fault.
+      </p>
+      <p>This Austra White is our most prolific producer.</p>
+    </div>
+
+    <div class="card scale-expand">
+      <img src="images/chicken1.jpg" alt="a chicken" />
+      <h4>Mrs. Featherstone</h4>
+      <p>
+        She may be a bit frumpy, but Mrs Featherstone gets the job done. She
+        lays her largish cream-colored eggs on a daily basis. She is gregarious
+        to a fault.
+      </p>
+      <p>This Austra White is our most prolific producer.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/chicken1.jpg" alt="a chicken" />
+      <h4>Mrs. Featherstone</h4>
+      <p>
+        She may be a bit frumpy, but Mrs Featherstone gets the job done. She
+        lays her largish cream-colored eggs on a daily basis. She is gregarious
+        to a fault.
+      </p>
+      <p>This Austra White is our most prolific producer.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/chicken1.jpg" alt="a chicken" />
+      <h4>Mrs. Featherstone</h4>
+      <p>
+        She may be a bit frumpy, but Mrs Featherstone gets the job done. She
+        lays her largish cream-colored eggs on a daily basis. She is gregarious
+        to a fault.
+      </p>
+      <p>This Austra White is our most prolific producer.</p>
+    </div>
+  </body>
+</html>
