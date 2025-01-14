@@ -1,0 +1,241 @@
+/* Define o modelo de box-sizing para o HTML como "border-box", 
+   o que inclui o padding e a borda dentro das dimensões totais dos elementos. */
+html {
+  box-sizing: border-box;
+}
+
+/* Define o box-sizing como "inherit" para todos os elementos, 
+     pseudo-elementos (::before e ::after) herdarem o valor do elemento pai. */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Estiliza o corpo da página */
+body {
+  background-color: hsl(200, 80%, 30%); /* Cor de fundo em azul escuro */
+  background-image: radial-gradient(
+    hsl(200, 80%, 30%),
+    hsl(210, 80%, 20%)
+  ); /* Gradiente radial */
+  color: white; /* Cor do texto branco */
+  font-family: Raleway, Helvetica, Arial, sans-serif; /* Fonte padrão do corpo */
+  line-height: 1.4; /* Altura da linha */
+  margin: 0; /* Remove margens padrão */
+  min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da janela */
+}
+
+/* Define estilos para os títulos H1, H2 e H3 */
+h1,
+h2,
+h3 {
+  font-family: Alfa Slab One, serif; /* Fonte decorativa para títulos */
+  font-weight: 400; /* Peso da fonte */
+}
+
+/* Define que o elemento <main> deve ser tratado como um bloco (padrão do HTML5) */
+main {
+  display: block;
+}
+
+/* Define que as imagens devem ocupar no máximo 100% da largura do elemento pai */
+img {
+  max-width: 100%;
+}
+
+/* Estilos para o cabeçalho da página */
+.page-header {
+  margin: 0; /* Remove margens padrão */
+  padding: 1rem; /* Espaçamento interno */
+}
+
+/* Ajusta o padding do cabeçalho para telas maiores que 30em (~480px) */
+@media (min-width: 30em) {
+  .page-header {
+    padding: 2rem 2rem 3rem;
+  }
+}
+
+@media (min-width: 30em) {
+  /* Ajusta a navegação principal para um layout fixo */
+  .main-nav {
+    position: fixed; /* Fixa o menu na posição */
+    top: 8.25rem; /* Distância do topo */
+    left: 0; /* Encosta à esquerda */
+    z-index: 10; /* Garante que esteja acima de outros elementos */
+    background-color: transparent; /* Fundo transparente */
+    transition: background-color 0.5s linear; /* Animação para mudança de fundo */
+    border-top-right-radius: 0.5em; /* Borda arredondada no canto superior direito */
+    border-bottom-right-radius: 0.5em; /* Borda arredondada no canto inferior direito */
+  }
+
+  /* Adiciona um fundo semi-transparente ao passar o mouse na navegação */
+  .main-nav:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* Define estilos para a lista de navegação */
+.nav-links {
+  display: flex; /* Define um layout flexível para os links */
+  justify-content: space-between; /* Espaçamento igual entre os itens */
+  margin-top: 0; /* Remove a margem superior */
+  margin-bottom: 1rem; /* Adiciona margem inferior */
+  padding: 0 1rem; /* Espaçamento horizontal interno */
+  list-style: none; /* Remove os marcadores de lista */
+  gap: 0.8em; /* Espaço entre os itens */
+}
+
+@media (min-width: 30em) {
+  /* Ajusta a lista de navegação para layout em coluna */
+  .nav-links {
+    flex-direction: column; /* Orientação vertical */
+    padding: 1em; /* Espaçamento interno */
+    margin-bottom: 0; /* Remove a margem inferior */
+  }
+}
+
+/* Estilos para os links dentro da lista de navegação */
+.nav-links > li > a {
+  display: block; /* Transforma os links em blocos clicáveis */
+  padding: 0.8em 0; /* Espaçamento interno */
+  color: white; /* Cor do texto branco */
+  font-size: 0.8rem; /* Tamanho da fonte */
+  text-decoration: none; /* Remove o sublinhado */
+  text-transform: uppercase; /* Converte o texto para maiúsculas */
+  letter-spacing: 0.06em; /* Espaçamento entre as letras */
+}
+
+/* Estilos para os ícones de navegação */
+.nav-links__icon {
+  height: 1.5em; /* Altura do ícone */
+  width: 1.5em; /* Largura do ícone */
+  vertical-align: -0.2em; /* Ajuste vertical para alinhar com o texto */
+}
+
+/* Altera a cor dos links ao passar o mouse */
+.nav-links > li > a:hover {
+  color: hsl(40, 100%, 70%); /* Muda a cor para amarelo claro */
+}
+
+/* Estilos adicionais para telas maiores que 30em (~480px) */
+@media (min-width: 30em) {
+  /* Estilos para o rótulo dos links na navegação */
+  .nav-links__label {
+    display: inline-block; /* Exibe como bloco inline */
+    margin-left: 1em; /* Margem à esquerda */
+    padding-right: 1em; /* Espaçamento à direita */
+    opacity: 0; /* Inicialmente invisível */
+    transform: translate(-1em); /* Move o rótulo para a esquerda */
+    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.3),
+      opacity 0.4s linear; /* Animação para movimento e opacidade */
+  }
+
+  /* Exibe o rótulo ao passar o mouse ou focar no link */
+  .nav-links:hover .nav-links__label,
+  .nav-links a:focus > .nav-links__label {
+    opacity: 1; /* Torna visível */
+    transform: translate(0); /* Move para a posição original */
+  }
+
+  /* Adiciona atrasos nas animações dos rótulos para cada item */
+  .nav-links > li:nth-child(2) .nav-links__label {
+    transition-delay: 0.1s;
+  }
+  .nav-links > li:nth-child(3) .nav-links__label {
+    transition-delay: 0.2s;
+  }
+  .nav-links > li:nth-child(4) .nav-links__label {
+    transition-delay: 0.3s;
+  }
+  .nav-links > li:nth-child(5) .nav-links__label {
+    transition-delay: 0.4s;
+  }
+
+  /* Animação dos ícones na navegação */
+  .nav-links__icon {
+    transition: transform 0.2s ease-out;
+  }
+
+  /* Aumenta o ícone ao passar o mouse ou focar */
+  .nav-links a:hover > .nav-links__icon,
+  .nav-links a:focus > .nav-links__icon {
+    transform: scale(1.3); /* Aumenta 30% do tamanho original */
+  }
+}
+
+.flyin-grid {
+  margin: 0 1rem;
+  perspective:  500px;
+}
+
+.card {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background-color: white;
+  color: hsl(210, 15%, 20%);
+  box-shadow: 0.2em 0.5em 1em rgba(0, 0, 0, 0.3);
+}
+
+.flyin-grid__item {
+  animation: fly-in 600ms ease-in;
+  animation-fill-mode: backwards;
+}
+
+.flyin-grid__item:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.flyin-grid__item:nth-child(2) {
+  animation-delay: 0.30s;
+}
+
+.flyin-grid__item:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+@media (min-width: 30em) {
+  .flyin-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5rem;
+    gap: 1em;
+  }
+
+  .flyin-grid__item {
+    flex: 1 1 300px;
+    max-width: 600px;
+  }
+
+  @supports (display: grid) {
+    .flyin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 2em;
+    }
+
+    .flyin-grid__item {
+      max-width: initial;
+      margin: 0;
+    }
+  }
+}
+
+@keyframes fly-in {
+
+  0% {
+    transform: translateZ(-800px) rotate(90deg);
+    opacity: 0;
+  }
+
+  56% {
+    transform: translateZ(-160px) rotateY(87deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateZ(0) rotate(0);
+  }
+  
+}
