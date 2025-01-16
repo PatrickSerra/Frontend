@@ -7,10 +7,63 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-      <img src="./img/imagem.jpg" alt="">
-      <img src="./img/imagem.jpg" alt="">
-    
+    <nav>
+      <details>
+        <summary>Menu</summary>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </details>
+    </nav>
 
-    <script></script>
+    <hgroup>
+      <h1>Scones:</h1>
+      <p>The most resplendent of snacks</p>
+    </hgroup>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
+      itaque? Incidunt a hic mollitia ab iure consequuntur earum, numquam
+      delectus voluptatibus voluptatem laborum veniam facilis magnam ratione
+      cumque libero quaerat?
+    </p>
+
+    <blockquote>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis
+      magni explicabo, asperiores inventore obcaecati nulla animi quae, suscipit
+      minima reprehenderit architecto magnam odit vel dolor deserunt iste
+      eveniet quos mollitia.
+    </blockquote>
+
+    <figure>
+      <img src="./img/imagem.jpg" alt="Incredible palce" />
+      <figcaption class="imageCaption">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. In velit
+        molestias mollitia amet commodi voluptate cupiditate, asperiores tempora
+        quisquam aspernatur totam quasi, fugiat fugit eum quaerat nostrum, nihil
+        voluptas eius?
+      </figcaption>
+    </figure>
+
+    <button id="launchDialog">Where is the dialog?</button>
+    <p id="formResult"></p>
+    <dialog id="dialogEle">
+      <form method="dialog">
+        <h1>How about this? A native Dialog.</h1>
+        Chapter 2 57
+        <p>So, only thing left to do is dismiss me.</p>
+        <button value="Dismissed!">Dismiss Dialog</button>
+      </form>
+    </dialog>
   </body>
+  <script>
+    const dialogEle = document.getElementById("dialogEle");
+    const launchBtn = document.getElementById("launchDialog");
+    const formResult = document.getElementById("formResult");
+    launchBtn.addEventListener("click", () => dialogEle.showModal());
+    dialogEle.addEventListener("close", () => {
+      formResult.textContent = dialogEle.returnValue;
+    });
+  </script>
 </html>

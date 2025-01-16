@@ -3,6 +3,10 @@ Topicos para estudar depois:
     2 - Importante mas não Prioritario
     3 - Opcional
 
+    HTML:
+        acessibilidade web
+
+
     CSS:
         * BEM e OCSS (1) - https://www.youtube.com/watch?v=rltjnLyjFZk
         * SASS (1)

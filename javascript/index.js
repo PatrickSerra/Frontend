@@ -1,207 +1,416 @@
-// 'use strict'
-
-// let person = {
-//     firstName: 'John',
-//     lastName: 'Doe',
-//     age: 25,
-
-//     get fullName() {
-//         return `${this.firstName} ${this.lastName}`
-//     },
-
-//     set fullName(fullname) {
-//         const parts = fullname.split(' ');
-//         this.firstName = parts[0];
-//         this.lastName = parts[1] || '';
+// {
+//     function Person(name) {
+//         this.name = name;
 //     }
 
-// }
-
-// Object.defineProperty(person, 'ssn', {
-//     configurable: false,
-//     enumerable: true,
-//     value: '012-38-9119'
-// });
-
-// Object.defineProperty(person, 'age', {
-//     configurable: true,
-//     enumerable: false,
-//     writable: true
-// });
-
-// for(let property in person) {
-//     console.log(property);
-
-// }
-
-// console.log(person.age);
-// //person.age = 29; Error
-// console.log(person.age);
-// console.log(person.fullName);
-
-// person.fullName = 'Mary Sue'
-// console.log(person.fullName);
-
-// Object.defineProperty(person, 'daysAlive', {
-//     get: function() {
-//         return this.age * 365
-//     },
-
-//     set: function(value) {
-//         this.age = value / 365;
+//     Person.prototype.getName = function () {
+//         return this.name
 //     }
 
-// })
+//     let john = new Person('John Doe');
+//     console.log(john.getName());
 
-// console.log(person.daysAlive);
-// person.daysAlive = 10585;
-// console.log(person.age);
+//     console.log(john instanceof Person);
+//     console.log(john instanceof Object);
 
-// let descriptor = Object.getOwnPropertyDescriptor(person, 'age');
-// console.log(descriptor);
-
-// for(let prop in person) {
-//     console.log(`${prop}: ${person[prop]}`);
-
-// }
-
-// let decoration = {
-//     color: 'red'
-// }
-
-// let circle = Object.create(decoration)
-// circle.radius = 10;
-
-// for(const prop in circle) {
-//     if (circle.hasOwnProperty(prop)) {
+//     for(prop in john) {
 //         console.log(prop);
+
+//     }
+
+// }
+
+// class Person {
+//     constructor(name) {
+//         this.name = name;
+//     }
+
+//     getName() {
+//         return this.name;
 //     }
 // }
 
-// Array.prototype.foo = 100;
+// let john = new Person('John Doe');
+// console.log(john);
+// console.log(john.getName());
+// console.log(typeof Person);
+// console.log(john instanceof Person);
+// console.log(john instanceof Object);
 
-// const items = [10, 20, 30];
-// let total = 0;
+// for(prop in john) {
+//     console.log(prop);
 
-// for(const item in items) {
-//     total += items[item]
 // }
 
-// console.log(total);
-
-// const person = {
-//     firstName: 'John',
-//     lastName: 'Doe'
-// }
-
-// person.age = 25;
-
-// const keys = Object.keys(person);
-// const values = Object.values(person);
-
-// console.log(keys);
-// console.log(values);
-
-// for(const key in person) {
-//     console.log(key);
-// }
-
-// Object.defineProperty(person, 'ssn', {
-//     enumerable: false,
-//     value: "123-456-7890"
-// })
-
-// for (const key in person) {
-//     console.log(key);
-// }
-
-// console.log(person.propertyIsEnumerable('firstName'));
-// console.log(person.propertyIsEnumerable('ssn'));
-
-// const employee = Object.create(person, {
-//     job: {
-//         value: 'JS Developer',
-//         enumerable: true
+// class Person {
+//     constructor(name) {
+//         this._name = name
 //     }
-// })
 
-// console.log(employee.hasOwnProperty('job'));
-// console.log(employee.hasOwnProperty('firstName'));
+//     get name() {
+//         return this._name
+//     }
 
-// console.log('-------------------------------------');
+//     set name(newName) {
+//         newName = newName.trim();
+//         if(newName === '') {
+//             throw 'The name cannot be empty'
+//         }
 
-// for (const key in employee) {
-//     console.log(key);
+//         this._name = newName;
+//     }
+
 // }
 
-// const person = {
-//   firstName: "John",
-//   lastName: "Doe",
+// let person = new Person('Jane Doe');
+// console.log(person);
 
-//   get fullName() {
-//     return this.firstName + " " + this.lastName;
-//   },
-// };
+// person.name = 'Jane Smith';
+// console.log(person.name);
 
-// function createPerson(firstName, lastName) {
-//   return {
-//     firstName,
-//     lastName,
-//   };
+// let Car = class {
+//     constructor(brand) {
+//         this._brand = brand;
+//     }
+
+//     get brand() {
+//         return this._brand;
+//     }
 // }
 
-// person1 = createPerson("John", "Doe");
-// person2 = createPerson("Jane", "Doe");
+// let car = new Car('Chevrolet')
+// console.log(car);
+// console.log(typeof Car);
 
-// let personActions = {
-//   get fullName() {
-//     return this.firstName + " " + this.lastName;
-//   },
-// };
+// let app = new class {
+//     constructor(name) {
+//         this.name = name
+//     }
 
-// Object.setPrototypeOf(person1, personActions);
-// console.log(person1.fullName);
+//     start() {
+//         console.log(`Starting the ${this.name}...`);
+//     }
+// }('Awesome App')
 
-// let car = {
-//     "brand": "Chevrolet",
-//     "model": "Camaro gold",
-//     "price": '20000000'
+// app.start();
+
+// class Config {
+//     constructor(appName, appPort) {
+
+//         if(Config.instance) {
+//             return Config.instance;
+//         }
+
+//         this.appName = appName;
+//         this.appPort = appPort;
+//         Config.instance = this;
+//     }
 // }
 
+// const instance1 = new Config('Shop', '4000');
+// const instance2 = new Config('Blog', '3000');
 
-// let {brand: Brand, model, date: date = '01/01/2020'} = car;
+// console.log(instance1);
+// console.log(instance2);
+// console.log(instance1 == instance2);
 
-// console.log(Brand);
-// console.log(model);
-// console.log(date);
+// let {appName: applet, appPort: port} = instance1;
+// console.log(applet, port);
 
+// let propName = 'c';
 
-function getUser(id) {
+// const rank = {
+//     a: 1,
+//     b: 2,
+//     [propName]: 3,
+// }
 
-    if(id <= 0) {
-        return null;
-    }
+// console.log(rank.c);
 
-    // get the user from database
-    // and return null if id does not exist
-    // ...
-    
-    // if user was found, return the user
-    return {
-        id: id,
-        username: 'admin',
-        profile: {
-            avatar: '/avatar.png',
-            language: 'English'
-        }
-    }
+// const createObject = (key, value) => {
+//     return {
+//         [key]: value,
+//     }
+// }
+
+// const persona = createObject('name', 'John');
+// console.log(persona);
+
+{
+  function Animal(legs) {
+    this.legs = legs;
+  }
+
+  Animal.prototype.walk = function () {
+    console.log(`Walking on ${this.legs} legs`);
+  };
+
+  function Bird(legs) {
+    Animal.call(this, legs);
+  }
+
+  Bird.prototype = Object.create(Animal.prototype);
+  Bird.prototype.constructor = Animal;
+
+  Bird.prototype.fly = function () {
+    console.log("Flying");
+  };
+
+  console.log(Animal.prototype);
+
+  let pigeon = new Bird(2);
+  pigeon.walk();
+  pigeon.fly();
 }
 
-let user = getUser(0);
-let profile = user?.profile
-let avatar = user.profile.avatar
+class Animal {
+  constructor(legs, color) {
+    this.legs = legs;
+    this.color = color;
+    this.multicelular = true;
+  }
 
+  walk() {
+    console.log(`Walking on ${this.legs} legs`);
+  }
 
-console.log(profile);
-console.log(avatar);
+  static helloWorld() {
+    console.log("Hello World");
+  }
+}
 
+class Bird extends Animal {
+  constructor(legs, color) {
+    super(legs, color);
+    this._color = color;
+  }
+
+  fly() {
+    console.log("flying");
+  }
+
+  get color() {
+    return this._color;
+  }
+
+  set color(color) {
+    this._color = color;
+  }
+}
+
+let pigeon = new Bird(2, "Blue");
+console.log(pigeon);
+
+pigeon.walk();
+pigeon.fly();
+console.log(pigeon.color);
+
+console.log(Object.getPrototypeOf(Animal));
+
+class Dog extends Animal {
+  constructor(color) {
+    super(4, color);
+    this.multicelular = false;
+  }
+
+  walk() {
+    super.walk();
+    console.log("Go walking");
+  }
+}
+
+let bingo = new Dog("Red");
+console.log(bingo);
+bingo.walk();
+
+Dog.helloWorld();
+
+class Queue extends Array {
+  enqueue(e) {
+    super.push(e);
+  }
+
+  dequeue() {
+    return super.shift();
+  }
+
+  peek() {
+    return !this.empty() ? this[0] : undefined;
+  }
+
+  empty() {
+    return this.length === 0;
+  }
+}
+
+let customers = new Queue();
+customers.enqueue("A");
+customers.enqueue("B");
+customers.enqueue("C");
+
+while (!customers.empty()) {
+  console.log(customers.dequeue());
+}
+
+function Book(title) {
+  if (!new.target) {
+    //throw "must use new operator with Book"
+    return new Book(title);
+  }
+
+  this.title = title;
+}
+
+let book = Book("hamlet");
+console.log();
+
+console.log(book.title);
+
+class Machine {
+  constructor(name) {
+    this.name = name;
+    console.log(new.target.name);
+  }
+}
+
+class Sander extends Machine {
+  constructor(name, corded) {
+    super(name);
+    this.corded(corded);
+  }
+}
+
+let m1 = new Machine("dril");
+
+{
+  class Person {
+    constructor(name) {
+      this._name = name;
+    }
+
+    get name() {
+      return this._name;
+    }
+
+    set name(newName) {
+      newName = newName.trim();
+      if (newName === "") {
+        throw "The name cannot be empty";
+      }
+
+      this._name = newName;
+    }
+
+    static createAnonymous(gender) {
+      let name = gender == "male" ? "John Doe" : "Jane Doe";
+      return new Person(name);
+    }
+  }
+
+  let person = new Person("ana");
+  console.log(person);
+
+  let anonymous = Person.createAnonymous("male");
+  console.log(anonymous);
+}
+
+{
+  class Circle {
+    #radius = 0;
+
+    constructor(radius) {
+      this.radius = radius;
+    }
+
+    get area() {
+      return Math.PI * Math.pow(this.#radius, 2);
+    }
+
+    set radius(value) {
+      if (typeof value === "number" && value > 0) {
+        this.#radius = value;
+      } else {
+        throw "The radius must be a positive number";
+      }
+    }
+
+    get radius() {
+      return this.#radius;
+    }
+
+    static hasRadius(circle) {
+      return #radius in circle;
+    }
+  }
+
+  let circle = new Circle(10);
+  console.log(circle.area);
+  console.log(circle.radius);
+  console.log(Circle.hasRadius(circle));
+}
+
+{
+  function Person(name) {
+    this.name = name;
+  }
+
+  let p1 = new Person("John");
+
+  console.log(p1 instanceof Person);
+  console.log(p1 instanceof Object);
+  console.log(p1.constructor);
+}
+
+{
+  class Person {
+    constructor(name) {
+      this.name = name;
+    }
+  }
+
+  class Employee extends Person {
+    constructor(name, title) {
+      super(name);
+      this.title = title;
+    }
+  }
+
+  let p1 = new Person("John");
+  console.log(p1 instanceof Person);
+
+  let e1 = new Employee();
+  console.log(e1 instanceof Employee);
+  console.log(e1 instanceof Person);
+  console.log(e1 instanceof Object);
+  console.log(Person[Symbol.hasInstance](p1));
+}
+
+{
+    let colors = ['red12', 'green13', 'blue14'];
+    let cars = ['Hyundai', 'Chevrolet', 'Toyota'];
+    let rgb = [...colors];
+
+    console.log(colors == rgb);
+    
+    merge = [...colors, ...cars];
+    console.log(merge);
+
+    function paint(red, green, blue) {
+        console.log(red, green, blue);
+    }
+
+    paint(...colors);
+
+    const circle = {
+        radius: 10
+    }
+
+    const coloredCirclue = {
+        ...circle,
+        color: 'black'
+    }
+
+    console.log(coloredCirclue);
+    
+    {}
+}
