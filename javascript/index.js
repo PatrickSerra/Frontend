@@ -1,416 +1,430 @@
-// {
-//     function Person(name) {
-//         this.name = name;
-//     }
-
-//     Person.prototype.getName = function () {
-//         return this.name
-//     }
-
-//     let john = new Person('John Doe');
-//     console.log(john.getName());
-
-//     console.log(john instanceof Person);
-//     console.log(john instanceof Object);
-
-//     for(prop in john) {
-//         console.log(prop);
-
-//     }
-
+// function add(x, y) {
+//   if(new.target) {
+//     throw 'The add function cannot be called as a constructor'
+//   }
+//   return x + y;
 // }
 
-// class Person {
-//     constructor(name) {
-//         this.name = name;
-//     }
+// console.log(add.length);
+// console.log(add.prototype);
+// console.log(typeof add);
 
-//     getName() {
-//         return this.name;
-//     }
+// let result = add(10, 20);
+// console.log(result);
+
+
+// let cat = {type: 'Cat', sound: 'Meow'}
+// let dog = {type: 'Dog', sound: 'Woof'}
+
+// const say = function(message) {
+//   console.log(message);
+//   console.log(this); 
+//   console.log(this.type + ' says ' + this.sound); 
 // }
 
-// let john = new Person('John Doe');
-// console.log(john);
-// console.log(john.getName());
-// console.log(typeof Person);
-// console.log(john instanceof Person);
-// console.log(john instanceof Object);
 
-// for(prop in john) {
-//     console.log(prop);
-
-// }
-
-// class Person {
-//     constructor(name) {
-//         this._name = name
-//     }
-
-//     get name() {
-//         return this._name
-//     }
-
-//     set name(newName) {
-//         newName = newName.trim();
-//         if(newName === '') {
-//             throw 'The name cannot be empty'
-//         }
-
-//         this._name = newName;
-//     }
-
-// }
-
-// let person = new Person('Jane Doe');
-// console.log(person);
-
-// person.name = 'Jane Smith';
-// console.log(person.name);
-
-// let Car = class {
-//     constructor(brand) {
-//         this._brand = brand;
-//     }
-
-//     get brand() {
-//         return this._brand;
-//     }
-// }
-
-// let car = new Car('Chevrolet')
-// console.log(car);
-// console.log(typeof Car);
-
-// let app = new class {
-//     constructor(name) {
-//         this.name = name
-//     }
-
-//     start() {
-//         console.log(`Starting the ${this.name}...`);
-//     }
-// }('Awesome App')
-
-// app.start();
-
-// class Config {
-//     constructor(appName, appPort) {
-
-//         if(Config.instance) {
-//             return Config.instance;
-//         }
-
-//         this.appName = appName;
-//         this.appPort = appPort;
-//         Config.instance = this;
-//     }
-// }
-
-// const instance1 = new Config('Shop', '4000');
-// const instance2 = new Config('Blog', '3000');
-
-// console.log(instance1);
-// console.log(instance2);
-// console.log(instance1 == instance2);
-
-// let {appName: applet, appPort: port} = instance1;
-// console.log(applet, port);
-
-// let propName = 'c';
-
-// const rank = {
-//     a: 1,
-//     b: 2,
-//     [propName]: 3,
-// }
-
-// console.log(rank.c);
-
-// const createObject = (key, value) => {
-//     return {
-//         [key]: value,
-//     }
-// }
-
-// const persona = createObject('name', 'John');
-// console.log(persona);
-
-{
-  function Animal(legs) {
-    this.legs = legs;
-  }
-
-  Animal.prototype.walk = function () {
-    console.log(`Walking on ${this.legs} legs`);
-  };
-
-  function Bird(legs) {
-    Animal.call(this, legs);
-  }
-
-  Bird.prototype = Object.create(Animal.prototype);
-  Bird.prototype.constructor = Animal;
-
-  Bird.prototype.fly = function () {
-    console.log("Flying");
-  };
-
-  console.log(Animal.prototype);
-
-  let pigeon = new Bird(2);
-  pigeon.walk();
-  pigeon.fly();
-}
-
-class Animal {
-  constructor(legs, color) {
-    this.legs = legs;
-    this.color = color;
-    this.multicelular = true;
-  }
-
-  walk() {
-    console.log(`Walking on ${this.legs} legs`);
-  }
-
-  static helloWorld() {
-    console.log("Hello World");
-  }
-}
-
-class Bird extends Animal {
-  constructor(legs, color) {
-    super(legs, color);
-    this._color = color;
-  }
-
-  fly() {
-    console.log("flying");
-  }
-
-  get color() {
-    return this._color;
-  }
-
-  set color(color) {
-    this._color = color;
-  }
-}
-
-let pigeon = new Bird(2, "Blue");
-console.log(pigeon);
-
-pigeon.walk();
-pigeon.fly();
-console.log(pigeon.color);
-
-console.log(Object.getPrototypeOf(Animal));
-
-class Dog extends Animal {
-  constructor(color) {
-    super(4, color);
-    this.multicelular = false;
-  }
-
-  walk() {
-    super.walk();
-    console.log("Go walking");
-  }
-}
-
-let bingo = new Dog("Red");
-console.log(bingo);
-bingo.walk();
-
-Dog.helloWorld();
-
-class Queue extends Array {
-  enqueue(e) {
-    super.push(e);
-  }
-
-  dequeue() {
-    return super.shift();
-  }
-
-  peek() {
-    return !this.empty() ? this[0] : undefined;
-  }
-
-  empty() {
-    return this.length === 0;
-  }
-}
-
-let customers = new Queue();
-customers.enqueue("A");
-customers.enqueue("B");
-customers.enqueue("C");
-
-while (!customers.empty()) {
-  console.log(customers.dequeue());
-}
-
-function Book(title) {
-  if (!new.target) {
-    //throw "must use new operator with Book"
-    return new Book(title);
-  }
-
-  this.title = title;
-}
-
-let book = Book("hamlet");
-console.log();
-
-console.log(book.title);
-
-class Machine {
-  constructor(name) {
-    this.name = name;
-    console.log(new.target.name);
-  }
-}
-
-class Sander extends Machine {
-  constructor(name, corded) {
-    super(name);
-    this.corded(corded);
-  }
-}
-
-let m1 = new Machine("dril");
-
-{
-  class Person {
-    constructor(name) {
-      this._name = name;
-    }
-
-    get name() {
-      return this._name;
-    }
-
-    set name(newName) {
-      newName = newName.trim();
-      if (newName === "") {
-        throw "The name cannot be empty";
-      }
-
-      this._name = newName;
-    }
-
-    static createAnonymous(gender) {
-      let name = gender == "male" ? "John Doe" : "Jane Doe";
-      return new Person(name);
-    }
-  }
-
-  let person = new Person("ana");
-  console.log(person);
-
-  let anonymous = Person.createAnonymous("male");
-  console.log(anonymous);
-}
-
-{
-  class Circle {
-    #radius = 0;
-
-    constructor(radius) {
-      this.radius = radius;
-    }
-
-    get area() {
-      return Math.PI * Math.pow(this.#radius, 2);
-    }
-
-    set radius(value) {
-      if (typeof value === "number" && value > 0) {
-        this.#radius = value;
-      } else {
-        throw "The radius must be a positive number";
-      }
-    }
-
-    get radius() {
-      return this.#radius;
-    }
-
-    static hasRadius(circle) {
-      return #radius in circle;
-    }
-  }
-
-  let circle = new Circle(10);
-  console.log(circle.area);
-  console.log(circle.radius);
-  console.log(Circle.hasRadius(circle));
-}
-
-{
-  function Person(name) {
-    this.name = name;
-  }
-
-  let p1 = new Person("John");
-
-  console.log(p1 instanceof Person);
-  console.log(p1 instanceof Object);
-  console.log(p1.constructor);
-}
-
-{
-  class Person {
-    constructor(name) {
-      this.name = name;
-    }
-  }
-
-  class Employee extends Person {
-    constructor(name, title) {
-      super(name);
-      this.title = title;
-    }
-  }
-
-  let p1 = new Person("John");
-  console.log(p1 instanceof Person);
-
-  let e1 = new Employee();
-  console.log(e1 instanceof Employee);
-  console.log(e1 instanceof Person);
-  console.log(e1 instanceof Object);
-  console.log(Person[Symbol.hasInstance](p1));
-}
-
-{
-    let colors = ['red12', 'green13', 'blue14'];
-    let cars = ['Hyundai', 'Chevrolet', 'Toyota'];
-    let rgb = [...colors];
-
-    console.log(colors == rgb);
+// say.apply(cat, ['What does a cat say?']);
+// say.apply(dog, ['What does a dog say?']);
+// say.call(cat, 'What does a cat say?');
+// say.call(dog, 'What does a dog say?');
+
+// let car = {
+//   speed: 5,
+//   start: function() {
+//     console.log('Start with ' + this.speed + ' kn/h');
     
-    merge = [...colors, ...cars];
-    console.log(merge);
+//   }
+// }
 
-    function paint(red, green, blue) {
-        console.log(red, green, blue);
-    }
+// let aircraft = {
+//   speed: 10,
+//   fly: function () {
+//     console.log('Flying');
+//   }
+// }
 
-    paint(...colors);
 
-    const circle = {
-        radius: 10
-    }
+// let taxiing = car.start.bind(aircraft);
+// taxiing();
+// car.start.call(aircraft)
 
-    const coloredCirclue = {
-        ...circle,
-        color: 'black'
-    }
 
-    console.log(coloredCirclue);
+// class Vehicle {
+  
+//   #speed;
+
+//   constructor(speed) {
+//     this.speed = speed
+//   }
+
+//   get speed() {
+//     return this.#speed
+//   } 
+
+//   set speed(value) {
+//      this.#speed = value
+//   }
+
+
+//   start() {
+//     console.log('Start with ' + this.speed + ' kn/h');
     
-    {}
+//   }
+// }
+
+// class Aircaft extends Vehicle {
+  
+//   fly() {
+//     console.log('Flying');
+//   }
+// }
+
+
+// let car1 = new Vehicle(10);
+// console.log(car1);
+// console.log(car1.speed);
+
+// let aircraft1 = new Aircaft(20) 
+// console.log(aircraft1);
+// console.log(aircraft1.speed);
+
+// aircraft1.fly();
+
+// function add(x, y) {
+//   return x + y;
+// }
+
+// console.log(add instanceof Function);
+
+// let result = add.call(this, 10, 20);
+// console.log(result);
+
+// let greeting = 'Hi';
+// let messenger = {
+//   greeting: 'Hello'
+// }
+
+// function say(name) {
+//   console.log(this.greeting + ' ' + name); 
+// }
+
+// say.call(messenger, 'John')
+
+
+
+// function Box(height, width) {
+//   this.height = height;
+//   this.width = width;
+// }
+
+// function Widget(height, width, color) {
+//   Box.call(this, height, width);
+//   this.color = color;
+// }
+
+// let widget = new Widget('red', 100, 200);
+// console.log(widget);
+
+// const car = {
+//   name: 'car',
+//   start() {
+//     console.log('Start the ' + this.name);
+//   },
+//   speedUp() {
+//     console.log('Speed up the ' + this.name);
+//   },
+//   stop() {
+//     console.log('Stop the ' + this.name);
+//   },
+// };
+
+// const aircraft = {
+//   name: 'aircraft',
+//   fly() {
+//     console.log('Fly');
+//   },
+// };
+
+// car.start.call(aircraft);
+// car.speedUp.call(aircraft)
+
+// console.log(Object.getPrototypeOf(Box));
+
+
+// const person = {
+//   firstName: 'John',
+//   lastName: 'Doe'
+// }
+
+
+// function greet(greeting, message) {
+//   return `${greeting} ${this.firstName}. ${message}`
+// }
+
+// let result = greet.apply(person, ['Hello', 'How are you?'])
+// console.log(result);
+
+// const computer = {
+//   name: 'MacBook',
+//   isOn: false,
+//   turnOn() {
+//     this.isOn = true
+//     return `The ${this.name} is On`
+//   },
+//   turnOff() {
+//     this.isOn = false
+//     return `The ${this.name} is Off`
+//   },
+// }
+
+// const server = {
+//   name: 'Dell PowerEdge t30',
+//   isOn: false
+// }
+
+// result = computer.turnOn.apply(server);
+// console.log(result);
+// console.log(computer.turnOff.apply(server));
+
+// let arr = [1, 2, 3];
+// let numbers = [4, 5, 6];
+
+// arr.push.apply(arr, numbers);
+// console.log(arr);
+
+
+// let person = {
+//   name: 'John Doe',
+//   getName() {
+//     console.log(this.name);
+//   }
+// }
+
+// person.getName();
+
+// let f = person.getName;
+
+// var name = 'Jane Doe';
+
+// setTimeout(function () {
+//   person.getName();
+// }, 1000);
+
+// console.log(this);
+
+
+// let fn = person.getName.bind(person);
+// setTimeout(fn, 1000)
+
+// let runner = {
+//   name: 'Runner',
+//   run: function (speed) {
+//       console.log(this.name + ' runs at ' + speed + ' mph.');
+      
+//   }
+// }
+
+// let flyer = {
+//   name: 'Flyer',
+//   fly: function (speed) {
+//     console.log(this.name + ' flies at ' + speed + ' mph.');
+//   }
+// }
+
+// Object.setPrototypeOf(flyer, runner)
+// console.log(flyer);
+// console.log(flyer instanceof Object);
+
+
+// flyer.run(34);
+
+// function sum(a, b) {
+//   return a + b;
+// }
+
+// console.log(sum instanceof Function);
+// console.log(Function instanceof Object);
+
+// console.log();
+
+
+
+// let run = runner.run.bind(flyer, 20);
+// run();
+
+// console.log(run === runner.run);
+
+// let name = 'John';
+
+// function greeting() {
+//   let message = 'Hi'
+  
+//   function sayHi() {
+//       console.log(message + ' ' + name);
+//   }
+
+//   return sayHi;
+
+
+// }
+
+// let hi = greeting();
+// hi();
+
+//console.log(message);
+
+
+// function greeting(message) {
+//   return function (name) {
+//     return message + ' ' + name;
+//   }
+// }
+
+// let sayHi = greeting('Hi');
+// let sayHello = greeting('Hello');
+
+// console.log(sayHi('John'));
+// console.log(sayHello('John'));
+
+// for(let index = 1; index <= 3; index++) {
+//   setTimeout(function () {
+//     console.log('after ' + index + ' second(s): ' + index);
+//   }, index * 1000);
+// }
+
+
+// function add(a, b) {
+//   return a + b;
+// }
+
+// let sum = (function (a, b) {
+//   return a + b;
+// })(10, 20);
+
+// console.log(sum);
+
+
+// (function() {
+  
+//   let counter = 0;
+
+//   function add(a, b) {
+//     return a + b;
+//   }
+
+//   console.log(add(10, 20));
+
+// })();
+
+{
+  function getNames() {
+    let firstName = 'John',
+        lastName = 'Doe';
+  
+    return [firstName, lastName]
+  }
+  
+  let names = getNames();
+  
+  const [firstName, lastName] = getNames();
+  console.log(firstName);
+    
+}
+
+{
+  function getNames() {
+    let firstName = 'John',
+        lastName = 'Doe';
+
+    return { firstName, lastName }
+  }
+
+  let names = getNames();
+
+  let firstName = names.firstName,
+      lastName = names.lastName;
+
+  console.log(firstName, lastName);
+  
+}
+
+{
+  let add = function (x, y) {
+      return x + y;
+  }
+
+  console.log(add(10, 20));
+}
+
+
+{
+  let add = (x, y) => x + y;
+
+  console.log(add(10, 20)); 
+  console.log(typeof add);
+  console.log(add instanceof Function);
+}
+
+{
+  let numbers = [4, 2, 6];
+
+  numbers.sort(function(a, b) {
+    return b - a;
+  })
+
+  console.log(numbers);
+  
+}
+
+{
+  let numbers = [4, 2, 6];
+  numbers.sort((a, b) => b - a);
+  console.log(numbers);
+}
+
+
+{
+  let names = ['John', 'Mac', 'Peter'];
+  let lengths = names.map(name => name.length);
+  console.log(lengths);
+}
+
+
+{
+  let logDoc = () => console.log(globalThis);
+  logDoc();
+}
+
+{
+  let square = x => x * x;
+
+  console.log(square(3));
+}
+
+
+{
+  let setColor = function (color) {
+    return {value: color};
+  }
+
+  let backgroundColor = setColor('Red');
+  console.log(backgroundColor.value);
+  
+
+}
+
+{
+
+  function Car() {
+    this.speed = 0;
+
+    this.speedUp = function (speed) {
+      this.speed = speed;
+      setTimeout(() => console.log(this.speed), 1000);
+    }
+  }
+
+  let car = new Car();
+  car.speedUp(50);
+
 }
