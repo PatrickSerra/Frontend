@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.jscl"
+    "start": "node index.jscl",
+    "dev": "vite dev"
   },
   "author": "Patrick",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "vite": "^6.1.0"
   }
 }
