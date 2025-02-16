@@ -19,6 +19,7 @@ Topicos para estudar depois:
         * dá uma olha nesses padrões design responsivo https://bradfrost.github.io/this-is-responsive/patterns.html. (2)
         * identidade visual (2)
         *Dá uma olhada nesse link sobre escolha de cores - https://tallys.github.io/color-theory/ (2)
+        Estudar Post CSS (3) - https://www.youtube.com/watch?v=fMg5HlHmGLY&list=PLLnpHn493BHFvjZzyYrQP0RTsG-Al7j9m
 
     JAVASCRIPT
         * Fazer uma calculdora simples usando JAVASCRIPT (1)
