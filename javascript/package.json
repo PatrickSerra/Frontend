@@ -11,7 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "random": "^5.2.0"
   },
   "devDependencies": {
     "vite": "^6.1.0"

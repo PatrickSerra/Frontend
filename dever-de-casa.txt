@@ -30,6 +30,8 @@ Topicos para estudar depois:
 
 
 Estudos em progresso:
+    Typescript - https://www.youtube.com/watch?v=30LWjhZzg50 - parem em 1:32:28
+    
     Sass - https://www.youtube.com/watch?v=sb4Nnc6VtZI&t=7289s - parei no minuto
     1:34:55:01    
 
