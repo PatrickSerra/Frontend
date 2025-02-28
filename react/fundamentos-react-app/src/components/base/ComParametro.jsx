@@ -24,7 +24,7 @@ export default function ComParamentro(props) {
                 Os valores de `aluno`, `nota` e `status` são interpolados dentro do JSX. */}
       <p>
         <strong>{aluno}</strong> tem nota
-        <strong>{nota}</strong> e foi {status}.
+        <strong> {nota} </strong> e foi {status}.
       </p>
     </>
   );

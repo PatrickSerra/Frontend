@@ -162,6 +162,113 @@
 // console.log(p.id);
 // console.log(titleInput.type);
 
+// console.log(document.body);
+
+// document.body.user = {
+//     name: "Patrick",
+//     isAdmin: true
+// }
+
+// console.log("user" in document.body);
+
+// document.body.sayTagName = function() {
+//     console.log(`Hello, I'm ${this.tagName}`);
+// }
+
+// document.body.sayTagName();
+
+// Node.prototype.sayName = function() {
+//     console.log(`Hello, I'm ${this.nodeName}`);
+// }
+
+// let ul = document.querySelector('ul');
+// console.log(ul instanceof Element);
+// ul.sayName()
+
+// document.documentElement.sayName();
+
+// console.log(document.body.firstChild instanceof Node);
+// document.body.firstChild.sayName();
+
+// let firstP = document.querySelector('p');
+// let firstInput = document.querySelector('input')
+
+// console.log(firstP.id);
+// console.log(firstP.something);
+
+// console.log('type' in firstP);
+// console.log('type' in firstInput);
+
+// console.log(firstP.hasAttribute('something'));
+// console.log(firstP.getAttribute('something'));
+
+// firstP.setAttribute('my-attr', 'my-value')
+// console.log(firstP.getAttribute('my-attr'));
+
+// console.log(firstP.outerHTML);
+
+// firstP.removeAttribute('my-attr');
+// console.log(firstP.getAttribute('my-attr'));
+// console.log(firstP.attributes.something);
+// console.log(firstP.ID);
+// console.log(firstP.outerHTML);
+
+
+// firstInput.setAttribute('id', 'id');
+// console.log(firstInput.id);
+
+// firstInput.id = 'newId';
+// console.log(firstInput.getAttribute('id'));
+
+// firstInput.setAttribute('value', 'text')
+// console.log(firstInput.value);
+
+// firstInput.value = 'newValue'
+// console.log(firstInput.getAttribute('value'));
+
+// let checkbox = document.querySelector('input[type="checkbox"]');
+// console.log(checkbox);
+
+// console.log(checkbox.getAttribute('checked'));
+// console.log(input.checked);
+
+// let lastP = document.getElementById('onlyP');
+// console.log(lastP.getAttribute('style'));
+// console.log(lastP.style.color);
+
+// let link = document.querySelector('a');
+// console.log(link.getAttribute('href'));
+// console.log(link.href);
+
+// let user = {
+//     name: "Pete",
+//     age: 25
+// };
+
+// for (let div of document.querySelectorAll('[show-info]')) {
+//     let field = div.getAttribute('show-info')  
+//     div.innerHTML = user[field]  
+// }
+
+
+// console.log(document.body.dataset.about);
+
+// lastP.dataset.message = 'warning'
+
+let widget = document.querySelector('div[data-widget-name]');
+
+widget.textContent = widget.dataset.widgetName
+console.log(widget.getAttribute(['data-widget-name']));
+
+
+
+
+
+
+
+
+
+
 
 
 

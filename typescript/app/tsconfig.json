@@ -8,20 +8,24 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
-
+    "noEmit": false,
+    "removeComments": true,
+    
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
+    //"noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
+    "noEmitOnError": false,
+    "outDir": "./src/build",
+
   },
   "include": ["src"]
 }

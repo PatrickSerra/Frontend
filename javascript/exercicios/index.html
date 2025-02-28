@@ -6,14 +6,27 @@
     <title>Tabela HTML</title>
     <!--First comment-->
     <style>
+        p[data-message="failed"] {
+           color: red;  
+        }
+
+        p[data-message="success"]  {
+            color: green;
+        }
+
+        p[data-message="warning"]  {
+            color: yellow;
+        }
+
     </style>
 </head>
-<body>
+<body data-about="elephants">
 
     <header id="header">Lista de compras</header>
 
-    <p>
-        <input type="text" value="value" id="title-input"> 
+    <p id="firstParagraph" something="non-standard">
+        <input type="text" value="value" id="title-input">
+        <input id="input" type="checkbox" checked> checkbox 
     </p>
    
     <div style="padding: 10px; box-sizing: border-box; height: 60px;">
@@ -37,6 +50,25 @@
     <p id="onlyP">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, exercitationem. Quidem voluptatem provident ratione nemo ea placeat repellat corrupti, aliquid deserunt quas explicabo totam eligendi sint nobis adipisci exercitationem incidunt.
     </p>
+
+    <a id="a" href="#hello">link</a>
+
+    <div show-info="name"></div>
+    <!-- and age here -->
+    <div show-info="age"></div>
+
+    <div data-widget-name="menu">Choose the genre</div>
+
+    <a name="list">the list</a>
+    <ul>
+        <li><a href="http://google.com">http://google.com</a></li>
+        <li><a href="/tutorial">/tutorial.html</a></li>
+        <li><a href="local/path">local/path</a></li>
+        <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+        <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+        <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul>
+
 
     <script type="module" src="./app.js"></script>
 </body>
