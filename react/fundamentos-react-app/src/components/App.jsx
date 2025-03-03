@@ -7,6 +7,7 @@ import FamiliaMembro from "./base/FamilaMembro";
 import ListaAlunos from "./repeticao/ListaAlunos";
 import TabelaProduto from "./repeticao/TabelaProduto";
 import ParOuImpar from "./condicional/ParOuImpar";
+import UsurarioInfo from './condicional/UsuarioInfo'
 import "./App.css";
 
 const App = () => (
@@ -45,6 +46,8 @@ const App = () => (
 
       <Card titulo="Renderização condicional" color="#c1a2a0">
         <ParOuImpar numero={21} />
+        <UsurarioInfo usuario={{nome: 'Patrick'}}></UsurarioInfo>
+        <UsurarioInfo></UsurarioInfo>
       </Card>
     </div>
   </div>
