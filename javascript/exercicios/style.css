@@ -1,3 +1,32 @@
 h1 {
     color: tomato;
 }
+
+
+.alert {
+    padding: 15px;
+    border-radius: 4px;
+    margin: 5px;
+    border-radius: 4px;
+}
+
+.success {
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+    background-color: #dff0d8;
+}
+
+.danger {
+    border: 1px solid rgb(146, 56, 74);
+    color: rgb(150, 85, 97);
+    background-color: rgb(212, 91, 115);
+   
+}
+  
+.warning {
+    border: 1px solid rgb(236, 233, 49);
+    color: rgb(137, 150, 21);
+    background-color: rgb(233, 218, 81);
+   
+}
+  

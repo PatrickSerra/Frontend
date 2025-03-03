@@ -4,21 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela HTML</title>
-    <!--First comment-->
-    <style>
-        p[data-message="failed"] {
-           color: red;  
-        }
-
-        p[data-message="success"]  {
-            color: green;
-        }
-
-        p[data-message="warning"]  {
-            color: yellow;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body data-about="elephants">
 
@@ -70,6 +56,15 @@
     </ul>
 
 
+    <section id="alerts">
+        <div class="alert">
+            <strong>Hi there!</strong> You've read an important message.
+        </div>
+        <div class="alert warning">
+            <strong>Warning</strong> You've read an important message.
+        </div>
+    </section>
+    
     <script type="module" src="./app.js"></script>
 </body>
 </html>

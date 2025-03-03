@@ -95,12 +95,10 @@
 // let empty_ul = document.querySelector("ul[name='empty']");
 // console.log(empty_ul);
 
-
 // console.log(document instanceof Node);
 // console.log(document.body instanceof Element);
 // console.log(document.body instanceof HTMLBodyElement);
 // console.log(document.documentElement.constructor.name);
-
 
 // for (const node of document.body.childNodes) {
 //     if(node instanceof HTMLUListElement) {
@@ -111,8 +109,7 @@
 // console.log(document.body)
 // console.dir(document.body)
 
-
-// let elem = document.body 
+// let elem = document.body
 
 // console.log(elem.nodeType);
 // console.log(elem.firstChild.nodeType);
@@ -128,7 +125,6 @@
 //   document.body.innerHTML += '<h1>Adicionado</h1>'
 // }, 3000)
 
-
 // console.log(document.body.outerHTML);
 
 // let li = document.querySelector('ul').firstElementChild;
@@ -136,7 +132,7 @@
 
 // let comments = []
 
-// for (const element of document.body.childNodes) {     
+// for (const element of document.body.childNodes) {
 //      if(element.nodeName == '#comment') {
 //          comments.push(element.data)
 //      }
@@ -213,7 +209,6 @@
 // console.log(firstP.ID);
 // console.log(firstP.outerHTML);
 
-
 // firstInput.setAttribute('id', 'id');
 // console.log(firstInput.id);
 
@@ -246,19 +241,124 @@
 // };
 
 // for (let div of document.querySelectorAll('[show-info]')) {
-//     let field = div.getAttribute('show-info')  
-//     div.innerHTML = user[field]  
+//     let field = div.getAttribute('show-info')
+//     div.innerHTML = user[field]
 // }
-
 
 // console.log(document.body.dataset.about);
 
 // lastP.dataset.message = 'warning'
 
-let widget = document.querySelector('div[data-widget-name]');
+// let widget = document.querySelector('div[data-widget-name]');
 
-widget.textContent = widget.dataset.widgetName
-console.log(widget.getAttribute(['data-widget-name']));
+// widget.textContent = widget.dataset.widgetName
+// console.log(widget.getAttribute(['data-widget-name']));
+
+// let alert_section = document.getElementById('alerts')
+
+// let div = document.createElement('div');
+// div.className = "danger";
+// div.id = 'alert1'
+// div.innerHTML = `
+
+// <strong> Dangerous!</strong>
+
+// `
+// //document.body.append(div)
+// //alert_section.append(div);
+// alert_section.prepend(div);
+// alert_section.after('End');
+// alert_section.before('Start');
+
+// alert_section.insertAdjacentHTML('afterbegin',
+//     `
+//     <div class="warning">
+//         <strong>Other warning</strong>
+//     </div>`
+// )
+
+// alert_section.insertAdjacentHTML('beforeend',
+//     `
+//     <div class="danger">
+//         <strong>Other dangerous thing</strong>
+//     </div>`
+// )
+
+// alert_section.insertAdjacentHTML('afterend',
+//     `
+//         <ul>
+//             <li>1</li>
+//             <li>2</li>
+//             <li>3</li>
+//         </ul>
+//     `
+// )
+
+// setTimeout(() => {
+//     alert_section.lastElementChild.remove()
+// }, 2000)
+
+// let div_clone = div.cloneNode()
+// div_clone.innerHTML = `
+//     <h1>I am out </h1>
+// `
+
+// alert_section.after(div_clone)
+
+let alerts_section = document.getElementById('alerts')
+let alerts_section_first = document.getElementById('alerts').firstElementChild
+console.log(alerts_section_first.className);
+
+// alerts_section_first.className = 'alert success'
+// console.log(alerts_section_first.className);
+
+alerts_section_first.classList.add('success');
+alerts_section_first.classList.remove('success')
+alerts_section_first.classList.toggle('success')
+
+for (const name of alerts_section_first.classList) {
+    console.log(name);
+}
+
+let danger_alert = document.createElement('div')
+danger_alert.classList.add('alert', 'danger')
+//alert.textContent = "Danger! You've read an important message."
+danger_alert.innerHTML = `
+    <strong> Danger!</strong> You've read an important message.
+
+`
+alerts_section.append(danger_alert)
+danger_alert.dataset.read=true
+
+//document.body.style.backgroundColor = prompt('background color?', 'gray');
+//document.body.style.color = 'white'
+//document.body.style.display = 'none';
+//setTimeout(() => document.body.style.display = "", 1000)
+
+document.body.style.cssText = `
+    background-color: gray;
+    color: white;
+`
+
+danger_alert.style.marginTop = '2em';
+
+console.log(alerts_section.style.color);
+
+
+let computedStyle = getComputedStyle(danger_alert)
+console.log(computedStyle.marginTop);
+
+danger_alert.style.marginTop =  `${parseInt(computedStyle.marginTop) + 20}px`
+console.log(computedStyle.marginTop);
+
+
+
+
+
+
+
+
+
 
 
 

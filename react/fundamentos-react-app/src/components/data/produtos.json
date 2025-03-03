@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "nome": "Smartphone XYZ",
+      "preco": 1200.50
+    },
+    {
+      "id": 2,
+      "nome": "Notebook ABC",
+      "preco": 3500.00
+    },
+    {
+      "id": 3,
+      "nome": "Tablet 10 Polegadas",
+      "preco": 899.99343434
+    },
+    {
+      "id": 4,
+      "nome": "Fone de Ouvido Bluetooth",
+      "preco": 150.00
+    }
+]

@@ -22,9 +22,9 @@ const aleatorio = (props) => {
             </p>
             
             {/* Correção: Removendo duplicação do valor máximo */}
-            <p>
+            <div>
                 <h3>Número escolhido: {numero_escolhido}</h3> 
-            </p>
+            </div>
         </div>
     );
 }

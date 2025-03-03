@@ -27,10 +27,13 @@ Topicos para estudar depois:
         * Construir uma aplicação desktop usando electon: https://www.youtube.com/watch?v=fP-371MN0Ck&t=545s (3)
         * Estudar babel e Webpack(2)
 
+    REACT 
+        Se aprofundar no react router: https://www.youtube.com/watch?v=nDGA3km5He4
+
 
 
 Estudos em progresso:
-    Typescript - https://www.youtube.com/watch?v=30LWjhZzg50 - parem em 1:32:28
+    Typescript - https://www.youtube.com/watch?v=gieEQFIfgYc&t=281s - parei 25:42
     
     Sass - https://www.youtube.com/watch?v=sb4Nnc6VtZI&t=7289s - parei no minuto
     1:34:55:01    
