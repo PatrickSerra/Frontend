@@ -1,4 +1,4 @@
-const membro = (props) => {
+const Membro = (props) => {
   return (
     <div>
       {props.nome} <strong>{props.sobrenome}</strong>
@@ -6,4 +6,4 @@ const membro = (props) => {
   );
 };
 
-export default membro;
+export default Membro;

@@ -1,3 +1,4 @@
+import "./App.css";
 import First from "./base/First";
 import ComParamentro from "./base/ComParametro";
 import Aleatorio from "./base/Aleatorio";
@@ -7,8 +8,11 @@ import FamiliaMembro from "./base/FamilaMembro";
 import ListaAlunos from "./repeticao/ListaAlunos";
 import TabelaProduto from "./repeticao/TabelaProduto";
 import ParOuImpar from "./condicional/ParOuImpar";
-import UsurarioInfo from './condicional/UsuarioInfo'
-import "./App.css";
+import UsurarioInfo from "./condicional/UsuarioInfo";
+import DiretaPai from "./comunicacao/DiretaPai";
+import IndiretaPai from "./comunicacao/IndiretaPai";
+import Input from "./formulario/Input";
+import Contador from "./contador/Contador";
 
 const App = () => (
   <div id="app" className="app">
@@ -46,9 +50,26 @@ const App = () => (
 
       <Card titulo="Renderização condicional" color="#c1a2a0">
         <ParOuImpar numero={21} />
-        <UsurarioInfo usuario={{nome: 'Patrick'}}></UsurarioInfo>
+        <UsurarioInfo usuario={{ nome: "Patrick" }}></UsurarioInfo>
         <UsurarioInfo></UsurarioInfo>
       </Card>
+
+      <Card titulo="Comunicação direta componentes" color="darkblue">
+        <DiretaPai />
+      </Card>
+
+      <Card titulo="Comunicação indireta componentes" color="gold">
+        <IndiretaPai />
+      </Card>
+
+      <Card titulo="Componente Controlado(Input)" color="brown">
+          <Input></Input>
+      </Card>
+
+      <Card titulo="Contador" color="darkgray">
+         <Contador numeroInicial={100} />
+      </Card>
+
     </div>
   </div>
 );

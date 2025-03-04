@@ -8,7 +8,7 @@ import { cloneElement } from "react";
  * @param {ReactNode} props.children - Os elementos filhos do componente.
  * @returns {JSX.Element} Um elemento `div` contendo os filhos clonados com as `props` adicionais.
  */
-const familia = (props) => {
+const Familia = (props) => {
   return (
     <div>
       {
@@ -23,4 +23,4 @@ const familia = (props) => {
   );
 };
 
-export default familia;
+export default Familia;

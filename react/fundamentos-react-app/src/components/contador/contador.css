@@ -1,0 +1,73 @@
+.contador {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Estilo do título */
+.contador__titulo {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Estilo do número exibido */
+.contador__numero {
+  color: #007bff;
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+/* Estilo do formulário de passo */
+.contador__passo {
+  margin-bottom: 20px;
+}
+
+/* Estilo do label do passo */
+.contador__passo-label {
+  font-size: 16px;
+  color: #555;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+/* Estilo do input do passo */
+.contador__passo-input {
+  width: 60px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.contador__botoes {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contador__botoes-btn {
+  background-color: #1499D3;
+  color: white;
+  border: none;
+  padding: 0.7em 0.8em;
+  font-size: 1.3em;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+}
+
+.contador__botoes-btn:hover {
+  background-color: #0056b3;
+}
+
+.contador__botoes-btn:active {
+  background-color: #004080;
+}

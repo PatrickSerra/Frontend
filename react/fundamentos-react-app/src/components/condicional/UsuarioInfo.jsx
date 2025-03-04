@@ -1,6 +1,6 @@
 import { default as If, Else } from "./If";
 
-const usuarioInfo = (props) => {
+const UsuarioInfo = (props) => {
   let usuario = props?.usuario;
 
   return (
@@ -31,4 +31,4 @@ const usuarioInfo = (props) => {
   );
 };
 
-export default usuarioInfo;
+export default UsuarioInfo;
