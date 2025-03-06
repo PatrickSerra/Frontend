@@ -1,0 +1,93 @@
+/* Container principal */
+.mega {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do container do input */
+.input-container {
+    margin-bottom: 20px;
+}
+
+/* Estilo do label */
+.input-container label {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilo do input */
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-container input:focus {
+    border-color: #007bff;
+}
+
+/* Estilo da seção de exibição dos números */
+.display {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos números gerados */
+.display h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Estilo do botão */
+.display button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.display button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .mega {
+        padding: 15px;
+    }
+
+    .input-container label {
+        font-size: 1rem;
+    }
+
+    .input-container input {
+        font-size: 0.9rem;
+    }
+
+    .display h3 {
+        font-size: 1.2rem;
+    }
+
+    .display button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

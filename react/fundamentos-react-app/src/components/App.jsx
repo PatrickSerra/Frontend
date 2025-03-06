@@ -15,6 +15,7 @@ import Input from "./formulario/Input";
 import Contador from "./contador/Contador";
 import Gallery from "./Galeria/Gallery";
 import ListaDeBagem from "./condicional/ListaDeBagem";
+import Mega from "./Mega/Mega";
 
 const App = () => (
   <div id="app" className="app">
@@ -79,6 +80,10 @@ const App = () => (
 
       <Card titulo="Lista de bagagem com renderização condicional" color="#c1a2a0">
         <ListaDeBagem /> 
+      </Card>
+
+      <Card titulo="Desafio da Mega Sena">
+         <Mega qtde={8} />
       </Card>
 
 
