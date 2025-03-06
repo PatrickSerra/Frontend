@@ -13,6 +13,8 @@ import DiretaPai from "./comunicacao/DiretaPai";
 import IndiretaPai from "./comunicacao/IndiretaPai";
 import Input from "./formulario/Input";
 import Contador from "./contador/Contador";
+import Gallery from "./Galeria/Gallery";
+import ListaDeBagem from "./condicional/ListaDeBagem";
 
 const App = () => (
   <div id="app" className="app">
@@ -52,6 +54,7 @@ const App = () => (
         <ParOuImpar numero={21} />
         <UsurarioInfo usuario={{ nome: "Patrick" }}></UsurarioInfo>
         <UsurarioInfo></UsurarioInfo>
+        <ListaDeBagem /> 
       </Card>
 
       <Card titulo="Comunicação direta componentes" color="darkblue">
@@ -69,6 +72,15 @@ const App = () => (
       <Card titulo="Contador" color="darkgray">
          <Contador numeroInicial={100} />
       </Card>
+
+      <Card titulo="Galeria" color="red">
+         <Gallery/>
+      </Card>
+
+      <Card titulo="Lista de bagagem com renderização condicional" color="#c1a2a0">
+        <ListaDeBagem /> 
+      </Card>
+
 
     </div>
   </div>

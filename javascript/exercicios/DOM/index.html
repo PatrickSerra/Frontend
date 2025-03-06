@@ -4,48 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      main {
+        background-color: gray;
+      }
+
+      .example {
+        width: 300px;
+        height: 200px;
+        border: 25px solid #e8c48f;
+        padding: 20px;
+        /* box-sizing: border-box; */
+        overflow: auto;
+      }
+    </style>
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Surname</th>
-          <th>Age</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>John</td>
-          <td>Smith</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>Pete</td>
-          <td>Brown</td>
-          <td>15</td>
-        </tr>
-        <tr>
-          <td>Ann</td>
-          <td>Lee</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>...</td>
-          <td>...</td>
-          <td>...</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="example" id="div1">
+      This Ecma Standard is based on several originating technologies, the most
+      well known being JavaScript (Netscape) and JScript (Microsoft). The
+      language was invented by Brendan Eich at Netscape and first appeared in
+      that company’s Navigator 2.0 browser. It has appeared in all subsequent
+      browsers from Netscape and in all browsers from Microsoft starting with
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error distinctio
+      rem, expedita debitis saepe omnis quas minima iusto explicabo? Quia
+      reiciendis asperiores quae, numquam doloribus error inventore non sed
+      explicabo!
+    </div>
+
+    <main style="position: relative" id="main">
+      <article>
+        <div
+          id="div2"
+          class="example"
+          style="position: absolute; left: 180px; top: 180px"
+        >
+          ...
+        </div>
+      </article>
+    </main>
 
     <script>
-       let table = document.querySelector('table')
-       let sortedRows = Array.from(table.tBodies[0].rows) // 1
-            .sort((rowA, rowB) => rowA.cells[0].innerHTML.localeCompare(rowB.cells[0].innerHTML));
-            console.log(sortedRows);
-            table.tBodies[0].append(...sortedRows); 
-       
-    
+      let div1 = document.getElementById("div1");
+      let div2 = document.getElementById("div2");
+
+      //div1.hidden = true;
+      //div1.style.display = 'none';
+
+      // console.log(div1.offsetParent);
+      // console.log(div1.offsetTop);
+      // console.log(div1.offsetLeft);
+      // console.log(div1.offsetWidth);
+      // console.log(div1.clientTop);
+      //console.log(div1.clientWidth);
+      // console.log(div1.clientHeight);
+      // console.log(div1.scrollWidth);
+      // console.log(div1.scrollHeight);
+      // console.log(div1.scrollTop);
+      // console.log(div1.scrollLeft);
+      // console.log(div1.scrollHeight - div1.scrollTop - div1.clientHeight);
+      // let div1ComputedStyle = getComputedStyle(div1)
+      // console.log(div1ComputedStyle.width);
+      // console.log(div1ComputedStyle.height);
+      //div1.style.height = `${div1.scrollHeight}px`
+      // console.log(div2.offsetParent.id);
+      // console.log(div2.offsetTop);
+      // console.log(div2.offsetLeft);
+      console.log(document.documentElement.clientWidth);
+      console.log(document.documentElement.clientHeight);
+      console.log(window.innerWidth);
+      console.log(window.innerHeight);
+      console.log(document.documentElement.scrollHeight);
+      console.log(document.body.scrollHeight);
+      console.log(window.pageXOffset);
+      console.log(window.pageYOffset);
+      window.scrollBy(0, 200)
+
+      setTimeout(() => {
+          window.scrollTo(0, 0)
+      }, 4000);
+
+      //document.body.style.overflow = 'hidden';
+      rect = div1.getBoundingClientRect()
+
+      console.log(rect);
+      
+      
+      
+      
+      
+      
     </script>
   </body>
 </html>
