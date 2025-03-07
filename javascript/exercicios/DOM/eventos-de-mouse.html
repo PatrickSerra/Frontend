@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste de Eventos de Mouse</title>
+    <style>
+      /* Estilos Gerais */
+      body {
+        background-color: #1a1a1a; /* Fundo escuro */
+        color: #ffffff; /* Texto branco */
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        margin: 0;
+      }
+
+      h1 {
+        color: #ff6347; /* Tomate */
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        color: #ff6347; /* Tomate */
+        margin-top: 20px;
+      }
+
+      /* Botão */
+      #btn {
+        background-color: #ff6347; /* Tomate */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      #btn:hover {
+        background-color: #ff4500; /* Laranja mais escuro */
+      }
+
+      /* Painel */
+      .pannel {
+        width: 300px;
+        height: 300px;
+        background-color: #800080; /* Roxo */
+        margin: 20px auto;
+        border: 10px solid #ffffff; /* Borda branca */
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Bola */
+      .ball {
+        border: 2px solid #fa8072; /* Salmão */
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #000000; /* Preto */
+        position: absolute;
+        transition: all 0.3s ease; /* Transição suave */
+      }
+
+      .visible {
+         display: none;
+      }
+
+
+      /* Mensagens */
+      #message,
+      #messageKeys,
+      #log {
+        background-color: #333333; /* Fundo escuro */
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
+        font-family: monospace;
+      }
+
+      #log {
+        white-space: pre-wrap; /* Mantém a formatação do texto */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Eventos de Mouse</h1>
+    <h2>Clique para desaparecer</h2> 
+    <button type="button" id="btn">Click me</button>
+    <br />
+    <div class="pannel">
+      <span id="ball" class="ball"></span>
+    </div>
+    <p id="message"></p>
+    <p id="messageKeys"></p>
+    <h3>Localização do ponteiro do mouse</h3>
+    <p id="log"></p>
+
+    <script>
+      // Seleção de elementos
+      let btn = document.querySelector("#btn");
+      let pannel = document.querySelector(".pannel");
+
+      // Evento de clique no botão para alternar visibilidade do painel
+      btn.addEventListener("click", (e) => {
+        pannel.classList.toggle("visible");
+      });
+
+      // Evento de clique no botão para detectar teclas modificadoras
+      btn.addEventListener("click", (e) => {
+        let keys = [];
+        if (e.shiftKey) keys.push("shift");
+        if (e.ctrlKey) keys.push("ctrl");
+        if (e.altKey) keys.push("alt");
+        if (e.metaKey) keys.push("meta");
+
+        let msg = document.querySelector("#messageKeys");
+        msg.textContent = `Teclas pressionadas: ${keys.join("+")}`;
+      });
+
+      // Evento de mousedown no botão
+      btn.addEventListener("mousedown", (e) => {
+        console.log(`Tipo de evento: ${e.type}`);
+      });
+
+      // Evento de mouseup no botão para detectar o botão do mouse clicado
+      pannel.addEventListener("mouseup", (e) => {
+        let msg = document.querySelector("#message");
+        switch (e.button) {
+          case 0:
+            msg.textContent = "Botão esquerdo do mouse clicado";
+            break;
+          case 1:
+            msg.textContent = "Botão do meio do mouse clicado";
+            break;
+          case 2:
+            msg.textContent = "Botão direito do mouse clicado";
+            break;
+          default:
+            msg.textContent = "Código de botão desconhecido: " + e.button;
+        }
+      });
+
+      // Prevenir o menu de contexto ao clicar com o botão direito
+      pannel.addEventListener("contextmenu", (e) => {
+        console.log("Menu de contexto bloqueado");
+        e.preventDefault();
+      });
+
+      // Evento de mousemove no painel para rastrear a posição do mouse
+      pannel.addEventListener("mousemove", (e) => {
+        let log = document.querySelector("#log");
+        log.innerText = `
+          Screen X/Y: (${e.screenX}, ${e.screenY}) (Na tela inteira)
+          Client X/Y: (${e.clientX}, ${e.clientY}) (Na viewport)
+          Offset X/Y: (${e.offsetX}, ${e.offsetY}) (Em relação ao elemento)
+        `;
+      });
+
+      // Evento de mouseenter no painel para mudar a cor de fundo
+      pannel.addEventListener("mouseenter", (e) => {
+        console.log(`Tipo de evento: ${e.type}`);
+        e.target.style.backgroundColor = "#ff0000"; /* Vermelho */
+      });
+
+      // Evento de mouseleave no painel para restaurar a cor de fundo
+      pannel.addEventListener("mouseleave", (e) => {
+        console.log(`Tipo de evento: ${e.type}`);
+        e.target.style.backgroundColor = "#800080"; /* Roxo */
+      });
+
+      // Evento de clique no painel para mover a bola
+      pannel.addEventListener("click", (e) => {
+        let ball = document.querySelector("#ball");
+        if (e.offsetX > 0 && e.offsetX < e.target.clientWidth)
+          ball.style.left = e.offsetX + "px";
+        if (e.offsetY > 0 && e.offsetY < e.target.clientHeight)
+          ball.style.top = e.offsetY + "px";
+
+        console.log(`Posição X: ${e.offsetX}, Posição Y: ${e.offsetY}`);
+      });
+    </script>
+  </body>
+</html>

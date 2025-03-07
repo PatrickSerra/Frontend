@@ -1,21 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tabela HTML</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="./app.js"></script>
+    <title>JS Scroll Events</title>
+    <style>
+      body {
+         height: 200vh;
+      }
+      #scrollDemo {
+        height: 200px;
+        width: 200px;
+        overflow: auto;
+        background-color: #f0db4f;
+      }
+
+      #scrollDemo p {
+        /* show the scrollbar */
+        height: 300px;
+        width: 300px;
+      }
+
+      #scrollinfo {
+        position: fixed;
+        top: 0;
+        right: 10px;
+      }
+
+    </style>
   </head>
   <body>
-    
-    <p id="P">...content before script...</p>
-    <script
-      defer
-      src="https://javascript.info/article/script-async-defer/long.js?speed=1"
-    ></script>
-    <!-- This isn't visible until the script loads -->
-    <p>...content after script...</p>
-    
+    <div id="scrollDemo">
+      <p>JS Scroll Event Demo</p>
+    </div>
+
+    <div id="control">
+      <button id="btnScrollLeft">Scroll Left</button>
+      <button id="btnScrollTop">Scroll Top</button>
+    </div>
+
+    <div id="scrollinfo">
+      scroll info
+    </div>
+
+    <script>
+      window.addEventListener("scroll", (event) => {
+         console.log('scrolling');
+         
+         let scrollInfo = document.getElementById('scrollinfo')
+         scrollInfo.innerText = `
+          Deslocamento em relação ao topo:  ${Math.round(window.scrollY)}
+         `
+      });
+
+      let control = document.querySelector("#control");
+      control.addEventListener("click", function (e) {
+        let div = document.getElementById('scrollDemo')
+        let target = e.target;
+
+        switch(target.id) {
+           case 'btnScrollLeft':
+              div.scrollLeft += 20;
+              break;
+            case 'btnScrollTop':
+              div.scrollTop += 20;
+        }
+
+      });
+    </script>
   </body>
 </html>

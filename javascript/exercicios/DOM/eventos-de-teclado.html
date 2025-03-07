@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos de teclado</title>
+    <style>
+      /* Reset básico para remover margens e padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Estilização do container principal */
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      /* Estilização do título */
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      /* Input de texto */
+      input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        margin-bottom: 15px;
+      }
+
+      /* Parágrafos que exibem eventos */
+      p {
+        font-size: 18px;
+        margin-top: 10px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Estilização para diferenciar cada evento */
+      #output1 {
+        color: #007bff;
+      }
+
+      #output2 {
+        color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Teste de Eventos de Teclado</h1>
+
+      <!-- Campo de entrada de texto -->
+      <input
+        type="text"
+        name="name"
+        id="message"
+        placeholder="Digite algo..."
+      />
+
+      <!-- Saídas para exibir os eventos -->
+      <p id="output1">Pressione uma tecla...</p>
+      <p id="output2"></p>
+      <p id="output3"></p>
+    </div>
+  </body>
+  <script>
+    // Seleciona o input pelo ID
+    let messageInput = document.getElementById("message");
+
+    // Evento keydown - Dispara quando a tecla é pressionada
+    messageInput.addEventListener("keydown", (e) => {
+      let output1 = document.getElementById("output1");
+      output1.innerText = `Tecla pressionada (keydown): ${e.key}, código: ${e.code}`;
+    });
+
+    /**
+     * Evento keypress - Dispara quando uma tecla imprimível é pressionada
+     * OBS: keypress é obsoleto e não funciona para algumas teclas especiais
+     */
+    messageInput.addEventListener("keypress", (e) => {
+      let output2 = document.getElementById("output2");
+      output2.innerText = `Tecla pressionada (keypress): ${e.key}, código: ${e.code}`;
+    });
+
+    // Evento keyup - Dispara quando a tecla é solta
+    messageInput.addEventListener("keyup", (e) => {
+      let output3 = document.getElementById("output3");
+      output3.innerText = `Tecla solta (keyup): ${e.key}, código: ${e.code}`;
+    });
+  </script>
+</html>
