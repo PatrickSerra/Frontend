@@ -1,7 +1,14 @@
 .calculator {
-    height: 320px;
-    width: 235px;
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: purple
+  height: 20em;
+  width: 14.687em;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0.8em;
+  
+  background: #314755;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #60bee9, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #0294d8, #4b7e9e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

@@ -1,0 +1,48 @@
+/* Display.css */
+.calculator__display {
+  max-width: 100%;
+  padding: 0.5em;
+  display: flex;
+  border: 1px solid rgb(134, 128, 133);
+  justify-content: flex-end;
+  align-items: center;
+  background: rgb(185, 179, 179);
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.05);
+}
+
+.calculator__display__content {
+  width: 100%;
+  font-size: 1.8em;
+  height: 1.5em;
+  text-align: right;
+  color: black;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  overflow: auto; /* Esconde a barra de rolagem */
+
+
+}
+
+/* Cursor simulado */
+.calculator__display__content::after {
+  content: "";
+
+  position: absolute;
+  animation: blink 0.8s infinite; /* Animação de piscar */
+}
+
+/* Animação de piscar */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

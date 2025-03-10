@@ -1,0 +1,25 @@
+.calculator__button-grid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.span-x-2 {
+  grid-column: span 2;
+}
+
+.span-y-2 {
+  grid-row: span 2;
+}
+
+.span-x-3 {
+  grid-column: span 3;
+}
+
+.span-y-3 {
+  grid-row: span 3;
+}

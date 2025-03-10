@@ -1,0 +1,73 @@
+/* Botão base */
+.btn {
+  font-size: 1em;
+  width: 100%;
+  height: 100%;
+  display: inline-flex; /* Ativa o flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  border-radius: 0.3125em;
+  text-align: center; /* Garante centralização de múltiplas linhas */
+  background-color: transparent;
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
+}
+
+/* Efeito ao passar o mouse */
+.btn:hover {
+  background-color: rgba(212, 192, 192, 0.658);
+  box-shadow: 0px 4px 10px rgba(20, 19, 19, 0.2);
+}
+
+/* Modificador: botão primário */
+.btn--primary {
+  border: 1.5px solid white;
+  color: white;
+}
+
+.btn--primary:active {
+  transform: scale(0.95); /* Simula um botão sendo pressionado */
+  box-shadow: 0px 2px 5px rgba(15, 13, 13, 0.1); /* Reduz a sombra para parecer pressionado */
+  background-color: rgb(216, 212, 212);
+  filter: brightness(0.85);
+}
+
+
+/* Modificador: botão primário */
+.btn--danger {
+  border: 1.5px solid white;
+  color: rgb(47, 46, 48);
+  background-color: rgb(253, 251, 251);
+}
+
+
+/* Modificador: botão primário */
+.btn--secondary {
+  border: 1.5px solid white;
+  color: rgb(83, 32, 134);
+  background-color: rgb(153, 155, 240);
+}
+
+/* Modificador: botão primário */
+.btn--secondary:active {
+  background-color: rgb(153, 155, 240);
+}
+
+/* Modificador: botão primário */
+.btn--secondary:hover {
+  background-color: rgb(139, 140, 236);
+}
+
+/* Grid de botões */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+/* Modificador: botão de igual (ocupa 2 linhas) */
+.btn--equal {
+  grid-row: span 2;
+}
+
