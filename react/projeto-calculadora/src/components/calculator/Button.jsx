@@ -5,7 +5,7 @@ function Button({label, classes, click}) {
     return ( 
         <button 
          className={classes}
-         onClick={e => click?.(label)}
+         onClick={() => click?.(label)}
         >    
            <span>{label}</span> 
         </button>
