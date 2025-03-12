@@ -1,64 +1,98 @@
+// let myName: string;
+// let meaningOfLife: number;
+// let isLoading: boolean;
+// let album: string | number;
 
-// let seraQuepode = '?'
-// console.log(seraQuepode);
+// myName = 'Patrick';
+// meaningOfLife = 42
+// isLoading = true;
+// album = 'Van Halen';
 
-// let estaFrio = true
-
-// if(estaFrio) {
-//     let acao = 'Colocar o casaco!'
-//     console.log(acao);
+// const sum = (a: number, b: string) => {
+//     return a + b
 // }
 
+// let postId: string | number;
+// let isActive: number | boolean;
 
-// const cpf: string = '123.456.000-19'
-// //cpf = '34343434434'
+// let re: RegExp = /\w+/g
 
-// function revelar() {
-//     const segredo = 'interno'
-//     console.log(segredo);
+// let stringArr = ['one', 'hey', 'Dave']
+// let guitars = ['strat', 'Les Paul', 5150]
+// let mixedData = ['EVH', '1984', true]
+
+// stringArr[0] = 'John';
+// stringArr.push('hey')
+
+// guitars[0] = 1984
+// guitars.unshift('Jim')
+// //guitars.unshift(true)
+
+// let test = []
+// let bands: string[] = []
+
+// bands.push('Van halen')
+
+
+// //Tuple 
+
+// let myTuple: [string, number, boolean] = ['Dave', 12, true]
+// let mixed = ['John', 1, false]
+
+// // myTuple = mixed
+// myTuple[1] = 42
+
+// //Objects
+// let myObj: object 
+// myObj = []
+// myObj = bands 
+// myObj = {}
+
+
+// let user = {
+//     name: 'Dave',
+//     isActive: true
 // }
 
-// {
+// user.isActive = false
 
-//     const segredo = 'externo!';
-//     console.log(segredo);
-
+// interface Guitarrist {
+//     name?: string, 
+//     active: boolean,
+//     albuns: (string | number)[]
+//     // playGuitar: (pick: string) => string
 // }
 
-// console.log(segredo);
-
-// const somar = function (n1: number, n2:number): number {
-//     return n1 + n2
+// let evh: Guitarrist = {
+//     name: 'Eddie',
+//     active: false,
+//     albuns: [1894, 5150, 'OU812']
 // }
 
-// console.log(somar(2, 2));
-
-// const subtrair = (n1: number, n2: number): number => n1 - n2
-// console.log(subtrair(2, 3));
-
-// const saudacao = () => console.log("Ola");
-// saudacao()
-
-// const falarCom = (pessoa: string) => console.log('Ola ' + pessoa);
-
-// //
-
-// function normalComThis() {
-//     console.log(this);    
+// let jp: Guitarrist = {
+//     name: 'Jimmy',
+//     active: true,
+//     albuns: ['I', 'II', 'IV']
 // }
 
-// const normalComThisEspecial = normalComThis.bind({nome: 'Ana'})
+// type GreetGuitarist = (guitarrist: Guitarrist) => string;
 
-// normalComThis()
-// normalComThisEspecial()
+// const greetGuitarist: GreetGuitarist = (guitarrist) => {
+//     if (guitarrist.name) {
+//         return `Hello ${guitarrist.name.toLocaleUpperCase()}`
+//     }
+//     return "No Guitarrist"
+// }
 
-// console.log(this);
-// const arrowComThis = () => console.log(this);
+// console.log(greetGuitarist(jp));
 
-// arrowComThis()
+// enum Grade {
+//     U = 1, 
+//     D,
+//     C,
+//     B,
+//     A
+// }
 
-function contagemRegressiva(inicio: number = 3): void {
-    console.log(inicio);
-    
-    
-}
+// console.log(Grade.U);
+
