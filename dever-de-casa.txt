@@ -29,6 +29,7 @@ Topicos para estudar depois:
 
     REACT 
         Se aprofundar no react router: https://www.youtube.com/watch?v=nDGA3km5He4
+        Se aprofundar no react hooks: https://www.youtube.com/watch?v=6wf5dIrryoQ
         Se aprofundar em Next.js https://www.youtube.com/watch?v=843nec-IvW0&list=WL&index=286
 
 
