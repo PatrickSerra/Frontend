@@ -1,8 +1,10 @@
+import reactLogo from '../img/react.png'
+
 function Header() {
   return (
     <header className="header">
       <div className="logo-img">
-         <img src="/src/img/react.png" alt="" />
+         <img src={reactLogo} alt="" />
       </div>
       <nav>
         <ul className="nav-list">

@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: whitesmoke;
+    background-color: bisque;
+}
+
+article {
+    text-align: center;
+}
+
+hr {
+    color: rgb(228, 214, 214);
+}
+
+.hidden {
+    display: none;
+}
