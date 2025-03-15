@@ -19,7 +19,7 @@ export default function App() {
     // Challenge: update `substract` to use a callback function
 
     function subtract() {
-        setCount(count - 1)
+        setCount(prevCount => prevCount - 1)
     }
 
     return (

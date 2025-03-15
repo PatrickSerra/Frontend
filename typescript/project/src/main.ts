@@ -223,4 +223,38 @@
 // img.src
 // myImg?.src
 
-class Pessoa {}
+class Data {
+  dia: number = 1;
+  mes: number = 1;
+  ano: number = 1970;
+
+  constructor(dia: number = 1, mes: number = 1, ano: number = 1970) {
+    this.dia = dia;
+    this.mes = mes;
+    this.ano = ano;
+  }
+}
+
+let aniversario = new Data(3, 11, 1991);
+aniversario.dia = 4;
+console.log(aniversario);
+console.log(Data);
+
+let casamento = new Data();
+casamento.ano = 2017;
+
+class DataExperta {
+  constructor(
+    public dia: number = 1,
+    public mes: number = 1,
+    public ano: number = 1970
+  ) {}
+}
+
+aniversario = new DataExperta(3, 11, 1991);
+aniversario.dia = 4;
+console.log(aniversario);
+console.log(Data);
+
+casamento = new Data();
+casamento.ano = 2017;

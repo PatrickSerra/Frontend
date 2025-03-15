@@ -1,24 +1,27 @@
-import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom/client";
 
 function App() {
-  
   function handleClick() {
-    console.log("I was clicked!")
+    console.log("I was clicked!");
   }
-  
+
+  function handleMouseMove() {
+    console.log("Moving");
+  }
+
   /**
    * Challenge: add our new function to the button
    */
-  
+
   return (
     <main className="container">
-      <img
+      <img onMouseMove={handleMouseMove}
         src="https://picsum.photos/640/360"
         alt="Placeholder image from Picsum"
       />
-      <button onClick={}>Click me</button>
+      <button onClick={handleClick}>Click me</button>
     </main>
-  )
+  );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
