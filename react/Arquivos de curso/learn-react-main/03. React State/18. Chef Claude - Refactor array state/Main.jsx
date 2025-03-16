@@ -1,3 +1,4 @@
+import {useState} from 'react'
 export default function Main() {
 
     /**
@@ -6,21 +7,17 @@ export default function Main() {
      * ingredient to our list!
      */
 
-    const ingredients = ["Chicken", "Oregano", "Tomatoes"]
+    const [ingredients, setIngridients] = useState(["Chicken", "Oregano", "Tomatoes"])
 
     const ingredientsListItems = ingredients.map(ingredient => (
         <li key={ingredient}>{ingredient}</li>
     ))
 
     function handleSubmit(event) {
-        /**
-         * Like before, don't worry about this FormData stuff yet.
-         * Just use the newIngredient below to help you finish the
-         * challenge.
-         */
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
         const newIngredient = formData.get("ingredient")
+        setIngridients(prevIngridients => [...prevIngridients, newIngredient])
     }
 
     return (

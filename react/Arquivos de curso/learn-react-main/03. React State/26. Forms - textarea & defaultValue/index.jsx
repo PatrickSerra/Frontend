@@ -6,7 +6,10 @@ function App() {
   function signUp(formData) {
     const email = formData.get("email")
     const password = formData.get("password")
+    const description = formData.get("description")
     console.log(password)
+    console.log(description);
+    
   }
 
   return (
@@ -20,11 +23,9 @@ function App() {
         <label htmlFor="password">Password:</label>
         <input id="password" defaultValue="password123" type="password" name="password" />
 
-        
-        
-        
-
-        
+        <label htmlFor="description">Description</label>
+        <textarea name="description" id="description"></textarea>
+  
         <button>Submit</button>
 
       </form>

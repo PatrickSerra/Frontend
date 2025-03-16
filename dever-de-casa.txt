@@ -31,11 +31,13 @@ Topicos para estudar depois:
         Se aprofundar no react router: https://www.youtube.com/watch?v=nDGA3km5He4
         Se aprofundar no react hooks: https://www.youtube.com/watch?v=6wf5dIrryoQ
         Se aprofundar em Next.js https://www.youtube.com/watch?v=843nec-IvW0&list=WL&index=286
+        Redux: https://www.youtube.com/watch?v=SlC8941Wwrk
+        Estudar sobre o zod no react e o chakra
         React native - https://www.youtube.com/watch?v=2esQdKzRUCw&t=426s
 
 
 Estudos em progresso:
-    React Básico - https://www.youtube.com/watch?v=x4rFhThSX04: para em 6:11:12
+    React Básico - https://www.youtube.com/watch?v=x4rFhThSX04: para em 7:17:29
     Typescript - https://www.youtube.com/watch?v=gieEQFIfgYc&t=281s - parei en 2:07:47
     
    

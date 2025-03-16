@@ -17,6 +17,8 @@ form {
     padding-inline: 40px;
     display: flex;
     flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 label {

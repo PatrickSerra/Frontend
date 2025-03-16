@@ -11,14 +11,15 @@ export default function App() {
         email: "itsmyrealname@example.com",
         isFavorite: false
     })
-    /**
-     * Challenge: Fill in the values in the markup
-     * using the properties of our state object above
-     * (Ignore `isFavorite` for now)
-     */
+
+    let starIcon = contact.isFavorite ? starFilled : starEmpty
+    let buttonLabel = contact.isFavorite ? 'Remove from favorites' : 'Add to favorites'
+    let buttonPressed = contact.isFavorite
+    let buttonImgAlt = contact.isFavorite ? 'filled star icon' :'empty star icon'
+
 
     function toggleFavorite() {
-        console.log("Toggle Favorite")
+       
     }
 
     return (
@@ -32,20 +33,21 @@ export default function App() {
                 <div className="info">
                     <button
                         onClick={toggleFavorite}
-                        aria-pressed={false}
+                        aria-pressed={buttonPressed}
+                        aria-label={buttonLabel}
                         className="favorite-button"
                     >
                         <img
-                            src={starEmpty}
-                            alt="empty star icon"
+                            src={starIcon}
+                            alt={buttonImgAlt}
                             className="favorite"
                         />
                     </button>
                     <h2 className="name">
-                        John Doe
+                        {contact.name} {contact.lastName}
                     </h2>
-                    <p className="contact">+1 (212) 555-1212</p>
-                    <p className="contact">itsmyrealname@example.com</p>
+                    <p className="contact">{contact.phone}</p>
+                    <p className="contact">{contact.email}</p>
                 </div>
 
             </article>

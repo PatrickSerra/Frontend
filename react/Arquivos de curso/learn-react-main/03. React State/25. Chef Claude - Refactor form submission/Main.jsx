@@ -1,39 +1,31 @@
-import React from "react"
+import React from "react";
 
 export default function Main() {
+  const [ingredients, setIngredients] = React.useState([]);
 
-    const [ingredients, setIngredients] = React.useState([])
+  const ingredientsListItems = ingredients.map((ingredient) => (
+    <li key={ingredient}>{ingredient}</li>
+  ));
 
-    const ingredientsListItems = ingredients.map(ingredient => (
-        <li key={ingredient}>{ingredient}</li>
-    ))
+  function addIngridient(formData) {
+    const newIngredient = formData.get("ingredient");
+    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+    console.log(formData);
     
-    /**
-     * Challenge: use form action instead of onSubmit to
-     * handle the data from the form
-     */
+  }
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
-        const newIngredient = formData.get("ingredient")
-        setIngredients(prevIngredients => [...prevIngredients, newIngredient])
-    }
-
-    return (
-        <main>
-            <form onSubmit={handleSubmit} className="add-ingredient-form">
-                <input
-                    type="text"
-                    placeholder="e.g. oregano"
-                    aria-label="Add ingredient"
-                    name="ingredient"
-                />
-                <button>Add ingredient</button>
-            </form>
-            <ul>
-                {ingredientsListItems}
-            </ul>
-        </main>
-    )
+  return (
+    <main>
+      <form action={addIngridient} className="add-ingredient-form">
+        <input
+          type="text"
+          placeholder="e.g. oregano"
+          aria-label="Add ingredient"
+          name="ingredient"
+        />
+        <button>Add ingredient</button>
+      </form>
+      <ul>{ingredientsListItems}</ul>
+    </main>
+  );
 }
