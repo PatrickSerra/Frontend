@@ -7,11 +7,16 @@ export default function Joke(props) {
         setIsShown(prevShown => !prevShown)
     }
     
+    function buttonShowHide(isShown) {
+        return isShown ? 'Hide' : 'Show' 
+    }
+
+
     return (
         <div>
             {props.setup && <h3>{props.setup}</h3>}
-            {isShown && <p>{props.punchline}</p>}
-            <button onClick={toggleShown}>Show punchline</button>
+            {isShown ? <p>{props.punchline}</p>: null}
+            <button onClick={toggleShown}>{buttonShowHide(isShown)} punchline</button>
             <hr />
         </div>
     )
