@@ -37,7 +37,7 @@ Topicos para estudar depois:
 
 
 Estudos em progresso:
-    React Básico - https://www.youtube.com/watch?v=x4rFhThSX04: para em 8:17:34
+    React Básico - https://www.youtube.com/watch?v=x4rFhThSX04: para em 9:07:34
     Typescript - https://www.youtube.com/watch?v=gieEQFIfgYc&t=281s - parei en 2:07:47
     Web design - https://www.youtube.com/watch?v=B-ytMSuwbf8&t=1223s - parei em 1:20:05
     

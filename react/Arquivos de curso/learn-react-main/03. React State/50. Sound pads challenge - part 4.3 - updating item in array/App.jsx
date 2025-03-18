@@ -6,7 +6,6 @@ export default function App() {
     const [pads, setPads] = React.useState(padsData)
     
     function toggle(id) {
-        console.log(id)
         /**
          * Challenge:
          * Call setPads to update the state of the one pad that was
@@ -17,6 +16,11 @@ export default function App() {
          * Otherwise (if the ids don't match), just return the previous
          * item as it was, unchanged.
          */
+
+        setPads(prevPads => prevPads.map(item => {
+            return item.id === id ? {...item, on: !item.on} : item
+        }))
+        
     }
     
     const buttonElements = pads.map(pad => (
