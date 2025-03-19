@@ -1,6 +1,6 @@
 /**
  * Módulo de integração com APIs de IA para geração de receitas baseadas em ingredientes fornecidos pelo usuário.
- * 
+ *
  * Utiliza os modelos da Anthropic (Claude) e Hugging Face (Mistral) para processar a entrada e gerar receitas.
  */
 import Anthropic from "@anthropic-ai/sdk";
@@ -11,13 +11,14 @@ const apiKey = import.meta.env.VITE_HF_ACCESS_TOKEN;
 
 /**
  * Prompt do sistema que define as regras para a IA gerar receitas corretamente.
- * 
+ *
  * A IA:
  * - Se apresenta como "Chef" na mesma língua dos ingredientes.
  * - Mantém a resposta no mesmo idioma dos ingredientes.
  * - Tenta usar a maioria dos ingredientes fornecidos.
  * - Pode adicionar ingredientes extras, mas com moderação.
  * - Formata a receita em Markdown.
+ * 
  */
 const SYSTEM_PROMPT = `
 You are a smart culinary assistant that receives a list of ingredients in a specific language and suggests a recipe the user can prepare using some or all of those ingredients.
@@ -40,7 +41,7 @@ const anthropic = new Anthropic({
 
 /**
  * Obtém uma receita do modelo Claude baseado nos ingredientes fornecidos.
- * 
+ *
  * @param {string[]} ingredientsArr - Lista de ingredientes informados pelo usuário.
  * @returns {Promise<string>} - Receita gerada pela IA no mesmo idioma dos ingredientes.
  */
@@ -66,7 +67,7 @@ const hf = new HfInference(apiKey);
 
 /**
  * Obtém uma receita do modelo Mistral baseado nos ingredientes fornecidos.
- * 
+ *
  * @param {string[]} ingredientsArr - Lista de ingredientes informados pelo usuário.
  * @returns {Promise<string>} - Receita gerada pela IA no mesmo idioma dos ingredientes.
  */
