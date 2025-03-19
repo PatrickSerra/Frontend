@@ -1,74 +1,104 @@
-# Logs e arquivos temporários
-*.log
-*.tmp
-*.temp
-*.swp
-*.swo
-*.DS_Store
-Thumbs.db
+# 🚀 Segurança e Privacidade  
+.env  
+.env.*  
+*.pem  
+*.key  
+*.crt  
+*.p12  
+*.pfx  
+*.cer  
+*.enc  
+secrets/  
+config/secrets/  
+certs/  
+id_rsa*  
+id_dsa*  
+*.gpg  
 
-# Cache do sistema e editor
-.cache/
-.idea/
-.vscode/
-*.bak
-*.~*
+# 🔍 Logs e Arquivos Temporários  
+*.log  
+*.tmp  
+*.temp  
+*.swp  
+*.swo  
+*.bak  
+*.orig  
+*.rej  
+*.lock  
+*.pid  
+*.seed  
+*.DS_Store  
+Thumbs.db  
 
-# Dependências
-node_modules/
-bower_components/
+# ⚙️ Cache do Sistema e Editores  
+.cache/  
+.idea/  
+.vscode/  
+*.eslintcache  
+*.stylelintcache  
+.jest/  
+.nyc_output/  
+*.~*  
 
-# Arquivos de build
-dist/
-build/
-out/
-*.min.js
-*.min.css
-*.map
+# 📦 Dependências  
+node_modules/  
+bower_components/  
 
-# Arquivos de configuração de ferramentas (se gerados automaticamente)
-*.eslintcache
-*.stylelintcache
-coverage/
-.jest/
-.nyc_output/
+# 📂 Arquivos de Build  
+dist/  
+build/  
+out/  
+*.min.js  
+*.min.css  
+*.map  
 
-# Relacionados ao Sass ou Less
-*.sass-cache/
-*.scss-cache/
-*.map
+# 🎨 Relacionados ao Sass ou Less  
+*.sass-cache/  
+*.scss-cache/  
+*.map  
 
-# Arquivos de teste
-*.spec.js
-*.test.js
-coverage/
+# ✅ Arquivos de Teste e Cobertura  
+*.spec.js  
+*.test.js  
+coverage/  
+coverage/*  
+.jest/  
 
-# HTML pré-processado ou gerado
-*.html~
-*.ejs~
+# 📜 HTML e Templates Temporários  
+*.html~  
+*.ejs~  
 
-# Imagens temporárias ou geradas
-*.png~
-*.jpg~
-*.gif~
-*.svg~
+# 🖼️ Imagens Temporárias ou Geradas  
+*.png~  
+*.jpg~  
+*.gif~  
+*.svg~  
 
-# Arquivos de pacotes ou deploy
-*.zip
-*.tar.gz
-*.rar
+# 📦 Pacotes e Arquivos de Deploy  
+*.zip  
+*.tar.gz  
+*.rar  
 
-# Configurações locais do Git
-.gitconfig.local
+# 🔄 Configurações Locais e do Git  
+.gitconfig.local  
+.gitignore.local  
+.gitmodules  
 
-# Arquivos relacionados ao Docker ou CI/CD
-.docker/
-docker-compose.override.yml
+# 🐳 Arquivos Relacionados ao Docker ou CI/CD  
+.docker/  
+docker-compose.override.yml  
 
-# Outros arquivos que podem ser gerados em builds ou edições
-*.bak
-*.orig
-*.rej
+# 🎬 Arquivos de Mídia  
+media/  
+*.mp4  
+*.mp3  
+*.wav  
+*.flac  
+*.avi  
+*.mov  
 
-#Arquivos de media
-media
+# 🛑 Proteção Extra para Credenciais Sensíveis  
+**/secrets.*  
+**/private/  
+**/keys/  
+**/configs/  
