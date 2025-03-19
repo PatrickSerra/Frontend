@@ -1,4 +1,4 @@
-# 🚀 Segurança e Privacidade  
+#Segurança e Privacidade  
 .env  
 .env.*  
 *.pem  
@@ -15,7 +15,7 @@ id_rsa*
 id_dsa*  
 *.gpg  
 
-# 🔍 Logs e Arquivos Temporários  
+#Logs e Arquivos Temporários  
 *.log  
 *.tmp  
 *.temp  
@@ -30,7 +30,7 @@ id_dsa*
 *.DS_Store  
 Thumbs.db  
 
-# ⚙️ Cache do Sistema e Editores  
+#Cache do Sistema e Editores  
 .cache/  
 .idea/  
 .vscode/  
@@ -40,11 +40,11 @@ Thumbs.db
 .nyc_output/  
 *.~*  
 
-# 📦 Dependências  
+#Dependências  
 node_modules/  
 bower_components/  
 
-# 📂 Arquivos de Build  
+#Arquivos de Build  
 dist/  
 build/  
 out/  
@@ -52,43 +52,43 @@ out/
 *.min.css  
 *.map  
 
-# 🎨 Relacionados ao Sass ou Less  
+#Relacionados ao Sass ou Less  
 *.sass-cache/  
 *.scss-cache/  
 *.map  
 
-# ✅ Arquivos de Teste e Cobertura  
+# Arquivos de Teste e Cobertura  
 *.spec.js  
 *.test.js  
 coverage/  
 coverage/*  
 .jest/  
 
-# 📜 HTML e Templates Temporários  
+#HTML e Templates Temporários  
 *.html~  
 *.ejs~  
 
-# 🖼️ Imagens Temporárias ou Geradas  
+#Imagens Temporárias ou Geradas  
 *.png~  
 *.jpg~  
 *.gif~  
 *.svg~  
 
-# 📦 Pacotes e Arquivos de Deploy  
+#Pacotes e Arquivos de Deploy  
 *.zip  
 *.tar.gz  
 *.rar  
 
-# 🔄 Configurações Locais e do Git  
+#Configurações Locais e do Git  
 .gitconfig.local  
 .gitignore.local  
 .gitmodules  
 
-# 🐳 Arquivos Relacionados ao Docker ou CI/CD  
+#Arquivos Relacionados ao Docker ou CI/CD  
 .docker/  
 docker-compose.override.yml  
 
-# 🎬 Arquivos de Mídia  
+#Arquivos de Mídia  
 media/  
 *.mp4  
 *.mp3  
@@ -97,7 +97,7 @@ media/
 *.avi  
 *.mov  
 
-# 🛑 Proteção Extra para Credenciais Sensíveis  
+#Proteção Extra para Credenciais Sensíveis  
 **/secrets.*  
 **/private/  
 **/keys/  
