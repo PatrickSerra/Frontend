@@ -1,6 +1,7 @@
 {
   "name": "Scrim-s06ivag",
   "description": "https://scrimba.com/learn-react-c0e/~05ta",
+  "type": "module",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -8,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "19.0.0-rc-8b08e99e-20240713",
-    "react-dom": "19.0.0-rc-8b08e99e-20240713",
     "@anthropic-ai/sdk": "0.27.3",
     "@huggingface/inference": "2.8.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-markdown": "^10.1.0",
+    "react-spinners": "^0.15.0",
     "vite": "latest"
   },
   "devDependencies": {

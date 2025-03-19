@@ -1,63 +1,87 @@
-import React from "react"
-import IngredientsList from "./components/IngredientsList"
-import ClaudeRecipe from "./components/ClaudeRecipe"
-import { getRecipeFromChefClaude, getRecipeFromMistral } from "./ai"
-
 /**
- * Challenge: Get a recipe from the AI!
+ * Componente principal do aplicativo de receitas.
  * 
- * This will be a bit harder of a challenge that will require you
- * to think critically and synthesize the skills you've been
- * learning and practicing up to this point.
- * 
- * We'll start with a mini-quiz:
- * 
- * 1. Think about where the recipe response should live and how you're
- *    going to make sure it doesn't disappear between each state change in
- *    the app. (I don't mean between refreshes of your mini-browser.
- *    You don't need to save this to localStorage or anything more permanent
- *    than in React's memory for now.)
- *  
- * 
- * 2. What action from the user should trigger getting the recipe?
- * 
+ * Este componente permite que o usuário adicione ingredientes,
+ * gere uma receita com base nos ingredientes inseridos por meio de IA,
+ * e exiba a receita gerada. 
  */
+import React from "react";
+import IngredientsList from "./components/IngredientsList";
+import ClaudeRecipe from "./components/ClaudeRecipe";
+import { getRecipeFromMistral } from "./ai";
+import { FadeLoader } from "react-spinners";
 
 export default function Main() {
-    const [ingredients, setIngredients] = React.useState(
-        ["all the main spices", "pasta", "ground beef", "tomato paste"]
-    )
-    const [recipeShown, setRecipeShown] = React.useState(false)
+  // Estado para armazenar os ingredientes adicionados pelo usuário
+  const [ingredients, setIngredients] = React.useState([]);
+  
+  // Estado para armazenar a receita gerada pela IA
+  const [recipe, setRecipe] = React.useState("");
+  
+  // Estado para controlar a exibição do indicador de carregamento
+  const [isLoading, setIsLoading] = React.useState(false);
 
-    function toggleRecipeShown() {
-        setRecipeShown(prevShown => !prevShown)
-    }
+  /**
+   * Obtém uma receita gerada pela IA com base nos ingredientes fornecidos.
+   * Atualiza o estado de carregamento durante a requisição.
+   */
+  async function getRecipeFromAI() {
+    setIsLoading(true);
+    let generatedRecipe = await getRecipeFromMistral(ingredients);
+    setRecipe(generatedRecipe);
+    setIsLoading(false);
+  }
 
-    function addIngredient(formData) {
-        const newIngredient = formData.get("ingredient")
-        setIngredients(prevIngredients => [...prevIngredients, newIngredient])
-    }
+  /**
+   * Adiciona um novo ingrediente à lista de ingredientes.
+   * @param {FormData} formData - Dados do formulário contendo o ingrediente a ser adicionado.
+   */
+  function addIngredient(formData) {
+    const newIngredient = formData.get("ingredient");
+    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+  }
 
-    return (
-        <main>
-            <form action={addIngredient} className="add-ingredient-form">
-                <input
-                    type="text"
-                    placeholder="e.g. oregano"
-                    aria-label="Add ingredient"
-                    name="ingredient"
-                />
-                <button>Add ingredient</button>
-            </form>
+  /**
+   * Remove um ingrediente da lista com base no índice fornecido.
+   * @param {number} indexToRemove - Índice do ingrediente a ser removido.
+   */
+  function removeIngredient(indexToRemove) {
+    setIngredients((prevIngredients) =>
+      prevIngredients.filter((_, index) => index !== indexToRemove)
+    );
+  }
 
-            {ingredients.length > 0 &&
-                <IngredientsList
-                    ingredients={ingredients}
-                    toggleRecipeShown={toggleRecipeShown}
-                />
-            }
+  return (
+    <main>
+      {/* Formulário para adicionar ingredientes */}
+      <form action={addIngredient} className="add-ingredient-form">
+        <input
+          type="text"
+          placeholder="e.g. oregano"
+          aria-label="Add ingredient"
+          name="ingredient"
+          required
+        />
+        <button>Add ingredient</button>
+      </form>
 
-            {recipeShown && <ClaudeRecipe />}
-        </main>
-    )
+      {/* Exibe a lista de ingredientes e botão para gerar a receita */}
+      {ingredients.length > 0 && (
+        <IngredientsList
+          ingredients={ingredients}
+          getRecipe={getRecipeFromAI}
+          removeIngredient={removeIngredient}
+        />
+      )}
+
+      {/* Indicador de carregamento ou exibição da receita gerada */}
+      {isLoading ? (
+        <div className="spinner-container">
+          <FadeLoader color="#d17557" size={25} margin={4} />
+        </div>
+      ) : (
+        recipe && <ClaudeRecipe recipe={recipe} />
+      )}
+    </main>
+  );
 }
