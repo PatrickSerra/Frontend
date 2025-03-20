@@ -7,8 +7,25 @@ export default function Main() {
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
     
+    let meme2 = {
+        ...meme,
+        algo: "kkkk"
+    }
+
+    console.log(meme2);
+    
+
     function handleChange(event) {
         const {value} = event.currentTarget
+        console.log(value);
+
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            topText: value
+           
+        }))
+
+        
         /**
          * Challenge: update the topText value in the meme state
          * object every time the topText input box is changed

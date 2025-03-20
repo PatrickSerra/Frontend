@@ -1,9 +1,16 @@
 import "./css/App.css";
-import Page from "./Page";
+import Button from "./Button";
 
 function App() {
+
+  function handlePlayClick(params) {
+    
+  }
+
   return (
-      <Page />
+    <div>
+      <Button title="Play" />
+    </div>
   );
 }
 
